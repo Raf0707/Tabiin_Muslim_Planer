@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.Tabiin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+
         <item name="colorPrimary">@color/purple_300</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
@@ -19,4 +21,17 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
     </style>
+
+    <style name="RoundedCornerButton" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/btndesign</item>
+        <item name="colorButtonNormal">@color/purple_300</item>
+        <item name="colorControlHighlight">@color/purple_300</item>
+    </style>
+
+    <style name="CustomAnimationButton" parent="@style/Widget.AppCompat.Button">
+        <item name="colorButtonNormal">#1a237e</item>
+        <item name="colorControlHighlight">#673ab7</item>
+        <item name="android:stateListAnimator">@drawable/btnshadow</item>
+    </style>
+
 </resources>
