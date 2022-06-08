@@ -144,7 +144,7 @@
         android:layout_height="49dp"
         android:indeterminateTint="#12705a"
         android:max="100"
-        android:progressDrawable="@drawable/ppcc"
+        android:progressDrawable="@drawable/progress_bar_round_corners"
         android:scaleY="1.1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
