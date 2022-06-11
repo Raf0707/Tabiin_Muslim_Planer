@@ -1,4 +1,4 @@
 package com.example.tabiin.adapters;
 
-public class koranAdapter {
+public class KoranAdapter {
 }

@@ -1,4 +1,4 @@
 package com.example.tabiin.database;
 
-public class dbManager {
+public class DBManager {
 }

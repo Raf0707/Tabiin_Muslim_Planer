@@ -1,4 +1,4 @@
-package com.example.tabiin.fragments;
+package com.example.tabiin.ui;
 
 import android.os.Bundle;
 

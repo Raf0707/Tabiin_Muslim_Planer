@@ -1,4 +1,4 @@
 package com.example.tabiin.viewmodels;
 
-public class viewModel {
+public class ViewModel {
 }

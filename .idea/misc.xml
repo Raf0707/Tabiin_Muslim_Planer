@@ -9,7 +9,16 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/conturdesc.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/green_cursor.xml" value="0.5305555555555556" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_add_circle_outline_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_ads_click_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_arrow_upward_24.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_control_point_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_exposure_neg_1_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_exposure_plus_1_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_keyboard_arrow_down_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_keyboard_arrow_left_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_keyboard_arrow_up_24.xml" value="0.5543589743589744" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_baseline_restart_alt_24.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_launcher_background.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ppcc.xml" value="0.5543589743589744" />
@@ -17,6 +26,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/separator.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/activity_main.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_counter.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_counter.xml" value="0.5328125" />
       </map>
     </option>
   </component>
