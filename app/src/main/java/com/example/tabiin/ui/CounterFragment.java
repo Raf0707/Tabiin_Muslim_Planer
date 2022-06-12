@@ -1,4 +1,4 @@
-package com.example.tabiin.fragments;
+package com.example.tabiin.ui;
 
 import android.os.Bundle;
 
@@ -12,7 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.lifecycle.Observer;
+import androidx.lifecycle.*;
+
 import com.example.tabiin.R;
 import com.example.tabiin.domain.models.counter.Counter;
 import com.example.tabiin.domain.models.counter.CounterTitleParam;
@@ -69,17 +70,15 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
         minus.setOnClickListener(this);
 
         counterViewModel = new CounterViewModel();
-        counterViewModel.getCounterLiveData().observe(this, new Observer<HashMap<String, Counter>>() {
-            @Override
-            public void onChanged(HashMap<String, Counter> map) {
-                etTitleTsel.setText(map.get(selectedCounterTitle).getTitle());
-                etTsel.setText(map.get(selectedCounterTitle).getAim());
-                etTitleDescript.setText(map.get(selectedCounterTitle).getDescription());
+        // counterViewModel.getCounterLiveData().observe(this, new Observer<HashMap<String, Counter>>() {
+        counterViewModel.getCounterLiveData().observe((LifecycleOwner) getContext(), map -> {
+            etTitleTsel.setText(map.get(selectedCounterTitle).getTitle());
+            etTsel.setText(map.get(selectedCounterTitle).getAim());
+            etTitleDescript.setText(map.get(selectedCounterTitle).getDescription());
 
-                mainProgressBar.setProgress(map.get(selectedCounterTitle).getCurrentProgress());
+            mainProgressBar.setProgress(map.get(selectedCounterTitle).getCurrentProgress());
 
-                //editprogress unknown
-            }
+            //editprogress unknown
         });
 
         return view;

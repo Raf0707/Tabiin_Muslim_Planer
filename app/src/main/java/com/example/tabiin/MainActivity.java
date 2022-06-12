@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
 
+import com.example.tabiin.ui.*;
+
 public class MainActivity extends AppCompatActivity implements SimpleAdapter.ViewBinder {
 
     @Override
@@ -18,4 +20,5 @@ public class MainActivity extends AppCompatActivity implements SimpleAdapter.Vie
     public boolean setViewValue(View view, Object o, String s) {
         return false;
     }
+    
 }
