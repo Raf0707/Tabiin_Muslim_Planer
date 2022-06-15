@@ -2,10 +2,8 @@ package com.example.tabiin.ui;
 
 import android.os.Bundle;
 
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.*;
+
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -15,11 +13,7 @@ import android.view.ViewGroup;
 import androidx.lifecycle.*;
 
 import com.example.tabiin.R;
-import com.example.tabiin.domain.models.counter.Counter;
-import com.example.tabiin.domain.models.counter.CounterTitleParam;
 import com.example.tabiin.viewmodels.CounterViewModel;
-
-import java.util.HashMap;
 
 
 public class CounterFragment extends Fragment implements View.OnClickListener{
@@ -33,10 +27,11 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
     private Button setCounter;
     private Button plus;
     private Button minus;
+    private Button editTsel;
 
     private ProgressBar mainProgressBar;
 
-    private TextView editprogress;
+    private TextView editProgressCount;
 
     private String selectedCounterTitle;
 
@@ -54,16 +49,20 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
         back = view.findViewById(R.id.back);
         saveProgress = view.findViewById(R.id.saveProgress);
         resetProgress = view.findViewById(R.id.resetProgress);
+        editProgressCount = view.findViewById(R.id.editProgressCount);
         setCounter = view.findViewById(R.id.setCounter);
         plus = view.findViewById(R.id.plus);
         minus = view.findViewById(R.id.minus);
 
         mainProgressBar = view.findViewById(R.id.mainProgressBar);
 
-        editprogress = view.findViewById(R.id.editprogress);
+        // Кнопка с карандашом
+        // карандаш, кнопка для изменения данных счетчика в интерфейсе и БД
+        editTsel = view.findViewById(R.id.editTsel);
 
         back.setOnClickListener(this);
         saveProgress.setOnClickListener(this);
+        editTsel.setOnClickListener(this);
         resetProgress.setOnClickListener(this);
         setCounter.setOnClickListener(this);
         plus.setOnClickListener(this);
@@ -78,7 +77,9 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
 
             mainProgressBar.setProgress(map.get(selectedCounterTitle).getCurrentProgress());
 
-            //editprogress unknown
+            // editProgress - TextView, которое наложено на mainProgressBar
+            // показывает текущий прогресс на mainProgressBar
+            // Наложенное TextView
         });
 
         return view;
@@ -100,6 +101,7 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
                 counterViewModel.updateCounterProgress(selectedCounterTitle,0);
                 break;
             case R.id.saveProgress: break;
+            case R.id.editTsel: break;
             
         }
     }

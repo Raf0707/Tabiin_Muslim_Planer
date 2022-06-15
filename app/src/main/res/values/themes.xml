@@ -34,4 +34,17 @@
         <item name="android:stateListAnimator">@drawable/btnshadow</item>
     </style>
 
+    <style name="AppTheme.Purple" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="background">@drawable/btndesign</item>
+        <item name="colorButtonNormal">@color/purple_45</item>
+        <item name="colorControlHighlight">@color/purple_45</item>
+    </style>
+
+    <style name="RoundedCornerButtonPurple" parent="@style/Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/btndesign</item>
+        <item name="colorButtonNormal">@color/purple_45</item>
+        <item name="colorControlHighlight">@color/purple_45</item>
+    </style>
+
 </resources>
