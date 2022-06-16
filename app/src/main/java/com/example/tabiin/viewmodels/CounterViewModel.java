@@ -8,7 +8,7 @@ import com.example.tabiin.domain.models.counter.Counter;
 import java.util.HashMap;
 
 public class CounterViewModel extends ViewModel {
-    private MutableLiveData<HashMap<String, Counter>> counterLiveData= new MutableLiveData<>();
+    private MutableLiveData<HashMap<String, Counter>> counterLiveData = new MutableLiveData<>();
 
     public LiveData<HashMap<String,Counter>> getCounterLiveData(){
         return counterLiveData;

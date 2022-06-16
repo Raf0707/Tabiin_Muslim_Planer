@@ -1,5 +1,7 @@
 package com.example.tabiin.ui;
 
+import static com.example.tabiin.R.drawable.*;
+
 import android.os.Bundle;
 
 import android.widget.*;
@@ -53,12 +55,15 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
         setCounter = view.findViewById(R.id.setCounter);
         plus = view.findViewById(R.id.plus);
         minus = view.findViewById(R.id.minus);
+        editProgressCount = view.findViewById(R.id.editProgressCount);
 
         mainProgressBar = view.findViewById(R.id.mainProgressBar);
 
         // Кнопка с карандашом
         // карандаш, кнопка для изменения данных счетчика в интерфейсе и БД
         editTsel = view.findViewById(R.id.editTsel);
+
+        // editProgressCount.setBackground(getContext().getResources().getDrawable(contur_45));
 
         back.setOnClickListener(this);
         saveProgress.setOnClickListener(this);

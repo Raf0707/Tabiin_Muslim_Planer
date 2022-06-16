@@ -5,12 +5,15 @@ public class Counter {
     private String description;
     private int aim;
     private int currentProgress;
+    private CounterState counterState;
+
 
     public Counter(String title, String description, int aim, int currentProgress) {
         this.title = title;
         this.description = description;
         this.aim = aim;
         this.currentProgress = currentProgress;
+        this.counterState = CounterState.NOTCOMPLETE;
     }
 
     public String getTitle() {
@@ -43,6 +46,14 @@ public class Counter {
 
     public void setCurrentProgress(int currentProgress) {
         this.currentProgress = currentProgress;
+    }
+
+    public CounterState getCounterState() {
+        return counterState;
+    }
+
+    public void setCounterState(CounterState counterState) {
+        this.counterState = counterState;
     }
 
 }
