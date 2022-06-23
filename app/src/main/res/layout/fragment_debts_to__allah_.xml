@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/counterfragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.Debts_to_Allah_Fragment">
+
+    <TextView
+        android:id="@+id/deptDescript"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:text="@string/_5_30"
+        android:background="@drawable/conturdesc"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:shadowColor="@color/purple_400"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.166" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/postDeptFragment"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
+        android:text="Пост"
+        android:textColor="@color/purple_300"
+        android:textSize="15sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.86"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.718"
+        app:rippleColor="#33AAAAAA"
+        app:strokeColor="@color/purple_300"
+        app:strokeWidth="2dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/namazDeptFragment"
+        android:layout_width="109dp"
+        android:layout_height="56dp"
+        android:text="Намаз"
+        android:textColor="@color/purple_300"
+        android:textSize="15sp"
+        app:backgroundTint="@android:color/transparent"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.115"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.718"
+        app:rippleColor="#33AAAAAA"
+        app:strokeColor="@color/purple_300"
+        app:strokeWidth="2dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

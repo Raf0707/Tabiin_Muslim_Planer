@@ -1,7 +1,5 @@
 package com.example.tabiin.ui;
 
-import static com.example.tabiin.R.drawable.*;
-
 import android.os.Bundle;
 
 import android.widget.*;
@@ -49,19 +47,19 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
         etTitleDescript = view.findViewById(R.id.titleDescript);
 
         back = view.findViewById(R.id.back);
-        saveProgress = view.findViewById(R.id.saveProgress);
-        resetProgress = view.findViewById(R.id.resetProgress);
-        editProgressCount = view.findViewById(R.id.editProgressCount);
+        saveProgress = view.findViewById(R.id.saveProgressCounterFragment);
+        resetProgress = view.findViewById(R.id.resetProgressCounterFragment);
+        editProgressCount = view.findViewById(R.id.editProgressCountTextCounterFragment);
         setCounter = view.findViewById(R.id.setCounter);
-        plus = view.findViewById(R.id.plus);
-        minus = view.findViewById(R.id.minus);
-        editProgressCount = view.findViewById(R.id.editProgressCount);
+        plus = view.findViewById(R.id.plusCounterFragment);
+        minus = view.findViewById(R.id.minusCounterFragment);
+        editProgressCount = view.findViewById(R.id.editProgressCountTextCounterFragment);
 
-        mainProgressBar = view.findViewById(R.id.mainProgressBar);
+        mainProgressBar = view.findViewById(R.id.mainProgressBarCounterFragment);
 
         // Кнопка с карандашом
         // карандаш, кнопка для изменения данных счетчика в интерфейсе и БД
-        editTsel = view.findViewById(R.id.editTsel);
+        editTsel = view.findViewById(R.id.editTselCounterFragment);
 
         // editProgressCount.setBackground(getContext().getResources().getDrawable(contur_45));
 
@@ -93,20 +91,20 @@ public class CounterFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         switch(view.getId()){
-            case R.id.plus:
+            case R.id.plusCounterFragment:
                 counterViewModel.updateCounterProgress(selectedCounterTitle,
                         counterViewModel.getCounterByTitle(selectedCounterTitle).getCurrentProgress()+1);
                 break;
-            case R.id.minus:
+            case R.id.minusCounterFragment:
                 counterViewModel.updateCounterProgress(selectedCounterTitle,
                         counterViewModel.getCounterByTitle(selectedCounterTitle).getCurrentProgress()-1);
                 break;
             case R.id.back: break;
-            case R.id.resetProgress:
+            case R.id.resetProgressCounterFragment:
                 counterViewModel.updateCounterProgress(selectedCounterTitle,0);
                 break;
-            case R.id.saveProgress: break;
-            case R.id.editTsel: break;
+            case R.id.saveProgressCounterFragment: break;
+            case R.id.editTselCounterFragment: break;
             
         }
     }

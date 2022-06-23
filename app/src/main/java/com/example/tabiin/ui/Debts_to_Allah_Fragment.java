@@ -12,12 +12,10 @@ import com.example.tabiin.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link GestureCounter#newInstance} factory method to
+ * Use the {@link Debts_to_Allah_Fragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class GestureCounter extends Fragment {
-
-    //android:src="@drawable/tap"
+public class Debts_to_Allah_Fragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +26,7 @@ public class GestureCounter extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public GestureCounter() {
+    public Debts_to_Allah_Fragment() {
         // Required empty public constructor
     }
 
@@ -38,11 +36,11 @@ public class GestureCounter extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment GestureCounter.
+     * @return A new instance of fragment Debts_to_Allah_Fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static GestureCounter newInstance(String param1, String param2) {
-        GestureCounter fragment = new GestureCounter();
+    public static Debts_to_Allah_Fragment newInstance(String param1, String param2) {
+        Debts_to_Allah_Fragment fragment = new Debts_to_Allah_Fragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,10 +60,7 @@ public class GestureCounter extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_gesture_counter, container, false);
-
-
-
-        return view;
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_debts_to__allah_, container, false);
     }
 }
