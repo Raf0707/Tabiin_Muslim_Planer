@@ -39,9 +39,13 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/activity_main.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/activity_navigation.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/counter_element.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_count_amount_namaz.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_count_amount_post.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_counter.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_counter_saves.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_debts_to__allah_.xml" value="0.5" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_dept_namaz.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_dept_post.xml" value="0.5328125" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_counter.xml" value="0.5328125" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_item_list.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_item_list_dialog_list_dialog.xml" value="0.546875" />
