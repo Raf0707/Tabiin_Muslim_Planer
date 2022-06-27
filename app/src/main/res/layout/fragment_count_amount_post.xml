@@ -8,4 +8,5 @@
     android:layout_height="match_parent"
     tools:context=".ui.depts_to_Allah.post.CountAmountPostFragment">
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>
