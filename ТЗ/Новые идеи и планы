@@ -1,0 +1,123 @@
+ТЗ    Tabiin_Project_Master
+
+1.	 Фрагмент «Counter»
+•	Список id
+	 EditText R.id.titleTsel - название цели. Сохраняется в БД полностью.
+	EditText R.id.tsel - сама цель. Допустимые символы – только целочисленные цифры, без точек и запятых. Цель – максимум для ПрогрессБара. Сохраняется в БД 
+	EditText R.id.titleDescript - описание цели. Сохраняется в БД с уменьшенным шрифтом, открывается только при нажатии на цель.
+	Button R.id.setCounter – кнопка Настройки счетчика. Переход на фрагмент настроек счетчика
+	Button R.id.backFronCounterFragment – возвращение на главный фрагмент
+	Button R.id.plusCounterFragment – кнопка + на счетчике. Увеличивает значение счетчика на 1. Вместе с этим увеличивается ProgressBar и меняется значение на поле textViewProgressBar. Автосохранение в БД
+	Button R.id.saveProgressCounterFragment – кнопка галочка - сохранение всего в БД (Созраняются и пересохраняются Название цели, цель, описание цели с уменьшенным шрифтом, прогресс на ProgressBar и прогресс на TextViewProgressBar)
+	Button R.id.editTselCounterFragment – кнопка карандаш – изменение любых параметров класса EditText – изменение названия цели, самой цели и описания цели. Если не нажата кнопка галочка (сохранение и пересохранение в БД), то сохранить как черновик.
+	Button R.id.resetProgressCounterFragment – обновить весь прогресс. Обновление прогресса недолжно быть сразу – вначале появляется диалоговое окно (похожее на Алерт, но не алерт, я свое в своем стиле сделаю) – подтверждение обновления (кнопки да, нет), если да, то обновить, если нет, - то оставить все как было. Обновляется ProgressBar, textViewProgressBar. Цель, название и описание цели остаются те же.
+	Button R.id.minusCounterFragment – кнопка -  - кнопка минус на счетчике. Уменьшает значение счетчика на 1. Вместе с этим уменьшается ProgressBar и меняется значение на поле textViewProgressBar. Автосохранение в БД.
+	ProgressBar R.id.mainProgressBarCounterFragment – ProgressBar, который меняется в зависимости от счетчика. Максимум прогрессБара – цель из EditText R.id.tsel. При изменении счетчика автосохранение в БД.
+	TextView R.id. editProgressCountTextCounterFragment – показатель счетчика на прогрессБаре. Показывает 3 элемента, 2 из которых меняются. <currentProgress> / <Tsel>. Вначале показывается текущий прогресс. Затем дробная черта и затем цель – максимум, который нужно достигнуть.
+•	ТЗ и реализация: 
+1. Название и Описание цели - ресайкл, чтоб прокручивалась, но прокручивалась чтоб только вертикально. Лучше, если название и описание будут вначале записаны через maxLine = 1. А затем, при нажатии на название или описание они разворачивались полностью, или же открывались в отдельном фрагменте.
+
+
+2. Цель - ввод только число (у меня это указано в xml как inputType="number")
+Заходишь в прошлый проект и полностью копируешь try/except (запрет на ввод запрещенных символов) ну и то, что мы там сделали
+
+
+3. +, -, reset, галочка - реализация по описанию
+
+
+Описание кнопок:
+1. + это плюс один
+2. - это минус один
+3. reset - полное обновление (не забудь, что ты обновляешь и прогресБар и значение на текствью)
+4. галочка - четыре действия: 
+первое - сохранение в БД (сохраняются все данные, кроме описания, то есть, название, цель и прогресс, скрин пришлю как примерно выглядит), 
+второе - убирает курсор и клавиатуру и блокирует появление курсора при нажатии на editText. 
+Третье - смена текстуры с галочки на карандашик. 
+И четвёртое - если данные изменились, то изменить их в БД.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.	Фрагмент gestureCounter – жестовый счетчик.
+•	Список id
+	TextView R.id.gestureCounter – textView жестового счетчика. Постоянное автосохранение в БД.
+•	Реализация ТЗ: 
+1)	Используем onSwipeTouchListener
+2)	Реализовываем необходимые жесты:
+o	public void onClick() – это клик по экрану, увеличение (+1). Автосохранение в БД
+o	public void onSwipeDown() – свайп вниз – уменьшение (-1). Автосохранение в БД
+o	public void onLongClick() – долгое нажатие на экран – обнуление счетчика. Автосохранение в БД
+•	Примечание: для реализации нажатия на экран не требуется id Layout. Чтобы избежать «грязного» кода, необходимо использовать 
+View view = inflater.inflate(R.layout.fragment_gesture_counter, container, false);
+
+А затем
+
+view.setOnTouchListener(new OnSwipeTouchListener(view.getContext()) {
+	
+    @Override
+    public void onClick() {
+        //Реализация +1
+    }
+
+    @Override
+    public void onSwipeDown() {
+        //Реализация -1
+    }
+
+    @Override
+    public void onLongClick() {
+        //Реализация обнуления
+    }
+
+
+});
+
+
+Далее:
+
+MainActivity:
+Свайповая навигация между фрагментами
+Использование класса onSwipeTouchListener
+Добавление фрагментов
+Добавление иконок новых фрагментов
+Добавление новостей
+Парсинг записей вк
+круглосуточное чтение Корана
+Прямые трансляции чтения Корана и Джуму'а намазов
+ScrollView для BottomNavigation:
+
+<androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:layout_marginBottom="130dp"
+            app:layout_constraintBottom_toTopOf="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.core.widget.NestedScrollView>
+
+
+Продолжаем использовать material3-design
+Пишем документацию, спецификацию
+Правильное оформление README.md
+
+
+
