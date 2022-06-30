@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/myLayout"
-    tools:context=".ui.SalavatFragment">
+    tools:context=".ui.zickr.salavat.SalavatFragment">
 
     <ImageView
         android:id="@+id/plus_1_Tap2"

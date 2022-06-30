@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.depts_to_Allah.post.CountAmountPostFragment">
+    tools:context=".ui.fard.depts_to_Allah.post.CountAmountPostFragment">
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,8 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="_5_30">Восполнение индивидуальных фардов (араб. فرض العين).</string>
-    <string name="title_home">العلم</string>
+    <string name="title_home">فرض</string>
     <string name="title_dashboard">الذكر</string>
-    <string name="title_notifications">الإعدادات</string>
-    <string name="abount_app">الأخبار</string>
+    <string name="title_notifications">كتاب</string>
+    <string name="useful">مفيدة</string>
 </resources>
