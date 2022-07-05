@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.tabiin"
-        minSdk 21
+        minSdk 22
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -36,8 +36,8 @@ android {
 
 dependencies {
 
-    implementation 'androidx.navigation:navigation-fragment:2.4.2'
-    implementation 'androidx.navigation:navigation-ui:2.4.2'
+    implementation 'androidx.navigation:navigation-fragment:2.5.0'
+    implementation 'androidx.navigation:navigation-ui:2.5.0'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'

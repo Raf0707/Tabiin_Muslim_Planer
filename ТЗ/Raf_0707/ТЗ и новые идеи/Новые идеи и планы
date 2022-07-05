@@ -37,18 +37,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 2.	Фрагмент gestureCounter – жестовый счетчик.
 •	Список id
 	TextView R.id.gestureCounter – textView жестового счетчика. Постоянное автосохранение в БД.
@@ -82,6 +70,8 @@ view.setOnTouchListener(new OnSwipeTouchListener(view.getContext()) {
 
 
 });
+
+3.
 
 
 Далее:
