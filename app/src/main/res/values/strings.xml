@@ -8,4 +8,7 @@
     <string name="title_notifications">كتاب</string>
     <string name="useful">مفيدة</string>
     <string name="settings">Настройки</string>
+    <string name="sura_47_ayat_19">فَاعْلَمْ أَنَّهُ لَا إِلَهَ إِلَّا اللَّهُ وَاسْتَغْفِرْ لِذَنبِكَ وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَاللَّهُ يَعْلَمُ مُتَقَلَّبَكُمْ وَمَثْوَاكُمْ</string>
+    <string name="translate_sura_47_ayat_19">Знай же, что нет божества, кроме Аллаха, и проси прощения за свой грех и за верующих мужчин и верующих женщин. Аллах знает о ваших передвижениях и вашей обители.</string>
+    <string name="Counter_Settings">Общие настройки</string>
 </resources>

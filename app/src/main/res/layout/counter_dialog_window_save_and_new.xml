@@ -26,38 +26,35 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.427" />
+        app:layout_constraintVertical_bias="0.034" />
 
-    <EditText
-        android:id="@+id/editCurrentCounterWindow"
-        android:layout_width="200dp"
-        android:layout_height="41dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/conturdesc"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:maxLines="3"
-        android:selectAllOnFocus="true"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:singleLine="true"
-        android:hint="цель"
-        android:inputType="number"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="27sp"
-        android:textStyle="bold"
+    <Button
+        android:id="@+id/negativeSaveAndDeleteCurrentCount"
+        android:layout_width="117dp"
+        android:layout_height="46dp"
+        android:backgroundTint="@android:color/holo_red_dark"
+        android:text="отмена"
+        android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.894"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
+
+    <Button
+        android:id="@+id/positiveSaveCurrentCountWindow"
+        android:layout_width="117dp"
+        android:layout_height="46dp"
+        android:gravity="center"
+        android:text="ок"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.337" />
 
     <TextView
         android:id="@+id/window_question"
@@ -75,38 +72,10 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
-
-    <Button
-        android:id="@+id/positiveSaveCurrentCountWindow"
-        android:layout_width="117dp"
-        android:layout_height="46dp"
-        android:gravity="center"
-        android:text="ок"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.153"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.604" />
-
-    <Button
-        android:id="@+id/negativeSaveAndDeleteCurrentCount"
-        android:layout_width="117dp"
-        android:layout_height="49dp"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:text="отмена"
-        android:textSize="17sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.602" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <EditText
         android:id="@+id/editTitleCurrentCounterWindow"
@@ -117,6 +86,7 @@
         android:background="@drawable/conturdesc"
         android:ellipsize="end"
         android:gravity="center"
+        android:hint="название"
         android:imeOptions="actionDone"
         android:maxLines="3"
         android:selectAllOnFocus="true"
@@ -125,7 +95,6 @@
         android:shadowDy="3"
         android:shadowRadius="1.6"
         android:singleLine="true"
-        android:hint="название"
         android:textAllCaps="true"
         android:textColor="@color/purple_300"
         android:textColorHint="@color/white"
@@ -134,9 +103,41 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.457"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416" />
+        app:layout_constraintVertical_bias="0.154" />
+
+    <EditText
+        android:id="@+id/editCurrentCounterWindow"
+        android:layout_width="200dp"
+        android:layout_height="41dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/conturdesc"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:hint="цель"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:maxLines="3"
+        android:selectAllOnFocus="true"
+        android:shadowColor="@color/purple_400"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.6"
+        android:singleLine="true"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="27sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.236" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

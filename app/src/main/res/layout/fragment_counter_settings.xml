@@ -5,13 +5,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.zickr.counter.CounterSettingsFragment">
+    tools:context=".ui.zickr.counter.counter_settings.CounterSettingsFragment">
 
     <TextView
-        android:id="@+id/counter_settings2"
+        android:id="@+id/titleOneClickGeneral"
+        android:layout_width="339dp"
+        android:layout_height="59dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="@string/Counter_Settings"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.261" />
+
+    <TextView
+        android:id="@+id/sura_muhammad_ayat_19"
+        android:layout_width="250dp"
+        android:layout_height="47dp"
+        android:background="@drawable/conturdesc"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Коран: 47:19"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <TextView
+        android:id="@+id/surprice_ayat"
+        android:layout_width="367dp"
+        android:layout_height="172dp"
+        android:background="@drawable/null_contur"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="@string/sura_47_ayat_19"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.618" />
+
+    <TextView
+        android:id="@+id/surprice_ayat_translate"
+        android:layout_width="367dp"
+        android:layout_height="172dp"
+        android:background="@drawable/null_contur"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="@string/translate_sura_47_ayat_19"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926" />
+
+    <TextView
+        android:id="@+id/counter_settings_set"
         android:layout_width="352dp"
         android:layout_height="47dp"
-        android:layout_marginTop="16dp"
         android:background="@drawable/conturdesc"
         android:gravity="center"
         android:imeOptions="actionDone"
@@ -22,35 +102,31 @@
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="17sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <TextView
+        android:id="@+id/titleOneClickSet"
         android:layout_width="339dp"
         android:layout_height="59dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Настройки кнопок"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.159">
-
-        <TextView
-            android:id="@+id/titleOneClick2"
-            android:layout_width="339dp"
-            android:layout_height="59dp"
-            android:background="@drawable/contur_text_rect"
-            android:gravity="center"
-            android:imeOptions="actionDone"
-            android:text="Однократное нажатие"
-            android:textAllCaps="true"
-            android:textColor="@color/purple_300"
-            android:textColorHint="@color/white"
-            android:textCursorDrawable="@drawable/green_cursor"
-            android:textSize="17sp"
-            android:textStyle="normal" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintVertical_bias="0.138" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

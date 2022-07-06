@@ -1,4 +1,4 @@
-package com.example.tabiin.ui.zickr.counter;
+package com.example.tabiin.ui.zickr.counter.counter_statistics.weekly_counter_statistic;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.tabiin.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CounterSettingsFragment#newInstance} factory method to
+ * Use the {@link ShowWeeklyCounterStatisticFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CounterSettingsFragment extends Fragment {
+public class ShowWeeklyCounterStatisticFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class CounterSettingsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public CounterSettingsFragment() {
+    public ShowWeeklyCounterStatisticFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class CounterSettingsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment CounterSettingsFragment.
+     * @return A new instance of fragment ShowWeeklyCounterStatisticFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static CounterSettingsFragment newInstance(String param1, String param2) {
-        CounterSettingsFragment fragment = new CounterSettingsFragment();
+    public static ShowWeeklyCounterStatisticFragment newInstance(String param1, String param2) {
+        ShowWeeklyCounterStatisticFragment fragment = new ShowWeeklyCounterStatisticFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class CounterSettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_counter_settings, container, false);
+        return inflater.inflate(R.layout.fragment_show_weekly_counter_statistic, container, false);
     }
 }

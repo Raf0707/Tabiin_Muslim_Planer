@@ -39,6 +39,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/icon_menu.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/namaz_x.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/new_check.xml" value="0.5630208333333333" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/null_contur.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ppcc.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progress.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progress_bar_round_corners.xml" value="0.5630208333333333" />
@@ -57,6 +58,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_abu_daud.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_buhary.xml" value="0.5328125" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_bulug_al_maram.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_click_counter_settings.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_count_amount_namaz.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_count_amount_post.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_counter.xml" value="0.546875" />
@@ -67,6 +69,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_debts_to__allah_.xml" value="0.5" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_dept_namaz.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_dept_post.xml" value="0.5328125" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_general_counter_settings.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_general_fard.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_general_kitabihil.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_general_useful.xml" value="0.546875" />
