@@ -7,11 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".ui.zickr.counter.counter_settings.CounterSettingsFragment">
 
-    <TextView
+    <Button
         android:id="@+id/titleOneClickGeneral"
         android:layout_width="339dp"
         android:layout_height="59dp"
-        android:background="@drawable/contur_text_rect"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:gravity="center"
         android:imeOptions="actionDone"
         android:text="@string/Counter_Settings"
@@ -109,11 +109,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.036" />
 
-    <TextView
+    <Button
         android:id="@+id/titleOneClickSet"
         android:layout_width="339dp"
         android:layout_height="59dp"
-        android:background="@drawable/contur_text_rect"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:gravity="center"
         android:imeOptions="actionDone"
         android:text="Настройки кнопок"
