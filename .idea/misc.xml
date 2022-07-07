@@ -43,6 +43,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/ppcc.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progress.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progress_bar_round_corners.xml" value="0.5630208333333333" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progress_bar_splesh_screen.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progress_fill.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progressbarcirclecorners.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/separator.xml" value="0.5543589743589744" />
@@ -93,6 +94,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_post_ramadan.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_sady_pravednih.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_salavat.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_splash_screen.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_swipe_value_settings.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_time_namaz.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_tirmizy.xml" value="0.5328125" />
