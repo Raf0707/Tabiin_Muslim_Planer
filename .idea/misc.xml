@@ -47,6 +47,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/progressbarcirclecorners.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/separator.xml" value="0.5543589743589744" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/thumb.xml" value="0.5630208333333333" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/toggle_btn.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/drawable/unchecked.xml" value="0.5630208333333333" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/activity_main.xml" value="0.5" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/activity_navigation.xml" value="0.546875" />
@@ -55,6 +56,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/counter_element.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/counter_settings_2.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/counter_settings_3.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/dialog_window_cancel.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_abu_daud.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_buhary.xml" value="0.5328125" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_bulug_al_maram.xml" value="0.546875" />
@@ -74,6 +76,10 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_general_kitabihil.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_general_useful.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_counter.xml" value="0.5328125" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_counter_settings.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_counter_sound_settings.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_general_settings.xml" value="0.5328125" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_gesture_swipe_settings.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_ibn_madja.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_item_list.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_item_list_dialog_list_dialog.xml" value="0.546875" />
@@ -87,6 +93,7 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_post_ramadan.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_sady_pravednih.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_salavat.xml" value="0.546875" />
+        <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_swipe_value_settings.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_time_namaz.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/layout/fragment_tirmizy.xml" value="0.5328125" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/menu-v26/bottom_nav_menu.xml" value="0.546875" />

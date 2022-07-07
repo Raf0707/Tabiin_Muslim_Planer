@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/gestureCounterSettingsFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.zickr.counter.counter_settings.general_screen.CounterSettingsFragment">
+    tools:context=".ui.zickr.gesture_counter.settings.GestureCounterSettingsFragment">
+
+
+    <Button
+        android:id="@+id/backGestureCounter"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="339dp"
+        android:layout_height="59dp"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Назад к счетчику"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.403" />
 
     <TextView
-        android:id="@+id/counter_settings_set"
+        android:id="@+id/counter_settings_set2"
         android:layout_width="352dp"
         android:layout_height="47dp"
         android:background="@drawable/conturdesc"
@@ -29,13 +51,13 @@
         app:layout_constraintVertical_bias="0.036" />
 
     <Button
-        android:id="@+id/titleOneClickSet"
+        android:id="@+id/settingsSwipeGesture"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="339dp"
         android:layout_height="59dp"
         android:gravity="center"
         android:imeOptions="actionDone"
-        android:text="Настройки кнопок"
+        android:text="Настройки свайпов"
         android:textAllCaps="true"
         android:textColor="@color/purple_300"
         android:textColorHint="@color/white"
@@ -46,10 +68,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174" />
+        app:layout_constraintVertical_bias="0.156" />
 
     <Button
-        android:id="@+id/titleOneClickGeneral"
+        android:id="@+id/settingsGeneralGesture"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="339dp"
         android:layout_height="59dp"
@@ -66,26 +88,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintVertical_bias="0.279" />
 
-    <Button
-        android:id="@+id/backCounter"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
-        android:layout_width="339dp"
-        android:layout_height="59dp"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Назад к счетчику"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="17sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
