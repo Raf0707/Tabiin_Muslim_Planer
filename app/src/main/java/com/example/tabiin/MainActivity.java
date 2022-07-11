@@ -7,13 +7,16 @@ import androidx.core.content.*;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
+import androidx.lifecycle.ViewModelProviders;
 
 import com.example.tabiin.util.*;
+import com.example.tabiin.viewmodels.*;
 import com.google.android.material.bottomnavigation.*;
 import com.google.android.material.navigation.*;
 
 public class MainActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
     private View mainView;
+    //ViewModel vm = ViewModelProviders.of();
 
 
     @Override
