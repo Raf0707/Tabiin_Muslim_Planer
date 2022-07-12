@@ -4,22 +4,22 @@
     <group>
 
         <item
-            android:id="@+id/navigation_dashboard"
+            android:id="@+id/fard_general"
             android:icon="@drawable/ic_baseline_history_toggle_off_24"
             android:title="@string/title_home" />
 
         <item
-            android:id="@+id/navigation_notifications"
+            android:id="@+id/zickr_general"
             android:icon="@drawable/ic_baseline_pan_tool_alt_24"
             android:title="@string/title_dashboard" />
 
         <item
-            android:id="@+id/navigation_home"
+            android:id="@+id/kitab_general"
             android:icon="@drawable/ic_baseline_auto_stories_24"
             android:title="@string/title_notifications" />
 
         <item
-            android:id="@+id/navigation_about_app"
+            android:id="@+id/news_general"
             android:icon="@drawable/ic_baseline_newspaper_24"
             android:title="@string/useful" />
     </group>
