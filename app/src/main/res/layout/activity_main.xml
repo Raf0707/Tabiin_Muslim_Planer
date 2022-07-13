@@ -24,10 +24,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:menu="@menu/bottom_navig_menu" />
 
+        <FrameLayout
+            android:id="@+id/kontainerFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="80dp"
+            class = "com.example.tabiin.ui.zickr.GeneralZickrFragment">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/bottomViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"  />
+        </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
