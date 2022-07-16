@@ -6,7 +6,6 @@
     android:id="@+id/zickrGeneralLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="80dp"
     tools:context=".ui.zickr.GeneralZickrFragment">
 
     <androidx.core.widget.NestedScrollView
@@ -39,7 +38,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="226dp"
-                    app:srcCompat="@drawable/counter_banner"
+                    app:srcCompat="@drawable/new_counter_banner"
                     android:scaleType="centerCrop" />
 
                 <LinearLayout

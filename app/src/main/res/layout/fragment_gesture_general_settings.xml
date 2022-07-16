@@ -9,6 +9,47 @@
     tools:context=".ui.zickr.gesture_counter.settings.general_gesture_settings.GestureGeneralSettingsFragment">
 
 
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/enableVibriateSwipeGestureGeneral"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.143">
+
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/checkShowStatisticGeneral"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:buttonTintMode="src_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239">
+
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/id.soundSwipeGestureGeneral"
+        android:layout_width="74dp"
+        android:layout_height="42dp"
+        android:buttonTintMode="src_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.328">
+
+    </com.google.android.material.switchmaterial.SwitchMaterial>
+
     <TextView
         android:id="@+id/soundSwipeGestureGeneralTitle"
         android:layout_width="215dp"
@@ -26,20 +67,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.183"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/soundSwipeGestureGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/chip_border"
-        android:text="вкл"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.877"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.328" />
@@ -77,19 +104,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
-
-    <ToggleButton
-        android:id="@+id/checkShowStatisticGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/toggle_btn"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
 
     <TextView
         android:id="@+id/showStatisticGestureGeneral"
@@ -154,17 +168,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.143" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/enableVibriateSwipeGestureGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/chip_border"
-        android:text="вкл"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.143" />
 </androidx.constraintlayout.widget.ConstraintLayout>

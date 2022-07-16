@@ -28,8 +28,7 @@
             android:id="@+id/kontainerFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginBottom="80dp"
-            class = "com.example.tabiin.ui.zickr.GeneralZickrFragment">
+            android:layout_marginBottom="80dp">
 
         </FrameLayout>
 

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.zickr.counter.counter_settings.settings_counter.ClickCounterSettingsFragment">
+    tools:context=".ui.zickr.counter.counter_settings.settings_counter.click_counter.ClickCounterSettingsFragment">
 
 
     <Button

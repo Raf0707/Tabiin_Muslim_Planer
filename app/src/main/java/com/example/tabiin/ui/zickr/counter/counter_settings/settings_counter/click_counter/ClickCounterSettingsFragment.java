@@ -1,4 +1,4 @@
-package com.example.tabiin.ui.zickr.counter.counter_settings.settings_counter;
+package com.example.tabiin.ui.zickr.counter.counter_settings.settings_counter.click_counter;
 
 import android.os.Bundle;
 

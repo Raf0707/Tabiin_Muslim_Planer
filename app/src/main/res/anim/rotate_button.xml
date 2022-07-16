@@ -1,4 +1,6 @@
-<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<rotate
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:fillEnabled="true"
     android:fillAfter="true"
     android:fromDegrees="0"
@@ -7,3 +9,5 @@
     android:pivotY="50%"
     android:duration="1000"
     android:interpolator="@android:interpolator/overshoot"/>
+
+<!-- android:interpolator="@android:anim/linear_interpolator" -->
