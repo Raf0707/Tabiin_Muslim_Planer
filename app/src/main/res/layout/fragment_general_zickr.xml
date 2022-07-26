@@ -23,6 +23,7 @@
         android:orientation="vertical">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardCounter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
@@ -59,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Counter (Счетчик)"
+                        android:text="Counter / Счетчик"
                         android:textColor="@color/purple_300"
                         android:textSize="24sp"/>
                 </LinearLayout>
@@ -67,6 +68,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardGestureCounter"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
@@ -103,7 +105,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Gesture Counter (Свайповый счетчик)"
+                        android:text="Gesture Counter / Свайповый счетчик"
                         android:textColor="@color/purple_300"
                         android:textSize="24sp"/>
                 </LinearLayout>
@@ -111,6 +113,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardSalavat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:rippleColor="@color/purple_300"
@@ -148,7 +151,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Salavat (Салаваты)"
+                        android:text="Salavat / Салаваты"
                         android:textColor="@color/purple_300"
                         android:textSize="24sp"/>
                 </LinearLayout>
@@ -156,6 +159,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardAllahNames"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
@@ -192,7 +196,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="99 names of Allah (99 имен Аллаха)"
+                        android:text="99 names of Allah / 99 имен Аллаха"
                         android:textColor="@color/purple_300"
                         android:textSize="24sp"/>
                 </LinearLayout>
@@ -200,6 +204,7 @@
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardDailyDua"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="24dp"
@@ -236,7 +241,52 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Daily Dua (Дуа на каждый день)"
+                        android:text="Daily Dua / Дуа на каждый день"
+                        android:textColor="@color/purple_300"
+                        android:textSize="24sp"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardOtherZickr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="24dp"
+            app:strokeColor="@color/purple_300"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Media -->
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="226dp"
+                    app:srcCompat="@drawable/zickr_material"
+                    android:scaleType="centerCrop" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Title, secondary and supporting text -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="أذكار"
+                        android:textColor="@color/purple_300"
+                        android:textSize="24sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Zickr / Зикр"
                         android:textColor="@color/purple_300"
                         android:textSize="24sp"/>
                 </LinearLayout>

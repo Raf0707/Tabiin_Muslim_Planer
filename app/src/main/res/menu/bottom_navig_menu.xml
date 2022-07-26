@@ -22,6 +22,11 @@
             android:id="@+id/news_general"
             android:icon="@drawable/ic_baseline_newspaper_24"
             android:title="@string/useful" />
+
+        <item
+            android:id="@+id/about_app"
+            android:icon="@drawable/ic_baseline_error_outline_24"
+            android:title="@string/about_app" />
     </group>
 
 

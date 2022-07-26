@@ -11,6 +11,7 @@ import android.view.*;
 
 import com.example.tabiin.databinding.*;
 import com.example.tabiin.ui.*;
+import com.example.tabiin.ui.about_app.AppAboutFragment;
 import com.example.tabiin.ui.fard.*;
 import com.example.tabiin.ui.kitab.*;
 import com.example.tabiin.ui.useful.*;
@@ -52,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.news_general:
                     changeFragment(this, new GeneralUsefulFragment(), R.id.kontainerFragment, null);
                     //viewFragment(new TwoFragment(), FRAGMENT_OTHER);
+                    break;
+
+                case R.id.about_app:
+                    changeFragment(this, new AppAboutFragment(), R.id.kontainerFragment, null);
                     break;
             }
             return true;
