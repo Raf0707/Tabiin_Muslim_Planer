@@ -12,4 +12,21 @@
     <string name="sura_47_ayat_19">فَاعْلَمْ أَنَّهُ لَا إِلَهَ إِلَّا اللَّهُ وَاسْتَغْفِرْ لِذَنبِكَ وَلِلْمُؤْمِنِينَ وَالْمُؤْمِنَاتِ وَاللَّهُ يَعْلَمُ مُتَقَلَّبَكُمْ وَمَثْوَاكُمْ</string>
     <string name="translate_sura_47_ayat_19">Знай же, что нет божества, кроме Аллаха, и проси прощения за свой грех и за верующих мужчин и верующих женщин. Аллах знает о ваших передвижениях и вашей обители.</string>
     <string name="Counter_Settings">Общие настройки</string>
+    <string name="version">Версия: 1.0.0.0</string>
+    <string name="ibragim_url" translatable="false">https://github.com/IbremMiner837</string>
+    <string name="rafail_url" translatable="false">https://github.com/Raf0707</string>
+    <string name="mail_raf" translatable="false">raf_android-dev@mail.ru</string>
+    <string name="mail_ibrem" translatable="false">ibremminer837.dev@gmail.com</string>
+    <string name="mail_danila" translatable="false">rswayfarersx@gmail.com</string>
+    <string name="source_code">Исходный код</string>
+    <string name="source_code_url" translatable="false">https://github.com/Raf0707/Tabiin_Muslim_Planer</string>
+    <string name="from_tabiin_rtx">from Tabiin-RTX</string>
+    <string name="tabiin_rtx" translatable="false">https://vk.com/club213851453</string>
+    <string name="Raf_title">Рафаил Кикматулин</string>
+    <string name="Ibrahim_title">Ибрагим Мальцагов</string>
+    <string name="Danila_title">Данила Воробьев</string>
+    <string name="raf_android_dev_mail_ru">raf_android-dev@mail.ru</string>
+    <string name="ibremminer837_dev_gmail_com">ibremminer837.dev@gmail.com</string>
+    <string name="rswayfarersx_gmail_com">rswayfarersx@gmail.com</string>
+    <string name="danila_url">https://github.com/DanilaDevx21x</string>
 </resources>
