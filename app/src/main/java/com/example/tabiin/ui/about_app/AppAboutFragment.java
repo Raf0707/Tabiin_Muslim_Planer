@@ -2,6 +2,7 @@ package com.example.tabiin.ui.about_app;
 
 import static com.example.tabiin.util.UtilFragment.changeFragment;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -26,7 +28,6 @@ import com.example.tabiin.util.CustomTabUtil;
 import com.google.android.material.snackbar.Snackbar;
 
 
-
 public class AppAboutFragment extends Fragment {
 
     private FragmentAppAboutBinding binding;
@@ -39,14 +40,15 @@ public class AppAboutFragment extends Fragment {
 
     public void addOnClick(View view, String text, ClipData clipData) {
         ClipboardManager clipboardManager = (ClipboardManager)
-                getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
 
         clipboardManager.setPrimaryClip(clipData);
-        Snackbar.make(getView(), text, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(requireView(), text, Snackbar.LENGTH_LONG).show();
     }
 
+    @SuppressLint("IntentReset")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = FragmentAppAboutBinding
@@ -122,7 +124,7 @@ public class AppAboutFragment extends Fragment {
         binding.appVersionBtn.setOnClickListener(view -> {
             clickCount += 1;
             if (clickCount == 8) {
-                changeFragment(getActivity(),
+                changeFragment(requireActivity(),
                         new DeveloperParamsFragment(),
                         R.id.kontainerFragment, null);
 
@@ -130,43 +132,43 @@ public class AppAboutFragment extends Fragment {
         });
 
         binding.sourceCodeBtn.setOnClickListener(v -> new CustomTabUtil()
-                .OpenCustomTab(getActivity(),
+                .openCustomTab(getActivity(),
                         getString(R.string.source_code_url),
                         R.color.purple_300));
 
         binding.ibragimBtn.setOnClickListener(v -> new CustomTabUtil()
-                .OpenCustomTab(getActivity(),
+                .openCustomTab(getActivity(),
                         getString(R.string.ibragim_url),
                         R.color.purple_300));
 
         binding.rafailBtn.setOnClickListener(v -> new CustomTabUtil()
-                .OpenCustomTab(getActivity(),
+                .openCustomTab(getActivity(),
                         getString(R.string.rafail_url),
                         R.color.purple_300));
 
         binding.danilaBtn.setOnClickListener(v -> new CustomTabUtil()
-                .OpenCustomTab(getActivity(),
+                .openCustomTab(getActivity(),
                         getString(R.string.danila_url),
                         R.color.purple_300));
 
         binding.mailRafBtn.setOnClickListener(v -> {
             final Intent emailIntent = new Intent(Intent.ACTION_SEND);
             emailIntent.setData(Uri.parse(getString(R.string.mailto)))
-            .setType(getString(R.string.text_plain))
-            .putExtra(android.content.Intent.EXTRA_EMAIL,
-                    new String[]{getString(R.string.mail_raf)})
-            .putExtra(Intent.EXTRA_SUBJECT, R.string.app_name)
-            .putExtra(Intent.EXTRA_TEXT,
-                    new StringBuilder()
-                            .append(getString(R.string.app_name))
-                            .append(getString(R.string.semicolon))
-                            .append(getString(R.string.version))
-                            .append(getString(R.string.str_dv))
-                            .append(BuildConfig.VERSION_NAME)
-                            .append(getString(R.string.val_str_sk_right))
-                            .append(BuildConfig.VERSION_CODE)
-                            .append(getString(R.string.val_str_sk_left))
-                            .toString());
+                    .setType(getString(R.string.text_plain))
+                    .putExtra(android.content.Intent.EXTRA_EMAIL,
+                            new String[]{getString(R.string.mail_raf)})
+                    .putExtra(Intent.EXTRA_SUBJECT, R.string.app_name)
+                    .putExtra(Intent.EXTRA_TEXT,
+                            new StringBuilder()
+                                    .append(getString(R.string.app_name))
+                                    .append(getString(R.string.semicolon))
+                                    .append(getString(R.string.version))
+                                    .append(getString(R.string.str_dv))
+                                    .append(BuildConfig.VERSION_NAME)
+                                    .append(getString(R.string.val_str_sk_right))
+                                    .append(BuildConfig.VERSION_CODE)
+                                    .append(getString(R.string.val_str_sk_left))
+                                    .toString());
 
             emailIntent.setType(getString(R.string.text_plain));
             // setType("message/rfc822")
@@ -182,7 +184,7 @@ public class AppAboutFragment extends Fragment {
         });
 
         binding.vkGroupBtn.setOnClickListener(v -> new CustomTabUtil()
-                .OpenCustomTab(getActivity(),
+                .openCustomTab(getActivity(),
                         getString(R.string.tabiin_rtx),
                         R.color.purple_300));
 

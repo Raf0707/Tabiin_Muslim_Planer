@@ -30,6 +30,12 @@
             android:layout_height="match_parent"
             android:layout_marginBottom="80dp">
 
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/mainViewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

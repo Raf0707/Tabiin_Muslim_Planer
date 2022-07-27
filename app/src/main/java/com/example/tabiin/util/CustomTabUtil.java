@@ -8,7 +8,7 @@ import androidx.browser.customtabs.CustomTabsIntent;
 
 public class CustomTabUtil {
 
-    public void OpenCustomTab(Context context, String URL, int colorInt) {
+    public void openCustomTab(Context context, String URL, int colorInt) {
         CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
         CustomTabsIntent customTabsIntent = builder.build();
         customTabsIntent.launchUrl(context, Uri.parse(URL));

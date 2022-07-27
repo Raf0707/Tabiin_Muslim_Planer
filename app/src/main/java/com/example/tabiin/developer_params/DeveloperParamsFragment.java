@@ -4,6 +4,7 @@ import static com.example.tabiin.util.UtilFragment.changeFragment;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -31,22 +32,32 @@ public class DeveloperParamsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         bind = FragmentDeveloperParamsBinding.inflate(inflater, container, false);
 
-        bind.sincNow.setOnClickListener(view -> Snackbar.make(requireView(),
-                "Gradle build finished in " +
-                        ThreadLocalRandom.current().nextInt(12, 561) + " ms",
-                Snackbar.LENGTH_LONG).show());
+        bind.sincNow.setOnClickListener(view -> {
+            Snackbar.make(requireView(),
+                    new StringBuilder()
+                            .append(getString(R.string.Gradle_build))
+                            .append(ThreadLocalRandom.current().nextInt(12, 561))
+                            .append(getString(R.string.Milly_sec))
+                            .toString(),
+
+                    Snackbar.LENGTH_LONG).show();
+        });
 
         bind.restartNow.setOnClickListener(view -> Snackbar.make(requireView(),
-                "Changes Apply Sucscessfully!", Snackbar.LENGTH_LONG).show());
+                R.string.Apply_changes, Snackbar.LENGTH_LONG).show());
 
         bind.debugNow.setOnClickListener(view -> Snackbar.make(requireView(),
-                "Android App Tabiin finished  Debug in " +
-                        ThreadLocalRandom.current().nextInt(132, 834) + " ms",
+                new StringBuilder()
+                        .append(getString(R.string.Debug_finish))
+                        .append(ThreadLocalRandom.current().nextInt(132, 834))
+                        .append(getString(R.string.Milly_sec))
+                        .toString(),
+
                 Snackbar.LENGTH_LONG).show());
 
         return bind.getRoot();
