@@ -1,14 +1,10 @@
 package com.example.tabiin;
 
-import static com.example.tabiin.util.UtilFragment.changeFragment;
-
 import androidx.annotation.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.*;
+
 import android.os.Bundle;
 import android.view.*;
 
@@ -20,8 +16,7 @@ import com.example.tabiin.ui.fard.*;
 import com.example.tabiin.ui.kitab.*;
 import com.example.tabiin.ui.useful.*;
 import com.example.tabiin.ui.zickr.*;
-import com.google.android.material.bottomnavigation.*;
-import com.google.android.material.navigation.*;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,29 +41,21 @@ public class MainActivity extends AppCompatActivity {
         binding.navView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.fard_general:
-                    changeFragment(this, new GeneralFardFragment(), R.id.kontainerFragment, null);
                     binding.mainViewpager.setCurrentItem(0);
-                    //viewFragment(new OneFragment(), FRAGMENT_OTHER);
                     break;
                 case R.id.zickr_general:
-                    changeFragment(this, new GeneralZickrFragment(), R.id.kontainerFragment, null);
                     binding.mainViewpager.setCurrentItem(1);
-                    //viewFragment(new TwoFragment(), FRAGMENT_OTHER);
                     break;
 
                 case R.id.kitab_general:
-                    changeFragment(this, new GeneralKitabihilFragment(), R.id.kontainerFragment, null);
                     binding.mainViewpager.setCurrentItem(2);
                     break;
 
                 case R.id.news_general:
-                    changeFragment(this, new GeneralUsefulFragment(), R.id.kontainerFragment, null);
                     binding.mainViewpager.setCurrentItem(3);
-                    //viewFragment(new TwoFragment(), FRAGMENT_OTHER);
                     break;
 
                 case R.id.about_app:
-                    changeFragment(this, new AppAboutFragment(), R.id.kontainerFragment, null);
                     binding.mainViewpager.setCurrentItem(4);
                     break;
             }
@@ -77,42 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-//        binding.navView.setOnNavigationItemSelectedListener(
-//                item -> {
-//                    switch (item.getItemId()) {
-//                        case R.id.fard_general:
-//                            changeFragment(this, new GeneralFardFragment(), R.id.kontainerFragment, null);
-//                            binding.mainViewpager.setCurrentItem(1);
-//                            //viewFragment(new OneFragment(), FRAGMENT_OTHER);
-//                            break;
-//                        case R.id.zickr_general:
-//                            changeFragment(this, new GeneralZickrFragment(), R.id.kontainerFragment, null);
-//                            binding.mainViewpager.setCurrentItem(2);
-//                            //viewFragment(new TwoFragment(), FRAGMENT_OTHER);
-//                            break;
-//
-//                        case R.id.kitab_general:
-//                            changeFragment(this, new GeneralKitabihilFragment(), R.id.kontainerFragment, null);
-//                            binding.mainViewpager.setCurrentItem(3);
-//                            break;
-//
-//                        case R.id.news_general:
-//                            changeFragment(this, new GeneralUsefulFragment(), R.id.kontainerFragment, null);
-//                            binding.mainViewpager.setCurrentItem(4);
-//                            //viewFragment(new TwoFragment(), FRAGMENT_OTHER);
-//                            break;
-//
-//                        case R.id.about_app:
-//                            changeFragment(this, new AppAboutFragment(), R.id.kontainerFragment, null);
-//                            binding.mainViewpager.setCurrentItem(5);
-//                            break;
-//                    }
-//                    return false;
-//                });
-
         binding.mainViewpager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            public void onPageScrolled(
+                    int position, float positionOffset, int positionOffsetPixels) {
 
             }
 
