@@ -9,11 +9,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -23,14 +21,14 @@ import com.example.tabiin.R;
 
 import com.example.tabiin.databinding.*;
 import com.example.tabiin.developer_params.DeveloperParamsFragment;
-import com.example.tabiin.ui.kitab.GeneralKitabihilFragment;
 import com.example.tabiin.util.CustomTabUtil;
-import com.example.tabiin.util.OnSwipeTouchListener;
 
 import com.google.android.material.snackbar.Snackbar;
 
 
+
 public class AppAboutFragment extends Fragment {
+
     private FragmentAppAboutBinding binding;
     private int clickCount = 0;
 
@@ -40,7 +38,9 @@ public class AppAboutFragment extends Fragment {
     }
 
     public void addOnClick(View view, String text, ClipData clipData) {
-        ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipboardManager clipboardManager = (ClipboardManager)
+                getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+
         clipboardManager.setPrimaryClip(clipData);
         Snackbar.make(getView(), text, Snackbar.LENGTH_LONG).show();
     }
@@ -48,80 +48,146 @@ public class AppAboutFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentAppAboutBinding.inflate(inflater, container, false);
 
-        binding.appVersionBtn.setText(getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) ");
+        binding = FragmentAppAboutBinding
+                .inflate(inflater, container, false);
+
+        binding.appVersionBtn.setText(new StringBuilder()
+                .append(getString(R.string.version))
+                .append(getString(R.string.str_dv))
+                .append(BuildConfig.VERSION_NAME)
+                .append(getString(R.string.val_str_sk_right))
+                .append(BuildConfig.VERSION_CODE)
+                .append(getString(R.string.val_str_sk_left))
+                .toString());
 
         binding.appVersionBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "version copied", ClipData.newPlainText("getContext()", "Tabiin: " + getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) "));
+            addOnClick(view, getString(R.string.version_copied),
+                    ClipData.newPlainText(
+                            getString(R.string.getContext),
+                            new StringBuilder()
+                                    .append(getString(R.string.Tabiin_str_Version))
+                                    .append(getString(R.string.version))
+                                    .append(getString(R.string.str_dv))
+                                    .append(BuildConfig.VERSION_NAME)
+                                    .append(getString(R.string.val_str_sk_right))
+                                    .append(BuildConfig.VERSION_CODE)
+                                    .append(getString(R.string.val_str_sk_left))
+                                    .toString()));
             return true;
         });
 
         binding.sourceCodeBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "link to source copied", ClipData.newPlainText("getContext()", "https://github.com/Raf0707/Tabiin_Muslim_Planer"));
+            addOnClick(view, getString(R.string.link_to_source_copied),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.source_code_url)));
             return true;
         });
 
         binding.rafailBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "link to Rafail Kikmatulin's GitHub profile copied", ClipData.newPlainText("getContext()", "https://github.com/Raf0707"));
+            addOnClick(view, getString(R.string.raf_git_copylink),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.rafail_url)));
             return true;
         });
 
         binding.ibragimBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "link to Ibragim Magaltsov's GitHub profile copied", ClipData.newPlainText("getContext()", "https://github.com/IbremMiner837"));
+            addOnClick(view, getString(R.string.ibrem_git_copylink),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.ibragim_url)));
             return true;
         });
 
         binding.danilaBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "link to Danila Vorobyov's GitHub profile copied", ClipData.newPlainText("getContext()", "https://github.com/DanilaDevx21x"));
+            addOnClick(view, getString(R.string.danila_git_coyplink),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.danila_url)));
             return true;
         });
 
         binding.mailRafBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "Rafail Kikmatulin's email copied", ClipData.newPlainText("getContext()", "raf_android-dev@mail.ru"));
+            addOnClick(view, getString(R.string.my_email_copylink),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.mail_raf)));
             return true;
         });
 
         binding.vkGroupBtn.setOnLongClickListener(view -> {
-            addOnClick(view, "VK-Group's Tabiin link copied", ClipData.newPlainText("getContext()", "https://vk.com/club213851453"));
+            addOnClick(view, getString(R.string.vk_tabiin_coyplink),
+                    ClipData.newPlainText(getString(R.string.getContext),
+                            getString(R.string.tabiin_rtx)));
             return true;
         });
 
         binding.appVersionBtn.setOnClickListener(view -> {
             clickCount += 1;
             if (clickCount == 8) {
-                changeFragment(getActivity(), new DeveloperParamsFragment(), R.id.kontainerFragment, null);
+                changeFragment(getActivity(),
+                        new DeveloperParamsFragment(),
+                        R.id.kontainerFragment, null);
 
             }
         });
 
-        binding.sourceCodeBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.source_code_url), R.color.purple_300));
-        binding.ibragimBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.ibragim_url), R.color.purple_300));
-        binding.rafailBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.rafail_url), R.color.purple_300));
-        binding.danilaBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.danila_url), R.color.purple_300));
+        binding.sourceCodeBtn.setOnClickListener(v -> new CustomTabUtil()
+                .OpenCustomTab(getActivity(),
+                        getString(R.string.source_code_url),
+                        R.color.purple_300));
+
+        binding.ibragimBtn.setOnClickListener(v -> new CustomTabUtil()
+                .OpenCustomTab(getActivity(),
+                        getString(R.string.ibragim_url),
+                        R.color.purple_300));
+
+        binding.rafailBtn.setOnClickListener(v -> new CustomTabUtil()
+                .OpenCustomTab(getActivity(),
+                        getString(R.string.rafail_url),
+                        R.color.purple_300));
+
+        binding.danilaBtn.setOnClickListener(v -> new CustomTabUtil()
+                .OpenCustomTab(getActivity(),
+                        getString(R.string.danila_url),
+                        R.color.purple_300));
 
         binding.mailRafBtn.setOnClickListener(v -> {
-            final Intent emailIntent = new Intent(Intent.ACTION_SEND); //TO, Uri.fromParts("mailto:", "abc@gmail.com", null));
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.setType("text/plain");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{getString(R.string.mail_raf)});
-            emailIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.app_name);
-            emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.app_name) + "; " + getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) ");
+            final Intent emailIntent = new Intent(Intent.ACTION_SEND);
+            emailIntent.setData(Uri.parse(getString(R.string.mailto)))
+            .setType(getString(R.string.text_plain))
+            .putExtra(android.content.Intent.EXTRA_EMAIL,
+                    new String[]{getString(R.string.mail_raf)})
+            .putExtra(Intent.EXTRA_SUBJECT, R.string.app_name)
+            .putExtra(Intent.EXTRA_TEXT,
+                    new StringBuilder()
+                            .append(getString(R.string.app_name))
+                            .append(getString(R.string.semicolon))
+                            .append(getString(R.string.version))
+                            .append(getString(R.string.str_dv))
+                            .append(BuildConfig.VERSION_NAME)
+                            .append(getString(R.string.val_str_sk_right))
+                            .append(BuildConfig.VERSION_CODE)
+                            .append(getString(R.string.val_str_sk_left))
+                            .toString());
 
-            emailIntent.setType("plain/text");
+            emailIntent.setType(getString(R.string.text_plain));
             // setType("message/rfc822")
 
             try {
-                startActivity(Intent.createChooser(emailIntent, "Send email using..."));
+                startActivity(Intent.createChooser(emailIntent,
+                        getString(R.string.email_client)));
+
             } catch (android.content.ActivityNotFoundException ex) {
                 Toast.makeText(getActivity(),
-                        "No email clients installed.", Toast.LENGTH_SHORT).show();
+                        R.string.no_email_client, Toast.LENGTH_SHORT).show();
             }
         });
 
-        binding.vkGroupBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.tabiin_rtx), R.color.purple_300));
-        binding.otherAppsBtn.setOnClickListener(view1 -> {
-            final String appPackageName = getContext().getPackageName();
+        binding.vkGroupBtn.setOnClickListener(v -> new CustomTabUtil()
+                .OpenCustomTab(getActivity(),
+                        getString(R.string.tabiin_rtx),
+                        R.color.purple_300));
+
+        binding.otherAppsBtn.setOnClickListener(view -> {
+            final String appPackageName = requireContext().getPackageName();
             /*
             try {
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://search?q=pub:JVMFrog")));

@@ -36,17 +36,19 @@ public class DeveloperParamsFragment extends Fragment {
 
         bind = FragmentDeveloperParamsBinding.inflate(inflater, container, false);
 
-//        startTimes = System.currentTimeMillis();
-//        while (startTimes != 5000) {
-//            binding.progressBar.setProgress(10);
-//        }
+        bind.sincNow.setOnClickListener(view -> Snackbar.make(requireView(),
+                "Gradle build finished in " +
+                        ThreadLocalRandom.current().nextInt(12, 561) + " ms",
+                Snackbar.LENGTH_LONG).show());
 
+        bind.restartNow.setOnClickListener(view -> Snackbar.make(requireView(),
+                "Changes Apply Sucscessfully!", Snackbar.LENGTH_LONG).show());
 
-        bind.sincNow.setOnClickListener(view -> Snackbar.make(requireView(), "Gradle build finished in " + ThreadLocalRandom.current().nextInt(12, 561) + " ms", Snackbar.LENGTH_LONG).show());
-        bind.restartNow.setOnClickListener(view -> Snackbar.make(requireView(), "Changes Apply Sucscessfully!", Snackbar.LENGTH_LONG).show());
-        bind.debugNow.setOnClickListener(view -> Snackbar.make(requireView(), "Android App Tabiin finished  Debug in " + ThreadLocalRandom.current().nextInt(132, 834) + " ms", Snackbar.LENGTH_LONG).show());
+        bind.debugNow.setOnClickListener(view -> Snackbar.make(requireView(),
+                "Android App Tabiin finished  Debug in " +
+                        ThreadLocalRandom.current().nextInt(132, 834) + " ms",
+                Snackbar.LENGTH_LONG).show());
 
         return bind.getRoot();
-        //inflater.inflate(R.layout.fragment_developer_params, container, false);
     }
 }
