@@ -39,98 +39,67 @@ public class AppAboutFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    public void addOnClick(View view, String text, ClipData clipData) {
+        ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+        clipboardManager.setPrimaryClip(clipData);
+        Snackbar.make(getView(), text, Snackbar.LENGTH_LONG).show();
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentAppAboutBinding.inflate(inflater, container, false);
 
         binding.appVersionBtn.setText(getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) ");
+
         binding.appVersionBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "Tabiin: " + getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) ");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "text copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "version copied", ClipData.newPlainText("getContext()", "Tabiin: " + getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) "));
             return true;
         });
 
         binding.sourceCodeBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "https://github.com/Raf0707/Tabiin_Muslim_Planer");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "link to source copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "link to source copied", ClipData.newPlainText("getContext()", "https://github.com/Raf0707/Tabiin_Muslim_Planer"));
             return true;
         });
 
         binding.rafailBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "https://github.com/Raf0707");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "link to Rafail Kikmatulin's GitHub profile copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "link to Rafail Kikmatulin's GitHub profile copied", ClipData.newPlainText("getContext()", "https://github.com/Raf0707"));
             return true;
         });
 
         binding.ibragimBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "https://github.com/IbremMiner837");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "link to Ibragim Magaltsov's GitHub profile copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "link to Ibragim Magaltsov's GitHub profile copied", ClipData.newPlainText("getContext()", "https://github.com/IbremMiner837"));
             return true;
         });
 
         binding.danilaBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "https://github.com/DanilaDevx21x");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "link to Danila Vorobyov's GitHub profile copied", Snackbar.LENGTH_LONG).show();
-            return true;
-        });
-
-        binding.mailIbremBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "ibremminer837.dev@gmail.com");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "Ibrabim Magaltsov's email copied", Snackbar.LENGTH_LONG).show();
-            return true;
-        });
-
-        binding.mailDanilaBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "rswayfarersx@gmail.com");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "Danila Vorobyov's email copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "link to Danila Vorobyov's GitHub profile copied", ClipData.newPlainText("getContext()", "https://github.com/DanilaDevx21x"));
             return true;
         });
 
         binding.mailRafBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "raf_android-dev@mail.ru");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "Rafail Kikmatulin's email copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "Rafail Kikmatulin's email copied", ClipData.newPlainText("getContext()", "raf_android-dev@mail.ru"));
             return true;
         });
 
         binding.vkGroupBtn.setOnLongClickListener(view -> {
-            ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clipData = ClipData.newPlainText("getContext()", "https://vk.com/club213851453");
-            clipboardManager.setPrimaryClip(clipData);
-            Snackbar.make(getView(), "VK-Group's Tabiin link copied", Snackbar.LENGTH_LONG).show();
+            addOnClick(view, "VK-Group's Tabiin link copied", ClipData.newPlainText("getContext()", "https://vk.com/club213851453"));
             return true;
         });
 
-        binding.appVersionBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                clickCount += 1;
-                if (clickCount == 8) {
-                    changeFragment(getActivity(), new DeveloperParamsFragment(), R.id.kontainerFragment, null);
-                    
-                }
+        binding.appVersionBtn.setOnClickListener(view -> {
+            clickCount += 1;
+            if (clickCount == 8) {
+                changeFragment(getActivity(), new DeveloperParamsFragment(), R.id.kontainerFragment, null);
+
             }
         });
+
         binding.sourceCodeBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.source_code_url), R.color.purple_300));
         binding.ibragimBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.ibragim_url), R.color.purple_300));
         binding.rafailBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.rafail_url), R.color.purple_300));
         binding.danilaBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.danila_url), R.color.purple_300));
+
         binding.mailRafBtn.setOnClickListener(v -> {
             final Intent emailIntent = new Intent(Intent.ACTION_SEND); //TO, Uri.fromParts("mailto:", "abc@gmail.com", null));
             emailIntent.setData(Uri.parse("mailto:"));
@@ -149,45 +118,6 @@ public class AppAboutFragment extends Fragment {
                         "No email clients installed.", Toast.LENGTH_SHORT).show();
             }
         });
-
-        binding.mailIbremBtn.setOnClickListener(v -> {
-            final Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.setType("text/plain");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{getString(R.string.mail_ibrem)});
-            //emailIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.feedback);
-            emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) ");
-
-            emailIntent.setType("plain/text");
-            // setType("message/rfc822")
-
-            try {
-                startActivity(Intent.createChooser(emailIntent, "Send email using..."));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(getActivity(),
-                        "No email clients installed.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        binding.mailDanilaBtn.setOnClickListener(v -> {
-            final Intent emailIntent = new Intent(Intent.ACTION_SEND);
-            emailIntent.setData(Uri.parse("mailto:"));
-            emailIntent.setType("text/plain");
-            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{getString(R.string.mail_danila)});
-            //emailIntent.putExtra(Intent.EXTRA_SUBJECT, R.string.feedback);
-            emailIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.version) + ": " + BuildConfig.VERSION_NAME + " ( " + BuildConfig.VERSION_CODE + " ) ");
-
-            emailIntent.setType("plain/text");
-            // setType("message/rfc822")
-
-            try {
-                startActivity(Intent.createChooser(emailIntent, "Send email using..."));
-            } catch (android.content.ActivityNotFoundException ex) {
-                Toast.makeText(getActivity(),
-                        "No email clients installed.", Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
         binding.vkGroupBtn.setOnClickListener(v -> new CustomTabUtil().OpenCustomTab(getActivity(), getString(R.string.tabiin_rtx), R.color.purple_300));
         binding.otherAppsBtn.setOnClickListener(view1 -> {
