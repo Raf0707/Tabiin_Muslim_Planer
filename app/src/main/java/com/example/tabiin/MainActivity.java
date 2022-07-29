@@ -33,7 +33,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+        //SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
+        // in Android Manifest <!--android:theme="@style/SplashScreenNew"-->
 
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_main);

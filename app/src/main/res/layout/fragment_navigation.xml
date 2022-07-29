@@ -8,6 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.NavigationFragment">
 
-    
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

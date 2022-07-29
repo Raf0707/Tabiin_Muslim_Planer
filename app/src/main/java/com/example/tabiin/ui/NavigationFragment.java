@@ -20,12 +20,6 @@ public class NavigationFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_navigation, container, false);
 
-//        switch (MainActivity.SelectFragment) {
-//            case 1:
-//                //getSupportFragmentManager()
-//                getFragmentManager().beginTransaction().replace(R.id.navigationLayout, new GeneralZickrFragment()).commit();
-//                break;
-//        }
 
         return view;
     }
