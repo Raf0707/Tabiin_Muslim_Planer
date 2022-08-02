@@ -124,14 +124,9 @@ public class AppAboutFragment extends Fragment {
         binding.appVersionBtn.setOnClickListener(view -> {
             clickCount += 1;
             if (clickCount == 8) {
-//                changeFragment(requireActivity(),
-//                        new DeveloperParamsFragment(),
-//                        R.id.kontainerFragmentApp, null);
-                this
-                        .getChildFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.navigationLayout, new DeveloperParamsFragment())
-                        .commit();
+                changeFragment(getActivity(),
+                        new DeveloperParamsFragment(),
+                        R.id.kontainerFragment, null);
             }
         });
 

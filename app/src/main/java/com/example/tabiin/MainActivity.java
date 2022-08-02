@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         binding.navView.setOnItemSelectedListener(item -> {
             switch (item.getItemId()) {
                 case R.id.fard_general:
@@ -73,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPageScrolled(
                     int position, float positionOffset, int positionOffsetPixels) {
-
             }
 
             @Override
