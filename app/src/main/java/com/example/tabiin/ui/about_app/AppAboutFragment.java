@@ -38,21 +38,27 @@ public class AppAboutFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
+    // Копирование данных при долгом нажатии
     public void addOnClick(View view, String text, ClipData clipData) {
         ClipboardManager clipboardManager = (ClipboardManager)
-                requireContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                requireContext()
+                        .getSystemService(Context.CLIPBOARD_SERVICE);
 
         clipboardManager.setPrimaryClip(clipData);
-        Snackbar.make(requireView(), text, Snackbar.LENGTH_LONG).show();
+        Snackbar.make(requireView(),
+                        text,
+                        Snackbar.LENGTH_LONG).show();
     }
 
     @SuppressLint("IntentReset")
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
 
         binding = FragmentAppAboutBinding
-                .inflate(inflater, container, false);
+                .inflate(inflater,
+                        container, false);
 
         binding.appVersionBtn.setText(new StringBuilder()
                 .append(getString(R.string.version))
@@ -80,42 +86,48 @@ public class AppAboutFragment extends Fragment {
         });
 
         binding.sourceCodeBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.link_to_source_copied),
+            addOnClick(view,
+                    getString(R.string.link_to_source_copied),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.source_code_url)));
             return true;
         });
 
         binding.rafailBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.raf_git_copylink),
+            addOnClick(view,
+                    getString(R.string.raf_git_copylink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.rafail_url)));
             return true;
         });
 
         binding.ibragimBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.ibrem_git_copylink),
+            addOnClick(view,
+                    getString(R.string.ibrem_git_copylink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.ibragim_url)));
             return true;
         });
 
         binding.danilaBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.danila_git_coyplink),
+            addOnClick(view,
+                    getString(R.string.danila_git_coyplink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.danila_url)));
             return true;
         });
 
         binding.mailRafBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.my_email_copylink),
+            addOnClick(view,
+                    getString(R.string.my_email_copylink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.mail_raf)));
             return true;
         });
 
         binding.vkGroupBtn.setOnLongClickListener(view -> {
-            addOnClick(view, getString(R.string.vk_tabiin_coyplink),
+            addOnClick(view,
+                    getString(R.string.vk_tabiin_coyplink),
                     ClipData.newPlainText(getString(R.string.getContext),
                             getString(R.string.tabiin_rtx)));
             return true;
@@ -124,14 +136,10 @@ public class AppAboutFragment extends Fragment {
         binding.appVersionBtn.setOnClickListener(view -> {
             clickCount += 1;
             if (clickCount == 8) {
-//                changeFragment(requireActivity(),
-//                        new DeveloperParamsFragment(),
-//                        R.id.kontainerFragmentApp, null);
-                this
-                        .getChildFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.navigationLayout, new DeveloperParamsFragment())
-                        .commit();
+                changeFragment(requireActivity(),
+                        new DeveloperParamsFragment(),
+                        R.id.kontainerFragment, null);
+
             }
         });
 

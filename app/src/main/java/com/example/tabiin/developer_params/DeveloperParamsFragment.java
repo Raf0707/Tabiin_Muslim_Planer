@@ -13,13 +13,11 @@ import android.view.ViewGroup;
 
 import com.example.tabiin.R;
 import com.example.tabiin.databinding.FragmentDeveloperParamsBinding;
+import com.example.tabiin.ui.about_app.AppAboutFragment;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
-import kotlinx.coroutines.CoroutineScope;
-import kotlinx.coroutines.Dispatchers;
 
 
 public class DeveloperParamsFragment extends Fragment {
@@ -32,33 +30,55 @@ public class DeveloperParamsFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container,
                              Bundle savedInstanceState) {
 
-        bind = FragmentDeveloperParamsBinding.inflate(inflater, container, false);
+        bind = FragmentDeveloperParamsBinding
+                .inflate(inflater,
+                        container, false);
 
         bind.sincNow.setOnClickListener(view -> {
             Snackbar.make(requireView(),
                     new StringBuilder()
                             .append(getString(R.string.Gradle_build))
-                            .append(ThreadLocalRandom.current().nextInt(12, 561))
+                            .append(" ")
+                            .append(ThreadLocalRandom
+                                    .current()
+                                    .nextInt(12, 561))
+
                             .append(getString(R.string.Milly_sec))
                             .toString(),
 
                     Snackbar.LENGTH_LONG).show();
         });
 
-        bind.restartNow.setOnClickListener(view -> Snackbar.make(requireView(),
-                R.string.Apply_changes, Snackbar.LENGTH_LONG).show());
+        bind.restartNow.setOnClickListener(view ->
+                Snackbar.make(requireView(),
+                R.string.Apply_changes,
+                        Snackbar.LENGTH_LONG).show());
 
-        bind.debugNow.setOnClickListener(view -> Snackbar.make(requireView(),
+        bind.debugNow.setOnClickListener(view ->
+                Snackbar.make(requireView(),
                 new StringBuilder()
                         .append(getString(R.string.Debug_finish))
-                        .append(ThreadLocalRandom.current().nextInt(132, 834))
+                        .append(" ")
+                        .append(ThreadLocalRandom
+                                .current()
+                                .nextInt(132, 834))
+
                         .append(getString(R.string.Milly_sec))
                         .toString(),
 
                 Snackbar.LENGTH_LONG).show());
+
+        bind.exitNowToAppABoutFragment.setOnClickListener(view -> {
+
+            changeFragment(requireActivity(),
+                    new AppAboutFragment(),
+                    R.id.kontainerFragment, null);
+
+        });
 
         return bind.getRoot();
     }

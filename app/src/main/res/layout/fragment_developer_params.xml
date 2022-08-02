@@ -6,6 +6,7 @@
     android:id="@+id/zickrGeneralLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/container_background"
     tools:context=".developer_params.DeveloperParamsFragment">
 
     <TextView
@@ -68,7 +69,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:gravity="center"
-        android:text="Connect to Server localhost:568-294-361-817 \n Apply changes and restart activity"
+        android:text="Connect to Server localhost : 568-294-361-817 \n Apply changes and restart activity"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="70dp"
         android:gravity="center"
-        android:text="Connect to Server localhost:432-737-895-211 \n and Sinc Project with Graddle Files"
+        android:text="Connect to Server localhost : 432-737-895-211 \n and Sinc Project with Graddle Files"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -155,6 +156,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.863" />
 
+    <Button
+        android:id="@+id/exitNowToAppABoutFragment"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="exit"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -183,20 +205,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:progressTint="@color/black"
-        android:max="1000"
-        android:progress="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

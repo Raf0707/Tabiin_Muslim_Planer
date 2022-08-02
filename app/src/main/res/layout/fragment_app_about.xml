@@ -19,6 +19,7 @@
             app:cardUseCompatPadding="true">
 
             <LinearLayout
+                android:id="@+id/titleCardView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
@@ -100,6 +101,7 @@
             app:cardUseCompatPadding="true">
 
             <LinearLayout
+                android:id="@+id/authorsCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -197,5 +199,13 @@
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/kontainerFragmentApp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp">
+    </FrameLayout>
+
 
 </FrameLayout>

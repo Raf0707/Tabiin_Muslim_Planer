@@ -31,10 +31,10 @@
     <string name="danila_url">https://github.com/DanilaDevx21x</string>
     <string name="version_copied">version copied</string>
     <string name="getContext">getContext()</string>
-    <string name="Tabiin_str_Version">\"Tabiin: \"</string>
-    <string name="str_dv">\": \"</string>
-    <string name="val_str_sk_right">\" ( \"</string>
-    <string name="val_str_sk_left">\" ) \"</string>
+    <string name="Tabiin_str_Version">\"Tabiin: \</string>
+    <string name="str_dv">\: \</string>
+    <string name="val_str_sk_right">\ ( \</string>
+    <string name="val_str_sk_left">\) \</string>
     <string name="link_to_source_copied">link to source copied</string>
     <string name="raf_git_copylink">link to Rafail Kikmatulin\'s GitHub profile copied</string>
     <string name="ibrem_git_copylink">link to Ibragim Magaltsov\'s GitHub profile copied</string>
@@ -45,9 +45,9 @@
     <string name="text_plain">text/plain</string>
     <string name="email_client">Send email using...</string>
     <string name="no_email_client">No email clients installed.</string>
-    <string name="semicolon">\"; \"</string>
-    <string name="Gradle_build">\"Gradle build finished in \"</string>
+    <string name="semicolon">\; \</string>
+    <string name="Gradle_build">\Gradle build finished in \</string>
     <string name="Apply_changes">Changes Apply Sucscessfully!</string>
-    <string name="Debug_finish">\"Android App Tabiin finished  Debug in \"</string>
-    <string name="Milly_sec">\" ms\"</string>
+    <string name="Debug_finish">\Android App Tabiin finished  Debug in \</string>
+    <string name="Milly_sec">\ ms\</string>
 </resources>
