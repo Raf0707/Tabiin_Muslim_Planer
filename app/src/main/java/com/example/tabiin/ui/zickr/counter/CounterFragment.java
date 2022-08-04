@@ -22,9 +22,11 @@ import android.view.ViewGroup;
 import com.example.tabiin.R;
 import com.example.tabiin.databinding.FragmentCounterBinding;
 import com.example.tabiin.util.CallBack;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.text.MessageFormat;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 
 
@@ -223,7 +225,8 @@ public class CounterFragment extends Fragment {
                     if (currentCount == maxvalue) {
                         Snackbar.make(requireView(),
                                         new StringBuilder()
-                                                .append("Цель достигнута! Да вознаградит вас Аллах!"),
+                                                .append("Цель достигнута! " +
+                                                        "Да вознаградит вас Аллах!"),
                                         Snackbar.LENGTH_LONG)
                                 .show();
 
@@ -290,7 +293,7 @@ public class CounterFragment extends Fragment {
 
         binding.resetProgressCounterFragment.setOnClickListener(view -> {
             //saveText();
-            if (currentCount != 0) onAlert();
+            if (currentCount != 0) onMaterialAlert();
             //saveText();
             //loadText();
 
@@ -317,14 +320,13 @@ public class CounterFragment extends Fragment {
         }
     };
 
-    public void onAlert() {
-        AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
-        builder1.setMessage("Вы уверены, что хотите сбросить счетчик?");
-        builder1.setCancelable(true);
-
-        builder1.setPositiveButton(
-                "Да", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
+    public void onMaterialAlert() {
+        new MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
+                .setTitle("Reset")
+                .setMessage("Вы уверены, что хотите обновить счетчик?")
+                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                         currentCount = 0;
                         binding.editProgressCountTextCounterFragment
                                 .setText(new StringBuilder()
@@ -334,31 +336,21 @@ public class CounterFragment extends Fragment {
                                                 .toString())
                                         .toString());
 
-                        ObjectAnimator animator2 = ObjectAnimator
+                        ObjectAnimator animatorMaterial = ObjectAnimator
                                 .ofInt(binding.mainProgressBarCounterFragment,
-                                "progress", currentCount);
-                        animator2.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
-                        animator2.setDuration(GAUGE_ANIMATION_DURATION);
-                        animator2.start();
-
-                        //saveText();
-                        //loadText();
+                                        "progress", currentCount);
+                        animatorMaterial.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+                        animatorMaterial.setDuration(GAUGE_ANIMATION_DURATION);
+                        animatorMaterial.start();
                     }
-                });
-
-        builder1.setNegativeButton(
-                "Отмена", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
+                })
+                .setNeutralButton("Отмена", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        dialogInterface.cancel();
                     }
-                });
-
-        View view = getLayoutInflater().inflate(R.layout.alert_dialog_counter, null);
-        builder1.setView(view);
-        AlertDialog alert11 = builder1.create();
-        alert11.getWindow().setLayout(400,800);
-        alert11.setTitle("Reset");
-        alert11.show();
+                })
+                .show();
     }
 
 }
