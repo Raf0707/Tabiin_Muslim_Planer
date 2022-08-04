@@ -37,7 +37,7 @@ public class CounterFragment extends Fragment {
     private Handler handler;
 
     private static final TimeInterpolator GAUGE_ANIMATION_INTERPOLATOR = new DecelerateInterpolator(2);
-    private static final long GAUGE_ANIMATION_DURATION = 50000;
+    private static final long GAUGE_ANIMATION_DURATION = 10;
 
 
     @Override
@@ -337,8 +337,8 @@ public class CounterFragment extends Fragment {
                         ObjectAnimator animator2 = ObjectAnimator
                                 .ofInt(binding.mainProgressBarCounterFragment,
                                 "progress", currentCount);
-                        //animator2.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
-                        //animator2.setDuration(GAUGE_ANIMATION_DURATION);
+                        animator2.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+                        animator2.setDuration(GAUGE_ANIMATION_DURATION);
                         animator2.start();
 
                         //saveText();
