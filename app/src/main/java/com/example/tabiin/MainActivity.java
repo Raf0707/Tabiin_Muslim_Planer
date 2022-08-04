@@ -19,14 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
 
-    private GeneralFardFragment generalFardFragment;
-    private GeneralZickrFragment generalZickrFragment;
-    private GeneralKitabihilFragment generalKitabihilFragment;
-    private GeneralUsefulFragment generalUsefulFragment;
-    private AppAboutFragment appAboutFragment;
-
-    private MenuItem menuItem;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -42,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(this,
                             new GeneralKitabihilFragment(),
                             R.id.kontainerFragment,
-                            null);
+                            savedInstanceState);
 
                     break;
 
@@ -50,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(this,
                             new GeneralFardFragment(),
                             R.id.kontainerFragment,
-                            null);
+                            savedInstanceState);
 
                     break;
 
@@ -58,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(this,
                             new GeneralZickrFragment(),
                             R.id.kontainerFragment,
-                            null);
+                            savedInstanceState);
 
                     break;
 
@@ -66,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(this,
                             new GeneralUsefulFragment(),
                             R.id.kontainerFragment,
-                            null);
+                            savedInstanceState);
 
                     break;
 
@@ -74,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     changeFragment(this,
                             new AppAboutFragment(),
                             R.id.kontainerFragment,
-                            null);
+                            savedInstanceState);
 
                     break;
 

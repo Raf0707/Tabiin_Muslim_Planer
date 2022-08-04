@@ -1,4 +1,4 @@
-package com.example.tabiin.ui.zickr.dua_from_koran;
+package com.example.tabiin.ui.useful.daily_zickr;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.tabiin.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link DuaFromKoranFragment#newInstance} factory method to
+ * Use the {@link DailyZickrFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DuaFromKoranFragment extends Fragment {
+public class DailyZickrFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class DuaFromKoranFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public DuaFromKoranFragment() {
+    public DailyZickrFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class DuaFromKoranFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DuaFromKoranFragment.
+     * @return A new instance of fragment DailyZickrFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DuaFromKoranFragment newInstance(String param1, String param2) {
-        DuaFromKoranFragment fragment = new DuaFromKoranFragment();
+    public static DailyZickrFragment newInstance(String param1, String param2) {
+        DailyZickrFragment fragment = new DailyZickrFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class DuaFromKoranFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dua_from_koran, container, false);
+        return inflater.inflate(R.layout.fragment_daily_zickr, container, false);
     }
 }

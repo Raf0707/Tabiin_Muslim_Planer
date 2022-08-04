@@ -126,8 +126,7 @@ public class AppAboutFragment extends Fragment {
             if (clickCount == 8) {
                 changeFragment(requireActivity(),
                         new DeveloperParamsFragment(),
-                        R.id.kontainerFragment,
-                        null);
+                        R.id.kontainerFragment, savedInstanceState);
 
             }
         });

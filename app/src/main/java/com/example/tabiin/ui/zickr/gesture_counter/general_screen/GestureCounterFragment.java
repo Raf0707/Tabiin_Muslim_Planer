@@ -24,7 +24,8 @@ public class GestureCounterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        binding = FragmentGestureCounterBinding.inflate(inflater, container, false);
+        binding = FragmentGestureCounterBinding
+                .inflate(inflater, container, false);
 
         return binding.getRoot();
     }

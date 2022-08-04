@@ -50,4 +50,5 @@
     <string name="Apply_changes">Changes Apply Sucscessfully!</string>
     <string name="Debug_finish">\Android App Tabiin finished  Debug in \</string>
     <string name="Milly_sec">\ ms\</string>
+    <string name="CompleteTsel">Цель достигнута! Да вознаградит вас Аллах!</string>
 </resources>

@@ -1,8 +1,17 @@
 package com.example.tabiin.ui.zickr.counter;
 
+import android.animation.ObjectAnimator;
+import android.animation.TimeInterpolator;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
-import android.widget.*;
+import android.os.Handler;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
+import android.view.inputmethod.InputMethodManager;
 
 import androidx.fragment.app.Fragment;
 
@@ -10,102 +19,346 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.lifecycle.*;
-
 import com.example.tabiin.R;
-import com.example.tabiin.viewmodels.counter.CounterViewModel;
+import com.example.tabiin.databinding.FragmentCounterBinding;
+import com.example.tabiin.util.CallBack;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.text.MessageFormat;
+import java.util.concurrent.TimeUnit;
 
 
-public class CounterFragment extends Fragment implements View.OnClickListener{
-    private EditText etTitleDescript;
-    private EditText etTitleTsel;
-    private EditText etTsel;
+public class CounterFragment extends Fragment {
+    private FragmentCounterBinding binding;
+    private int currentCount;
+    private String defoltValue = "10";
+    private int maxvalue;
+    private SharedPreferences sPreff;
+    private Handler handler;
 
-    private Button back;
-    private Button saveProgress;
-    private Button resetProgress;
-    private Button setCounter;
-    private Button plus;
-    private Button minus;
-    private Button editTsel;
+    private static final TimeInterpolator GAUGE_ANIMATION_INTERPOLATOR = new DecelerateInterpolator(2);
+    private static final long GAUGE_ANIMATION_DURATION = 50000;
 
-    private ProgressBar mainProgressBar;
 
-    private TextView editProgressCount;
-
-    private String selectedCounterTitle;
-
-    private CounterViewModel counterViewModel;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        binding = FragmentCounterBinding
+                .inflate(inflater, container, false);
 
-        View view =  inflater.inflate(R.layout.fragment_counter, container, false);
+        handler = new Handler();
 
-        etTitleTsel = view.findViewById(R.id.titleTsel);
-        etTsel = view.findViewById(R.id.tsel);
-        etTitleDescript = view.findViewById(R.id.titleDescript);
+        binding.saveProgressCounterFragment.setOnClickListener(view -> {
+            // saveText()
+            binding.tsel.setText(binding
+                    .tsel
+                    .getText()
+                    .toString()
+                    .replaceAll("[\\.\\-,\\s]+", ""));
 
-        back = view.findViewById(R.id.back);
-        saveProgress = view.findViewById(R.id.saveProgressCounterFragment);
-        resetProgress = view.findViewById(R.id.resetProgressCounterFragment);
-        editProgressCount = view.findViewById(R.id.editProgressCountTextCounterFragment);
-        setCounter = view.findViewById(R.id.setCounter);
-        plus = view.findViewById(R.id.plusCounterFragment);
-        minus = view.findViewById(R.id.minusCounterFragment);
-        editProgressCount = view.findViewById(R.id.editProgressCountTextCounterFragment);
+            binding.tsel.setCursorVisible(false);
+            binding.tsel.setFocusableInTouchMode(false);
+            binding.tsel.setEnabled(false);
 
-        mainProgressBar = view.findViewById(R.id.mainProgressBarCounterFragment);
+            binding.titleTsel.setCursorVisible(false);
+            binding.titleTsel.setFocusableInTouchMode(false);
+            binding.titleTsel.setEnabled(false);
 
-        // Кнопка с карандашом
-        // карандаш, кнопка для изменения данных счетчика в интерфейсе и БД
-        editTsel = view.findViewById(R.id.editTselCounterFragment);
+            binding.titleDescript.setCursorVisible(false);
+            binding.titleDescript.setFocusableInTouchMode(false);
+            binding.titleDescript.setEnabled(false);
 
-        // editProgressCount.setBackground(getContext().getResources().getDrawable(contur_45));
+            if (binding.tsel.getText().toString().length() == 0) {
+                binding.tsel.setText(defoltValue);
+                maxvalue = Integer.parseInt(binding
+                        .tsel
+                        .getText()
+                        .toString());
 
-        back.setOnClickListener(this);
-        saveProgress.setOnClickListener(this);
-        editTsel.setOnClickListener(this);
-        resetProgress.setOnClickListener(this);
-        setCounter.setOnClickListener(this);
-        plus.setOnClickListener(this);
-        minus.setOnClickListener(this);
+                binding.mainProgressBarCounterFragment.setMax(maxvalue);
 
-        counterViewModel = new CounterViewModel();
-        // counterViewModel.getCounterLiveData().observe(this, new Observer<HashMap<String, Counter>>() {
-        counterViewModel.getCounterLiveData().observe((LifecycleOwner) getContext(), map -> {
-            etTitleTsel.setText(map.get(selectedCounterTitle).getTitle());
-            etTsel.setText(map.get(selectedCounterTitle).getAim());
-            etTitleDescript.setText(map.get(selectedCounterTitle).getDescription());
+                Snackbar.make(requireView(),
+                        new StringBuilder()
+                                .append("Вы не ввели цель. По умолчанию: ")
+                                .append(defoltValue),
+                        Snackbar.LENGTH_LONG)
+                        .show();
 
-            mainProgressBar.setProgress(map.get(selectedCounterTitle).getCurrentProgress());
+            } else {
 
-            // editProgress - TextView, которое наложено на mainProgressBar
-            // показывает текущий прогресс на mainProgressBar
-            // Наложенное TextView
+                if (Integer.parseInt(binding.tsel.getText().toString()) <= 0) {
+                    Snackbar.make(requireView(),
+                            new StringBuilder()
+                                    .append("Введите число больше нуля!"),
+                            Snackbar.LENGTH_LONG)
+                            .show();
+
+                } else {
+
+                    Snackbar.make(requireView(),
+                            new StringBuilder()
+                                    .append("Цель установлена"),
+                            Snackbar.LENGTH_LONG)
+                            .show();
+
+                    maxvalue = Integer.parseInt(binding.tsel.getText().toString());
+                    binding.mainProgressBarCounterFragment.setMax(maxvalue);
+                    binding
+                            .editProgressCountTextCounterFragment
+                            .setText(MessageFormat
+                                    .format("{0} / {1}",
+                                            currentCount,
+                                            binding
+                                                    .tsel
+                                                    .getText()
+                                                    .toString()));
+
+                }
+            }
+
         });
 
-        return view;
+        binding.editTselCounterFragment.setOnClickListener(view -> {
+
+            binding.tsel.setCursorVisible(true);
+            binding.tsel.setFocusableInTouchMode(true);
+            binding.tsel.setEnabled(true);
+
+            binding.titleTsel.setCursorVisible(true);
+            binding.titleTsel.setFocusableInTouchMode(true);
+            binding.titleTsel.setEnabled(true);
+
+            binding.tsel.requestFocus();
+
+            binding.tsel.setSelection(
+                    binding.tsel.getText().length()
+            );
+
+            getActivity()
+                    .getWindow()
+                    .setFlags(WindowManager
+                            .LayoutParams
+                            .FLAG_NOT_FOCUSABLE,
+                            WindowManager
+                                    .LayoutParams
+                                    .FLAG_ALT_FOCUSABLE_IM
+                    );
+
+            getActivity()
+                    .getWindow()
+                    .setSoftInputMode(
+                            WindowManager
+                                    .LayoutParams
+                                    .SOFT_INPUT_STATE_VISIBLE
+                    );
+
+            getContext()
+                    .getSystemService(Context
+                            .INPUT_METHOD_SERVICE);
+
+            InputMethodManager imm = (InputMethodManager) getActivity()
+                    .getSystemService(Context
+                            .INPUT_METHOD_SERVICE);
+
+            if (imm != null) {
+                imm.showSoftInput(binding.tsel,
+                        InputMethodManager.SHOW_FORCED);
+            }
+
+        });
+
+        binding.plusCounterFragment.setOnClickListener(view -> {
+            //saveText();
+            if (binding.tsel.getText().toString().length() == 0) {
+                maxvalue = 100;
+                binding.tsel.setText(Integer.toString(maxvalue));
+                binding.mainProgressBarCounterFragment.setMax(100);
+                binding.editProgressCountTextCounterFragment
+                        .setText(MessageFormat.format("{0} / {1}",
+                                currentCount, 100));
+            }
+            if (currentCount == maxvalue) {
+                binding.editProgressCountTextCounterFragment
+                        .setText(MessageFormat
+                                .format("{0} / {1}",
+                        binding.tsel
+                                .getText()
+                                .toString(),
+                                binding.tsel
+                                        .getText()
+                                        .toString()));
+
+                Snackbar.make(requireView(),
+                                new StringBuilder()
+                                        .append("Цель достигнута! Да вознаградит вас Аллах!"),
+                                Snackbar.LENGTH_LONG)
+                        .show();
+            }
+
+            if (binding.tsel.getText().toString() != null) {
+                currentCount++;
+                if (currentCount <= Integer
+                        .parseInt(binding.tsel
+                                .getText()
+                                .toString())) {
+                    binding.editProgressCountTextCounterFragment
+                            .setText(MessageFormat
+                                    .format("{0} / {1}", currentCount,
+                            binding.tsel.getText().toString()));
+                }
+
+                ObjectAnimator animator = ObjectAnimator
+                        .ofInt(binding.mainProgressBarCounterFragment,
+                                "progress",
+                        currentCount, currentCount);
+
+                animator.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+                animator.setDuration(GAUGE_ANIMATION_DURATION);
+                animator.start();
+
+
+                if (binding.tsel.length() != 0) {
+                    maxvalue = Integer.parseInt(binding.tsel.getText().toString());
+
+                    if (currentCount == maxvalue) {
+                        Snackbar.make(requireView(),
+                                        new StringBuilder()
+                                                .append("Цель достигнута! Да вознаградит вас Аллах!"),
+                                        Snackbar.LENGTH_LONG)
+                                .show();
+
+                    }
+
+                }
+
+            }
+
+
+            else {
+                Snackbar.make(requireView(),
+                                new StringBuilder()
+                                        .append("Введите цель!"),
+                                Snackbar.LENGTH_LONG)
+                        .show();
+            }
+
+            //saveText();
+            //loadText();
+            
+        });
+        
+        binding.minusCounterFragment.setOnClickListener(view -> {
+            //saveText();
+            currentCount--;
+            if (currentCount < 0) {
+                currentCount = 0;
+            }
+
+            if (binding.tsel
+                    .getText()
+                    .toString()
+                    .length() == 0) {
+                binding.editProgressCountTextCounterFragment
+                        .setText(MessageFormat.format("{0} / {1}",
+                                currentCount, 100));
+            } else if (currentCount <= Integer
+                    .parseInt(binding.tsel
+                            .getText()
+                            .toString())) {
+                binding.editProgressCountTextCounterFragment
+                        .setText(MessageFormat
+                                .format("{0} / {1}",
+                                        currentCount, binding.tsel
+                                                .getText()
+                                                .toString()));
+
+            }
+
+            ObjectAnimator animatorMinus = ObjectAnimator
+                    .ofInt(binding.mainProgressBarCounterFragment,
+                            "progress",
+                            currentCount, currentCount);
+
+            animatorMinus.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+            animatorMinus.setDuration(GAUGE_ANIMATION_DURATION);
+            animatorMinus.start();
+
+            //saveText();
+            //loadText();
+
+        });
+
+        binding.resetProgressCounterFragment.setOnClickListener(view -> {
+            //saveText();
+            if (currentCount != 0) onAlert();
+            //saveText();
+            //loadText();
+
+        });
+
+        Thread thread = new Thread(() -> {
+            try {
+                TimeUnit.MILLISECONDS.sleep(100);
+                handler.post(runnable);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        thread.start();
+
+        return binding.getRoot();
     }
 
-    @Override
-    public void onClick(View view) {
-        switch(view.getId()){
-            case R.id.plusCounterFragment:
-                counterViewModel.updateCounterProgress(selectedCounterTitle,
-                        counterViewModel.getCounterByTitle(selectedCounterTitle).getCurrentProgress()+1);
-                break;
-            case R.id.minusCounterFragment:
-                counterViewModel.updateCounterProgress(selectedCounterTitle,
-                        counterViewModel.getCounterByTitle(selectedCounterTitle).getCurrentProgress()-1);
-                break;
-            case R.id.back: break;
-            case R.id.resetProgressCounterFragment:
-                counterViewModel.updateCounterProgress(selectedCounterTitle,0);
-                break;
-            case R.id.saveProgressCounterFragment: break;
-            case R.id.editTselCounterFragment: break;
-            
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            CallBack.runAllCallbacks();
+            handler.postDelayed(runnable, 100);
         }
+    };
+
+    public void onAlert() {
+        AlertDialog.Builder builder1 = new AlertDialog.Builder(getContext());
+        builder1.setMessage("Вы уверены, что хотите сбросить счетчик?");
+        builder1.setCancelable(true);
+
+        builder1.setPositiveButton(
+                "Да", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        currentCount = 0;
+                        binding.editProgressCountTextCounterFragment
+                                .setText(new StringBuilder()
+                                        .append("0 / ")
+                                        .append(binding.tsel
+                                                .getText()
+                                                .toString())
+                                        .toString());
+
+                        ObjectAnimator animator2 = ObjectAnimator
+                                .ofInt(binding.mainProgressBarCounterFragment,
+                                "progress", currentCount);
+                        animator2.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+                        animator2.setDuration(GAUGE_ANIMATION_DURATION);
+                        animator2.start();
+
+                        //saveText();
+                        //loadText();
+                    }
+                });
+
+        builder1.setNegativeButton(
+                "Отмена", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+
+        View view = getLayoutInflater().inflate(R.layout.alert_dialog_counter, null);
+        builder1.setView(view);
+        AlertDialog alert11 = builder1.create();
+        alert11.getWindow().setLayout(400,800);
+        alert11.setTitle("Reset");
+        alert11.show();
     }
+
 }

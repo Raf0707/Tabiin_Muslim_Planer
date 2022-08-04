@@ -22,7 +22,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class DeveloperParamsFragment extends Fragment {
     private FragmentDeveloperParamsBinding bind;
-    private long startTimes;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,7 +75,7 @@ public class DeveloperParamsFragment extends Fragment {
 
             changeFragment(requireActivity(),
                     new AppAboutFragment(),
-                    R.id.kontainerFragment, null);
+                    R.id.kontainerFragment, savedInstanceState);
 
         });
 
