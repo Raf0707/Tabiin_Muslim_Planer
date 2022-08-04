@@ -38,9 +38,10 @@ public class CounterFragment extends Fragment {
     private SharedPreferences sPreff;
     private Handler handler;
 
-    private static final TimeInterpolator GAUGE_ANIMATION_INTERPOLATOR = new DecelerateInterpolator(2);
-    private static final long GAUGE_ANIMATION_DURATION = 10;
+    private static final TimeInterpolator GAUGE_ANIMATION_INTERPOLATOR =
+            new DecelerateInterpolator(2);
 
+    private static final long GAUGE_ANIMATION_DURATION = 10;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -192,7 +193,8 @@ public class CounterFragment extends Fragment {
 
                 Snackbar.make(requireView(),
                                 new StringBuilder()
-                                        .append("Цель достигнута! Да вознаградит вас Аллах!"),
+                                        .append("Цель достигнута! " +
+                                                "Да вознаградит вас Аллах!"),
                                 Snackbar.LENGTH_LONG)
                         .show();
             }
@@ -321,35 +323,32 @@ public class CounterFragment extends Fragment {
     };
 
     public void onMaterialAlert() {
-        new MaterialAlertDialogBuilder(requireContext(), R.style.AlertDialogTheme)
+        new MaterialAlertDialogBuilder(requireContext(),
+                R.style.AlertDialogTheme)
                 .setTitle("Reset")
                 .setMessage("Вы уверены, что хотите обновить счетчик?")
-                .setPositiveButton("Да", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        currentCount = 0;
-                        binding.editProgressCountTextCounterFragment
-                                .setText(new StringBuilder()
-                                        .append("0 / ")
-                                        .append(binding.tsel
-                                                .getText()
-                                                .toString())
-                                        .toString());
+                .setPositiveButton("Да", (dialogInterface, i) -> {
+                    currentCount = 0;
+                    binding.editProgressCountTextCounterFragment
+                            .setText(new StringBuilder()
+                                    .append("0 / ")
+                                    .append(binding.tsel
+                                            .getText()
+                                            .toString())
+                                    .toString());
 
-                        ObjectAnimator animatorMaterial = ObjectAnimator
-                                .ofInt(binding.mainProgressBarCounterFragment,
-                                        "progress", currentCount);
-                        animatorMaterial.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
-                        animatorMaterial.setDuration(GAUGE_ANIMATION_DURATION);
-                        animatorMaterial.start();
-                    }
+                    ObjectAnimator animatorMaterial = ObjectAnimator
+                            .ofInt(binding.mainProgressBarCounterFragment,
+                                    "progress", currentCount);
+                    animatorMaterial
+                            .setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+                    animatorMaterial
+                            .setDuration(GAUGE_ANIMATION_DURATION);
+                    animatorMaterial.start();
                 })
-                .setNeutralButton("Отмена", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.cancel();
-                    }
-                })
+                .setNeutralButton("Отмена",
+                        (dialogInterface, i) ->
+                                dialogInterface.cancel())
                 .show();
     }
 
