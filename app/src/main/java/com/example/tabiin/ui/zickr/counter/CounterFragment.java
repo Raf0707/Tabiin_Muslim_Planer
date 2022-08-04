@@ -337,8 +337,8 @@ public class CounterFragment extends Fragment {
                         ObjectAnimator animator2 = ObjectAnimator
                                 .ofInt(binding.mainProgressBarCounterFragment,
                                 "progress", currentCount);
-                        animator2.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
-                        animator2.setDuration(GAUGE_ANIMATION_DURATION);
+                        //animator2.setInterpolator(GAUGE_ANIMATION_INTERPOLATOR);
+                        //animator2.setDuration(GAUGE_ANIMATION_DURATION);
                         animator2.start();
 
                         //saveText();
