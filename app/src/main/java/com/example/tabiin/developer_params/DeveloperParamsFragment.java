@@ -21,7 +21,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 
 public class DeveloperParamsFragment extends Fragment {
-    private FragmentDeveloperParamsBinding bind;
+    private FragmentDeveloperParamsBinding binding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,11 @@ public class DeveloperParamsFragment extends Fragment {
                              ViewGroup container,
                              Bundle savedInstanceState) {
 
-        bind = FragmentDeveloperParamsBinding
+        binding = FragmentDeveloperParamsBinding
                 .inflate(inflater,
                         container, false);
 
-        bind.sincNow.setOnClickListener(view -> {
+        binding.sincNow.setOnClickListener(view -> {
             Snackbar.make(requireView(),
                     new StringBuilder()
                             .append(getString(R.string.Gradle_build))
@@ -52,12 +52,12 @@ public class DeveloperParamsFragment extends Fragment {
                     Snackbar.LENGTH_LONG).show();
         });
 
-        bind.restartNow.setOnClickListener(view ->
+        binding.restartNow.setOnClickListener(view ->
                 Snackbar.make(requireView(),
                 R.string.Apply_changes,
                         Snackbar.LENGTH_LONG).show());
 
-        bind.debugNow.setOnClickListener(view ->
+        binding.debugNow.setOnClickListener(view ->
                 Snackbar.make(requireView(),
                 new StringBuilder()
                         .append(getString(R.string.Debug_finish))
@@ -71,7 +71,7 @@ public class DeveloperParamsFragment extends Fragment {
 
                 Snackbar.LENGTH_LONG).show());
 
-        bind.exitNowToAppABoutFragment.setOnClickListener(view -> {
+        binding.exitNowToAppABoutFragment.setOnClickListener(view -> {
 
             changeFragment(requireActivity(),
                     new AppAboutFragment(),
@@ -79,6 +79,6 @@ public class DeveloperParamsFragment extends Fragment {
 
         });
 
-        return bind.getRoot();
+        return binding.getRoot();
     }
 }

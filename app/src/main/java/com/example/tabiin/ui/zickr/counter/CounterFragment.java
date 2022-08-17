@@ -1,5 +1,7 @@
 package com.example.tabiin.ui.zickr.counter;
 
+import static com.example.tabiin.util.UtilFragment.changeFragment;
+
 import android.animation.ObjectAnimator;
 import android.animation.TimeInterpolator;
 import android.app.AlertDialog;
@@ -21,6 +23,8 @@ import android.view.ViewGroup;
 
 import com.example.tabiin.R;
 import com.example.tabiin.databinding.FragmentCounterBinding;
+import com.example.tabiin.ui.zickr.counter.counter_database.CounterSavesFragment;
+import com.example.tabiin.ui.zickr.counter.counter_settings.general_screen.CounterSettingsFragment;
 import com.example.tabiin.util.CallBack;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.snackbar.Snackbar;
@@ -130,6 +134,10 @@ public class CounterFragment extends Fragment {
             binding.titleTsel.setCursorVisible(true);
             binding.titleTsel.setFocusableInTouchMode(true);
             binding.titleTsel.setEnabled(true);
+
+            binding.titleDescript.setCursorVisible(true);
+            binding.titleDescript.setFocusableInTouchMode(true);
+            binding.titleDescript.setEnabled(true);
 
             binding.tsel.requestFocus();
 
@@ -293,12 +301,28 @@ public class CounterFragment extends Fragment {
 
         });
 
+        binding.dataBaseCounter.setOnClickListener(view -> {
+            changeFragment(requireActivity(),
+                    new CounterSavesFragment(),
+                    R.id.kontainerFragment,
+                    savedInstanceState
+            );
+        });
+
         binding.resetProgressCounterFragment.setOnClickListener(view -> {
             //saveText();
             if (currentCount != 0) onMaterialAlert();
             //saveText();
             //loadText();
 
+        });
+
+        binding.setCounter.setOnClickListener(view -> {
+            changeFragment(requireActivity(),
+                    new CounterSettingsFragment(),
+                    R.id.kontainerFragment,
+                    savedInstanceState
+                    );
         });
 
         Thread thread = new Thread(() -> {
@@ -351,5 +375,7 @@ public class CounterFragment extends Fragment {
                                 dialogInterface.cancel())
                 .show();
     }
+
+
 
 }

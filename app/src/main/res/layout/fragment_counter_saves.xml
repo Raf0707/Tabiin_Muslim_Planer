@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.zickr.counter.CounterSavesFragment">
+    tools:context=".ui.zickr.counter.counter_database.CounterSavesFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -33,5 +33,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/noRes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Нет счетчиков"
+        android:textColor="@color/purple_300"
+        android:textSize="31sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/recycleCounter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,90 +6,112 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/counter_element"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="258dp"
-        android:background="@drawable/conturdesc"
-        android:gravity="center"
-        android:hint=""
-        android:imeOptions="actionDone"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_400"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="25sp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.03" />
+        app:layout_constraintVertical_bias="0.1"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Название цели">
 
-    <EditText
-        android:id="@+id/tselDataBaseCounterElement"
-        android:layout_width="218dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:autoSizeTextType="uniform"
-        android:hint="цель"
-        android:inputType="number"
-        android:background="@drawable/conturdesc"
-        android:ellipsize="end"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:maxLines="3"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:singleLine="true"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_400"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="27sp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleDataBaseCounterElement"
+                android:layout_width="match_parent"
+                android:layout_height="86dp"
+                android:gravity="center"
+                android:shadowColor="@color/purple_400"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1.6"
+                android:textColor="@color/purple_300"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/green_cursor"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.201" />
+        app:layout_constraintVertical_bias="0.255"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Цель">
 
-    <Button
-        android:id="@+id/moreInfoDataBaseCounterElement"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_baseline_info_24"
-        android:visibility="visible"
-        app:cornerRadius="28dp"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tselDataBaseCounterElement"
+                android:layout_width="238dp"
+                android:layout_height="64dp"
+                android:gravity="center"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:shadowColor="@color/purple_400"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1.6"
+                android:textAllCaps="true"
+                android:textColor="@color/purple_300"
+                android:textColorHint="@color/white"
+                android:textCursorDrawable="@drawable/green_cursor"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.255" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.53"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Описание цели">
 
-    <Button
-        android:id="@+id/editDataBaseCounterElement"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_baseline_edit_24"
-        android:visibility="visible"
-        app:cornerRadius="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.787"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/titleDescript"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center"
+            android:shadowColor="@color/purple_400"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.6"
+            android:textColor="@color/purple_300"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@drawable/green_cursor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.53" />
 
-    <Button
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/deleteDataBaseCounterElement"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -100,12 +122,40 @@
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
+        app:layout_constraintHorizontal_bias="0.956"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.023" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editDataBaseCounterElement"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_edit_24"
+        android:visibility="visible"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/moreInfoDataBaseCounterElement"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_info_24"
+        android:visibility="visible"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/saveDataBaseCounterElement"
         android:layout_width="40dp"
         android:layout_height="40dp"
@@ -114,10 +164,10 @@
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.66"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.023" />
 
     <ProgressBar
         android:id="@+id/saveCounterProgress"
@@ -136,7 +186,7 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/saveEditProgressElementCounter"
@@ -154,42 +204,12 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.77" />
 
-    <EditText
-        android:id="@+id/titleDataBaseCounterElement"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:autoSizeTextType="uniform"
-        android:background="@drawable/conturdesc"
-        android:hint="название"
-        android:ellipsize="end"
-        android:gravity="center_vertical|center"
-        android:imeOptions="actionDone"
-        android:maxLines="3"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:singleLine="true"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_400"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="27sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.578"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.128" />
-
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/checkCounterComplite"
         android:layout_width="159dp"
         android:layout_height="52dp"
@@ -205,18 +225,17 @@
         android:shadowDy="3"
         android:shadowRadius="1.6"
         android:singleLine="true"
+        android:text="Доработать"
         android:textAllCaps="true"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
         android:textSize="17sp"
-        android:text="Доработать"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.041" />
+        app:layout_constraintVertical_bias="0.914" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

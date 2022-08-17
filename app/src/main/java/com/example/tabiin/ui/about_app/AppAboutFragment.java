@@ -23,6 +23,7 @@ import com.example.tabiin.R;
 
 import com.example.tabiin.databinding.*;
 import com.example.tabiin.developer_params.DeveloperParamsFragment;
+import com.example.tabiin.developer_params.PasswordDevFragment;
 import com.example.tabiin.util.CustomTabUtil;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -125,7 +126,7 @@ public class AppAboutFragment extends Fragment {
             clickCount += 1;
             if (clickCount == 8) {
                 changeFragment(requireActivity(),
-                        new DeveloperParamsFragment(),
+                        new PasswordDevFragment(), //DeveloperParamsFragment(),
                         R.id.kontainerFragment, savedInstanceState);
 
             }

@@ -121,13 +121,20 @@
         <entry key="app/src/main/res/layout/counter/layout/fragment_about_app.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/counter/layout/fragment_app_about.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/counter_dialog_window_save_and_new.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/counter_element.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/counter_item_create.xml" value="0.5369791666666667" />
+        <entry key="app/src/main/res/layout/counter_item_element.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/drawer_names_item.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/fragment_allah_names.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_app_about.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_click_counter_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_counter.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_counter_saves.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_counter_settings.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_create_counter_item.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_daily_zickr.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_developer_params.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_general_counter_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_general_zickr.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter_settings.xml" value="0.5380208333333333" />
@@ -136,8 +143,10 @@
         <entry key="app/src/main/res/layout/fragment_gesture_swipe_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_navigation.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_page.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_password_dev.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/listitem.xml" value="0.5369791666666667" />
+        <entry key="app/src/main/res/layout/recylerview_row.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/menu/bottom_navig_menu.xml" value="0.5380208333333333" />
       </map>
     </option>

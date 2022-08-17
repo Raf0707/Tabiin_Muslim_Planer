@@ -8,34 +8,48 @@
     android:layout_height="match_parent"
     tools:context=".ui.zickr.counter.CounterFragment">
 
-
-    <EditText
-        android:id="@+id/titleDescript"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/conturdesc"
-        android:gravity="center"
-        android:hint="Описание цели"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="25sp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        app:layout_constraintVertical_bias="0.523"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Описание цели">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/titleDescript"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:gravity="center"
+            android:shadowColor="@color/purple_400"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.6"
+            android:textColor="@color/purple_300"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@drawable/green_cursor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.523" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/editTselCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_edit_24"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_edit_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
         android:visibility="visible"
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,11 +59,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/minusCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_remove_circle_outline_24"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_remove_circle_outline_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
         android:visibility="visible"
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -59,36 +76,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
 
-    <EditText
-        android:id="@+id/tsel"
-        android:layout_width="238dp"
-        android:layout_height="64dp"
-        android:background="@drawable/conturdesc"
-        android:gravity="center"
-        android:hint="Цель"
-        android:imeOptions="actionDone"
-        android:inputType="number"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="25sp"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.266"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Цель">
 
-    <Button
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tsel"
+            android:layout_width="238dp"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:inputType="number"
+            android:shadowColor="@color/purple_400"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.6"
+            android:textAllCaps="true"
+            android:textColor="@color/purple_300"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@drawable/green_cursor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.266" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/resetProgressCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_restart_alt_24"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_restart_alt_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
         android:visibility="visible"
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,11 +130,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/saveProgressCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_check_24"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_check_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
         android:visibility="visible"
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,11 +147,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/plusCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_control_point_24"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_control_point_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
         android:visibility="visible"
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -126,52 +164,69 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.791" />
 
-    <EditText
-        android:id="@+id/titleTsel"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="86dp"
-        android:background="@drawable/conturdesc"
-        android:gravity="center"
-        android:hint="Название цели"
-        android:shadowColor="@color/purple_400"
-        android:shadowDx="3"
-        android:shadowDy="3"
-        android:shadowRadius="1.6"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="25sp"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.125"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Название цели">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/titleTsel"
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:gravity="center"
+            android:shadowColor="@color/purple_400"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1.6"
+            android:textColor="@color/purple_300"
+            android:textColorHint="@color/white"
+            android:textCursorDrawable="@drawable/green_cursor"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.125" />
+
+</com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
-        android:id="@+id/backFromCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_arrow_back_24"
-        app:cornerRadius="28dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/setCounter"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_settings_24"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_settings_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dataBaseCounter"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cornerRadius="28dp"
+        app:icon="@drawable/ic_baseline_format_list_bulleted_24"
+        app:iconGravity="textEnd"
+        app:iconSize="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />

@@ -29,24 +29,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.023" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/backSettingsCounterFromGeneralSettings"
-        android:layout_width="42dp"
-        android:layout_height="42dp"
-        android:background="@drawable/ic_baseline_settings_24"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         app:cornerRadius="28dp"
+        app:icon="@drawable/ic_baseline_settings_24"
+        app:iconGravity="textEnd"
+        app:iconSize="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.894"
+        app:layout_constraintHorizontal_bias="0.885"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.007" />
 
     <ToggleButton
-        android:id="@+id/checkIntermediateTitleTselsGeneral"
+        android:id="@+id/checkShowStatisticGeneral"
         android:layout_width="100dp"
         android:layout_height="41dp"
-        android:background="@drawable/toggle_btn"
+        android:background="@drawable/conturdesc"
+        android:shadowColor="@color/white"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.6"
         android:textColor="@color/purple_300"
         android:textOff="off"
         android:textOn="On"
@@ -55,7 +62,7 @@
         app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.637" />
 
     <SeekBar
         android:id="@+id/soundMusicSoundSeekBarGeneral"
@@ -68,42 +75,7 @@
         app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955" />
-
-    <TextView
-        android:id="@+id/vibriateClickSomeSettingsGeneral"
-        android:layout_width="215dp"
-        android:layout_height="41dp"
-        android:background="@drawable/contur_text_rect"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Вибрация при нажатии"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/enableVibriateClickGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/chip_border"
-        android:text="вкл"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
+        app:layout_constraintVertical_bias="0.866" />
 
     <Spinner
         android:id="@+id/soundDifListClickGeneral"
@@ -115,184 +87,7 @@
         app:layout_constraintHorizontal_bias="0.874"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
-
-    <TextView
-        android:id="@+id/soundMusicSoundTitleGeneral"
-        android:layout_width="215dp"
-        android:layout_height="41dp"
-        android:background="@drawable/contur_text_rect"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Громкость звука музыки"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.891" />
-
-    <TextView
-        android:id="@+id/vibriateEndSomeSettingsGeneral"
-        android:layout_width="215dp"
-        android:layout_height="41dp"
-        android:background="@drawable/contur_text_rect"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Долгая вибрация при выполнении цели"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
-
-    <TextView
-        android:id="@+id/showStatisticGeneral"
-        android:layout_width="215dp"
-        android:layout_height="41dp"
-        android:background="@drawable/contur_text_rect"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Показывать статистику"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
-
-    <ToggleButton
-        android:id="@+id/checkShowStatisticGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/toggle_btn"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.727" />
-
-    <Spinner
-        android:id="@+id/soundSignListClickGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/conturdesc"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
-
-    <ToggleButton
-        android:id="@+id/checkIntermediateTselsGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/toggle_btn"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623" />
-
-    <TextView
-        android:id="@+id/saveIntermediateTitleTselsGeneral"
-        android:layout_width="215dp"
-        android:layout_height="41dp"
-        android:background="@drawable/contur_text_rect"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Сохранять промежуточные названия целей"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
-
-    <TextView
-        android:id="@+id/infoStatisticGeneral"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:background="@drawable/ic_baseline_info_24"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:textAllCaps="true"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.094"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
-
-    <TextView
-        android:id="@+id/vibriateSoundDifEffectSomeSettingsGeneral"
-        android:layout_width="215dp"
-        android:layout_height="41dp"
-        android:background="@drawable/contur_text_rect"
-        android:gravity="center"
-        android:imeOptions="actionDone"
-        android:text="Другие звуки при нажатии на кнопку"
-        android:textAllCaps="true"
-        android:textColor="@color/purple_300"
-        android:textColorHint="@color/white"
-        android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="13sp"
-        android:textStyle="normal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.178"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.317" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/enableLongVibriateEndGeneral"
-        android:layout_width="100dp"
-        android:layout_height="41dp"
-        android:background="@drawable/chip_border"
-        android:text="вкл"
-        android:textColor="@color/purple_300"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.874"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.227" />
 
     <TextView
         android:id="@+id/vibriateSoundSignEffectSomeSettingsGeneral"
@@ -313,28 +108,47 @@
         app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.421" />
+        app:layout_constraintVertical_bias="0.331" />
 
     <TextView
-        android:id="@+id/settingsStatisticCardGeneral"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:background="@drawable/null_contur"
+        android:id="@+id/vibriateEndSomeSettingsGeneral"
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
         android:gravity="center"
         android:imeOptions="actionDone"
-        android:text="статистику за день, неделю, месяц, год можно увидеть в новостях"
+        android:text="Долгая вибрация при выполнении цели"
         android:textAllCaps="true"
         android:textColor="@color/purple_300"
         android:textColorHint="@color/white"
         android:textCursorDrawable="@drawable/green_cursor"
-        android:textSize="12sp"
-        android:textStyle="bold"
+        android:textSize="13sp"
+        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.813" />
+        app:layout_constraintVertical_bias="0.127" />
+
+    <ToggleButton
+        android:id="@+id/enableLongVibriateEndGeneral"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
+        android:background="@drawable/conturdesc"
+        android:shadowColor="@color/white"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.6"
+        android:textColor="@color/purple_300"
+        android:textOff="off"
+        android:textOn="On"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.127" />
 
     <TextView
         android:id="@+id/saveIntermediateTselsGeneralCard"
@@ -355,6 +169,182 @@
         app:layout_constraintHorizontal_bias="0.178"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.623" />
+        app:layout_constraintVertical_bias="0.533" />
+
+    <ToggleButton
+        android:id="@+id/checkIntermediateTselsGeneral"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
+        android:background="@drawable/conturdesc"
+        android:shadowColor="@color/white"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.6"
+        android:textColor="@color/purple_300"
+        android:textOff="off"
+        android:textOn="On"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
+
+    <TextView
+        android:id="@+id/infoStatisticGeneral"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_info_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.723" />
+
+    <TextView
+        android:id="@+id/settingsStatisticCardGeneral"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:background="@drawable/null_contur"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="статистику за день, неделю, месяц, год можно увидеть в новостях"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.723" />
+
+    <TextView
+        android:id="@+id/soundMusicSoundTitleGeneral"
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Громкость звука музыки"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
+
+    <TextView
+        android:id="@+id/vibriateSoundDifEffectSomeSettingsGeneral"
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Звуки при нажатии на кнопку"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.227" />
+
+    <ToggleButton
+        android:id="@+id/checkIntermediateTitleTselsGeneral"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
+        android:background="@drawable/conturdesc"
+        android:shadowColor="@color/white"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.6"
+        android:textColor="@color/purple_300"
+        android:textOff="off"
+        android:textOn="On"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
+
+    <TextView
+        android:id="@+id/saveIntermediateTitleTselsGeneral"
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Сохранять все названия целей"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.43" />
+
+    <TextView
+        android:id="@+id/showStatisticGeneral"
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Показывать статистику"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.637" />
+
+    <Spinner
+        android:id="@+id/soundSignListClickGeneral"
+        android:layout_width="100dp"
+        android:layout_height="41dp"
+        android:background="@drawable/conturdesc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.874"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.331" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
