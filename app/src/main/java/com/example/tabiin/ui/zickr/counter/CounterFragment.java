@@ -310,11 +310,7 @@ public class CounterFragment extends Fragment {
         });
 
         binding.resetProgressCounterFragment.setOnClickListener(view -> {
-            //saveText();
             if (currentCount != 0) onMaterialAlert();
-            //saveText();
-            //loadText();
-
         });
 
         binding.setCounter.setOnClickListener(view -> {

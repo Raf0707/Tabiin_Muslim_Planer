@@ -9,7 +9,7 @@
     tools:context=".ui.zickr.gesture_counter.settings.GestureCounterSettingsFragment">
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/backGestureCounter"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="339dp"
@@ -27,7 +27,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.403" />
+        app:layout_constraintVertical_bias="0.831" />
 
     <TextView
         android:id="@+id/counter_settings_set2"
@@ -89,6 +89,144 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.279" />
+
+    <TextView
+        android:id="@+id/counter_settings_set"
+        android:layout_width="352dp"
+        android:layout_height="47dp"
+        android:background="@drawable/conturdesc"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="@string/settings"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_baseline_exposure_plus_1_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <TextView
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Свайп вниз"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572" />
+
+    <TextView
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Долгое нажатие на экран"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <TextView
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_baseline_restart_alt_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.739"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <TextView
+        android:layout_width="215dp"
+        android:layout_height="41dp"
+        android:background="@drawable/contur_text_rect"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:text="Нажатие на экран"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.463" />
+
+    <TextView
+        android:layout_width="42dp"
+        android:layout_height="41dp"
+        android:background="@drawable/ic_baseline_exposure_neg_1_24"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="13sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.737"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

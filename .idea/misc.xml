@@ -112,8 +112,20 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/menu/bottom_navig_menu.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5630208333333333" />
         <entry key="..\:/Users/User/StudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/circular_progress.xml" value="0.331" />
+        <entry key="app/src/main/res/drawable/contur.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/contur_mini.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/contur_mini_radius.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/contur_text_rect.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/custom_fill_progress.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/ic_baseline_alternate_email_24.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/ic_baseline_exposure_neg_1_24.xml" value="0.331" />
         <entry key="app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3305" />
+        <entry key="app/src/main/res/drawable/null_contur.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/progress.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/progress_bar_round_corners.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/progress_bar_splesh_screen.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/shape_circular.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/splash_screen_new.xml" value="0.3305" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4221014492753623" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.5380208333333333" />
@@ -134,8 +146,9 @@
         <entry key="app/src/main/res/layout/fragment_create_counter_item.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_daily_zickr.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_developer_params.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_general_beta_gesture_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_general_counter_settings.xml" value="0.5380208333333333" />
-        <entry key="app/src/main/res/layout/fragment_general_zickr.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/fragment_general_zickr.xml" value="0.36386051426558647" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter_sound_settings.xml" value="0.5380208333333333" />
@@ -144,6 +157,7 @@
         <entry key="app/src/main/res/layout/fragment_navigation.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_page.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_password_dev.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_settings_beta_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/listitem.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/recylerview_row.xml" value="0.5380208333333333" />

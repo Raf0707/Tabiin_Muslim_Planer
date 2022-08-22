@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.zickr.gesture_counter_beta.general_screen.GeneralBetaGestureCounterFragment">
+
+    <ProgressBar
+        android:id="@+id/counterBetaProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:indeterminateOnly="false"
+        android:indeterminateTint="#12705a"
+        android:max="100"
+        android:progressDrawable="@drawable/circular_progress"
+        android:rotation="-90"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.38" />
+
+    <TextView
+        android:id="@+id/textBetaProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical|center_horizontal|center"
+        android:textColor="@color/purple_300"
+        android:textSize="120sp"
+        android:textStyle="bold"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="@+id/counterBetaProgress"
+        app:layout_constraintEnd_toEndOf="@+id/counterBetaProgress"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="@+id/counterBetaProgress"
+        app:layout_constraintTop_toTopOf="@+id/counterBetaProgress"
+        app:layout_constraintVertical_bias="0.491" />
+
+    <View
+        android:id="@+id/counterBetaView"
+        android:layout_width="wrap_content"
+        android:layout_height="400dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.35" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/counterBetaSettings"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:icon="@drawable/ic_baseline_settings_24"
+        app:iconSize="60dp"
+        app:iconGravity="textEnd"
+        style="@style/Widget.Material3.Button.IconButton"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/tselBeta"
+        android:layout_width="238dp"
+        android:layout_height="64dp"
+        android:focusableInTouchMode="false"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:isScrollContainer="false"
+        android:textAllCaps="true"
+        android:textColor="@color/purple_300"
+        android:textColorHint="@color/purple_300"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="25sp"
+        android:hint="цель"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.878" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/editBetaCounter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_edit_24"
+        android:visibility="visible"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteBetaCounter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_delete_forever_24"
+        android:backgroundTint="#941212"
+        android:theme="@style/Theme.AppCompat"
+        android:visibility="visible"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.628"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/saveBetaCounter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ic_baseline_check_24"
+        android:visibility="visible"
+        app:cornerRadius="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.956" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

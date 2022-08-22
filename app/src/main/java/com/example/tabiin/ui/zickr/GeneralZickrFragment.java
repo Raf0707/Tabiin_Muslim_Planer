@@ -17,6 +17,7 @@ import com.example.tabiin.ui.zickr.athcar.AthcarFragment;
 import com.example.tabiin.ui.zickr.counter.CounterFragment;
 import com.example.tabiin.ui.zickr.dua.DuaFragment;
 import com.example.tabiin.ui.zickr.gesture_counter.general_screen.GestureCounterFragment;
+import com.example.tabiin.ui.zickr.gesture_counter_beta.general_screen.GeneralBetaGestureCounterFragment;
 import com.example.tabiin.ui.zickr.names.AllahNamesFragment;
 import com.example.tabiin.ui.zickr.salavat.SalavatFragment;
 
@@ -40,6 +41,12 @@ public class GeneralZickrFragment extends Fragment {
         binding.materialCardGestureCounter.setOnClickListener(view -> {
             changeFragment(requireActivity(),
                     new GestureCounterFragment(),
+                    R.id.kontainerFragment, savedInstanceState);
+        });
+
+        binding.materialCardBetaGestureCounter.setOnClickListener(view -> {
+            changeFragment(requireActivity(),
+                    new GeneralBetaGestureCounterFragment(),
                     R.id.kontainerFragment, savedInstanceState);
         });
 

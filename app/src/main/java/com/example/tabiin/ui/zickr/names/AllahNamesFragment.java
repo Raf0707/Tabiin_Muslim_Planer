@@ -3,18 +3,16 @@ package com.example.tabiin.ui.zickr.names;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tabiin.R;
-import com.example.tabiin.adapters.DrawerNamesAdapter;
-import com.example.tabiin.adapters.NamesAdapter;
+import com.example.tabiin.adapters.names.DrawerNamesAdapter;
+import com.example.tabiin.adapters.names.NamesAdapter;
 import com.example.tabiin.databinding.FragmentAllahNamesBinding;
-import com.example.tabiin.objects.DrawerNamesContent;
-import com.example.tabiin.objects.Name;
+import com.example.tabiin.objects.names.DrawerNamesContent;
+import com.example.tabiin.objects.names.Name;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;

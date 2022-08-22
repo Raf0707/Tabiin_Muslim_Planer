@@ -5,7 +5,6 @@ import static com.example.tabiin.util.UtilFragment.changeFragment;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.*;
 
@@ -14,15 +13,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tabiin.R;
-import com.example.tabiin.adapters.CounterAdapter;
-import com.example.tabiin.database.Employee;
-import com.example.tabiin.database.Items;
+import com.example.tabiin.adapters.counter.CounterAdapter;
+import com.example.tabiin.database.CounterItems;
 import com.example.tabiin.databinding.FragmentCounterSavesBinding;
-import com.example.tabiin.ui.zickr.counter.counter_settings.general_screen.CounterSettingsFragment;
-import com.example.tabiin.viewmodels.CounterViewModel;
-import com.google.android.material.floatingactionbutton.*;
-
-import java.util.List;
+import com.example.tabiin.viewmodels.counter.CounterViewModel;
 
 
 public class CounterSavesFragment extends Fragment implements CounterAdapter.HandleItemClick {
@@ -52,15 +46,14 @@ public class CounterSavesFragment extends Fragment implements CounterAdapter.Han
     }
 
     private void initViewModel() {
-        //viewModel = new ViewModelProvider(this).get(CounterViewModel.class);
         viewModel = new ViewModelProvider(this, (ViewModelProvider.Factory) ViewModelProvider.AndroidViewModelFactory
                 .getInstance(getActivity().getApplication())).get(CounterViewModel.class);
-        viewModel.getItemListObsever().observe(getViewLifecycleOwner(), employees -> {
-            if (employees == null) {
+        viewModel.getCounterItemsListObserver().observe(getViewLifecycleOwner(), counterItems -> {
+            if (counterItems == null) {
                 binding.noRes.setVisibility(View.VISIBLE);
                 binding.recycleCounter.setVisibility(View.GONE);
             } else {
-                counterAdapter.setItemsList(employees);
+                counterAdapter.setItemsList(counterItems);
                 binding.recycleCounter.setVisibility(View.VISIBLE);
                 binding.noRes.setVisibility(View.GONE);
             }
@@ -75,12 +68,12 @@ public class CounterSavesFragment extends Fragment implements CounterAdapter.Han
 
 
     @Override
-    public void itemClick(Items items) {
-        viewModel.deleteItem(items);
+    public void itemClick(CounterItems counterItems) {
+
     }
 
     @Override
-    public void removeItem(Items items) {
-
+    public void removeItem(CounterItems counterItems) {
+        viewModel.deleteCounterItems(counterItems);
     }
 }

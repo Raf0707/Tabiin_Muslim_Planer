@@ -4,9 +4,6 @@ import static com.example.tabiin.util.UtilFragment.changeFragment;
 
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +11,13 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.fragment.app.Fragment;
+
 import com.example.tabiin.R;
 import com.example.tabiin.databinding.FragmentCreateCounterItemBinding;
-import com.example.tabiin.ui.zickr.counter.counter_settings.general_screen.CounterSettingsFragment;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.text.MessageFormat;
+import java.util.Random;
 
 
 public class CreateCounterItemFragment extends Fragment {
@@ -57,9 +55,9 @@ public class CreateCounterItemFragment extends Fragment {
             binding.titleDescriptFromCreateItem.setFocusableInTouchMode(false);
             binding.titleDescriptFromCreateItem.setEnabled(false);
 
-            if (binding.titleFromCreateItemDataBaseCounterElement
+            if (binding.tselFromCreateItemDataBaseCounterElement
                     .getText().toString().length() == 0) {
-                binding.titleFromCreateItemDataBaseCounterElement.setText(defoltValue);
+                binding.tselFromCreateItemDataBaseCounterElement.setText(defoltValue);
                 maxvalue = Integer.parseInt(binding
                         .titleFromCreateItemDataBaseCounterElement
                         .getText()
@@ -92,9 +90,16 @@ public class CreateCounterItemFragment extends Fragment {
                             .show();
 
                     maxvalue = Integer.parseInt(binding
-                            .titleFromCreateItemDataBaseCounterElement.getText().toString());
+                            .titleFromCreateItemDataBaseCounterElement
+                            .getText().toString());
 
                 }
+            }
+
+            if (binding.titleFromCreateItemDataBaseCounterElement
+                    .getText().toString().length() == 0) {
+                binding.titleFromCreateItemDataBaseCounterElement
+                        .setText(getRandomString(15));
             }
 
         });
@@ -166,5 +171,30 @@ public class CreateCounterItemFragment extends Fragment {
         });
 
         return binding.getRoot();
+    }
+
+    public static String getRandomString(int length){
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for(int i = 0; i < length; i++){
+            int number = random.nextInt(3);
+            long result = 0;
+            switch(number){
+                case 0:
+                    result = Math.round(Math.random()*25+65);
+                    sb.append((char) result);
+                    break;
+                case 1:
+                    result = Math.round(Math.random()*25+97);
+                    sb.append((char) result);
+                    break;
+                case 2:
+                    sb.append(new Random().nextInt(10));
+                    break;
+            }
+
+
+        }
+        return sb.toString();
     }
 }

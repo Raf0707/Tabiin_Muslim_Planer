@@ -193,8 +193,38 @@
         android:textSize="17sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.911" />
+        app:layout_constraintVertical_bias="0.923" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/cancelItemCounter"
+        android:layout_width="159dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/contur_45"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:imeOptions="actionDone"
+        android:maxLines="3"
+        android:shadowColor="@color/purple_400"
+        android:shadowDx="3"
+        android:shadowDy="3"
+        android:shadowRadius="1.6"
+        android:singleLine="true"
+        android:text="Отмена"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textCursorDrawable="@drawable/green_cursor"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.923" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/gestureCounterFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,14 +15,14 @@
         app:cornerRadius="28dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintHorizontal_bias="0.982"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024" />
 
     <TextView
         android:id="@+id/gestureCounter"
-        android:layout_width="match_parent"
+        android:layout_width="400dp"
         android:layout_height="180dp"
         android:background="@drawable/conturdesc"
         android:gravity="center"
@@ -33,23 +32,21 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.97" />
 
-    <Button
-        android:id="@+id/backFromGestureCounterFragment"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:background="@drawable/ic_baseline_arrow_back_24"
-        app:cornerRadius="28dp"
+    <View
+        android:id="@+id/counterGestureView"
+        android:layout_width="wrap_content"
+        android:layout_height="670dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+        app:layout_constraintVertical_bias="1.5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

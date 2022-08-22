@@ -6,11 +6,11 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.tabiin.dao.EmployeeDao;
+import com.example.tabiin.dao.ItemDao;
 
-@Database(entities = {Employee.class, Items.class},  version = 1)
+@Database(entities = {CounterInfo.class, CounterItems.class},  version = 1)
 public abstract class AppDatabase extends RoomDatabase {
-    public abstract EmployeeDao employeeDao();
+    public abstract ItemDao itemDao();
     public static AppDatabase INSTANCE;
     public static AppDatabase getInstance(Context context) {
         if (INSTANCE == null) {
