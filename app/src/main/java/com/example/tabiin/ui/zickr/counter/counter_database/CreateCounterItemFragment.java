@@ -35,6 +35,18 @@ public class CreateCounterItemFragment extends Fragment {
 
         handler = new Handler();
 
+        binding.titleFromCreateItemDataBaseCounterElement.setCursorVisible(true);
+        binding.titleFromCreateItemDataBaseCounterElement.setFocusableInTouchMode(true);
+        binding.titleFromCreateItemDataBaseCounterElement.setEnabled(true);
+
+        binding.titleFromCreateItemDataBaseCounterElement.setCursorVisible(true);
+        binding.titleFromCreateItemDataBaseCounterElement.setFocusableInTouchMode(true);
+        binding.titleFromCreateItemDataBaseCounterElement.setEnabled(true);
+
+        binding.titleDescriptFromCreateItem.setCursorVisible(true);
+        binding.titleDescriptFromCreateItem.setFocusableInTouchMode(true);
+        binding.titleDescriptFromCreateItem.setEnabled(true);
+
         binding.saveFromCreateItemDataBaseCounterElement.setOnClickListener(view -> {
             // saveText()
             binding.titleFromCreateItemDataBaseCounterElement.setText(binding
@@ -164,10 +176,6 @@ public class CreateCounterItemFragment extends Fragment {
                     R.id.kontainerFragment,
                     savedInstanceState
             );
-        });
-
-        binding.createItemCounter.setOnClickListener(view -> {
-
         });
 
         return binding.getRoot();
