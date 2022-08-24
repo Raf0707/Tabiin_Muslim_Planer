@@ -112,6 +112,9 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/menu/bottom_navig_menu.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5630208333333333" />
         <entry key="..\:/Users/User/StudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/mikha/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/fragment_koran.xml" value="0.26811594202898553" />
+        <entry key="..\:/Users/mikha/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/koran_card_item.xml" value="0.22509057971014493" />
+        <entry key="..\:/Users/mikha/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/listitem.xml" value="0.22509057971014493" />
         <entry key="app/src/main/res/drawable/circular_progress.xml" value="0.331" />
         <entry key="app/src/main/res/drawable/contur.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/contur_mini.xml" value="0.325" />

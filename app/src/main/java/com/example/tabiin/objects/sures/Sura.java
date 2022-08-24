@@ -59,4 +59,16 @@ public class Sura {
     public void setTranslatedVerses(ArrayList<Verse> translatedVerses) {
         this.translatedVerses = translatedVerses;
     }
+
+    @Override
+    public String toString() {
+        return "Sura{" +
+                "name='" + name + '\'' +
+                ", translatedName='" + translatedName + '\'' +
+                ", foreword='" + foreword + '\'' +
+                ", translatedForeword='" + translatedForeword + '\'' +
+                ", verses=" + verses +
+                ", translatedVerses=" + translatedVerses +
+                '}';
+    }
 }

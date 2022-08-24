@@ -1,14 +1,24 @@
 package com.example.tabiin.ui.kitab.koran;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tabiin.R;
+import com.example.tabiin.objects.sures.Sura;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Scanner;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +64,16 @@ public class KoranFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+        Gson gson = new GsonBuilder().create();
+        InputStream inputStream = null;
+        try {
+            inputStream = getContext().getAssets().open("Quran and Tafsir (.json)/1.json");
+            String jsonString = new Scanner(inputStream).useDelimiter("\\A").next();
+            Sura sura = gson.fromJson(jsonString, Sura.class);
+            Log.d("SURA", sura.toString());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
