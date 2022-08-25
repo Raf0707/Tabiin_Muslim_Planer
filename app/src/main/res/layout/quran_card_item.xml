@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047"
+        tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/numVerse"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:text="1"
+                android:gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:textSize="30dp"
+                android:background="@drawable/conturdesc">
+
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+        <TextView
+            android:id="@+id/arabicViewVerse"
+            android:text=" يَا أَيُّهَا الَّذِينَ آمَنُواْ أَوْفُواْ بِالْعُقُودِ أُحِلَّتْ لَكُم بَهِيمَةُ الأَنْعَامِ إِلاَّ مَا يُتْلَى عَلَيْكُمْ غَيْرَ مُحِلِّي الصَّيْدِ وَأَنتُمْ حُرُمٌ إِنَّ اللّهَ يَحْكُمُ مَا يُرِيدُ"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/translateViewVerse"
+            android:text="О вы, которые уверовали! Выполняйте все договоры, обеты и обещания между вами и Аллахом, а также законные договоры между вами и другими людьми, честно соблюдайте все свои обязательства. Аллах разрешил вам есть мясо животных из скота (верблюдов, коров, овец и т.д.), кроме того, что вам запрещено Аллахом. Вам не дозволена охота, когда вы в ихраме (в хаджже или умре) или находитесь в Священном месте - Запретном Доме Аллаха. Аллах устанавливает законы по Своей мудрости. Поистине, Аллах решает то, что Он захочет. И это - один из заветов Аллаха."
+            android:textSize="20sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/numCustVerse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
