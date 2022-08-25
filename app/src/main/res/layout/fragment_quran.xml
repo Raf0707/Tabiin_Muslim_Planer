@@ -1,6 +1,6 @@
 <androidx.drawerlayout.widget.DrawerLayout
 
-    android:id="@+id/drawerLayout"
+    android:id="@+id/quranContentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:openDrawer="start"
