@@ -19,6 +19,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public TextView num;
         public TextView arabicVerse;
         public TextView translatedVerse;
+        public TextView heading;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -26,7 +27,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             arabicVerse = itemView.findViewById(R.id.arabicViewVerse); // аят на арабском
             translatedVerse = itemView.findViewById(R.id.translateViewVerse); // аят на русском
             num = itemView.findViewById(R.id.numVerse); // номер аята
-
+            heading = itemView.findViewById(R.id.heading);
         }
     }
 
@@ -47,19 +48,32 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, int position) {
-        Verse arabicViewVerse = sura.getVerses().get(position);
-        Verse translateViewVerse = sura.getTranslatedVerses().get(position);
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
-        num.setText(Integer.toString(position));
-        arabicViewVerse.setText(arabicViewVerse.getText());
-        tvesre.setText(translateViewVerse.getText());
+        TextView heading = holder.heading;
+        heading.setVisibility(View.GONE);
+        if (position == 1){
+            num.setVisibility(View.GONE);
+            heading.setVisibility(View.VISIBLE);
+            heading.setText(sura.getName());
+            verseView.setText(sura.getForeword());
+            tvesre.setText(sura.getTranslatedForeword());
+        }
+        else {
+            num.setVisibility(View.VISIBLE);
+            heading.setVisibility(View.GONE);
+            Verse arabicViewVerse = sura.getVerses().get(position);
+            Verse translateViewVerse = sura.getTranslatedVerses().get(position);
+            num.setText(Integer.toString(position));
+            verseView.setText(arabicViewVerse.getText());
+            tvesre.setText(translateViewVerse.getText());
+        }
     }
 
     @Override
     public int getItemCount() {
-        return sura.getVerses().size();
+        return sura.getVerses().size() + 1;
     }
 
     public QuranAdapter(Sura suras) {

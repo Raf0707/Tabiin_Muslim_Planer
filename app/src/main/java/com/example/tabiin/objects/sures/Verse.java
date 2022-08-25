@@ -1,5 +1,7 @@
 package com.example.tabiin.objects.sures;
 
+import java.util.ArrayList;
+
 public class Verse {
     private String text;
     private String audioLink;
@@ -18,5 +20,22 @@ public class Verse {
 
     public void setAudioLink(String audioLink) {
         this.audioLink = audioLink;
+    }
+
+    @Override
+    public String toString() {
+        return "Verse{" +
+                "text='" + text + '\'' +
+                ", audioLink='" + audioLink + '\'' +
+                '}';
+    }
+
+    public static String toStr(ArrayList<Verse> verses){
+        String str = "";
+        for (Verse verse:
+             verses) {
+            str.concat(verse.getText());
+        }
+        return str;
     }
 }
