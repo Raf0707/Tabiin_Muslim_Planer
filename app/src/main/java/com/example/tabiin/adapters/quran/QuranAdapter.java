@@ -1,4 +1,4 @@
-package com.example.tabiin.ui.kitab.koran;
+package com.example.tabiin.adapters.quran;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,32 +13,31 @@ import com.example.tabiin.R;
 import com.example.tabiin.objects.sures.Sura;
 import com.example.tabiin.objects.sures.Verse;
 
-import java.util.List;
-
-public class KoranAdapter extends RecyclerView.Adapter<KoranAdapter.ViewHolder> {
+public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> {
     private Sura sura;
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView num;
-        public TextView verse;
+        public TextView arabicVerse;
         public TextView translatedVerse;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
 
-            verse = itemView.findViewById(R.id.textView);
-            translatedVerse = itemView.findViewById(R.id.textView2);
-            num = itemView.findViewById(R.id.textView3);
+            arabicVerse = itemView.findViewById(R.id.arabicViewVerse); // аят на арабском
+            translatedVerse = itemView.findViewById(R.id.translateViewVerse); // аят на русском
+            num = itemView.findViewById(R.id.numVerse); // номер аята
 
         }
     }
+
     @NonNull
     @Override
-    public KoranAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public QuranAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
         // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.koran_card_item, parent, false);
+        View contactView = inflater.inflate(R.layout.quran_card_item, parent, false);
 
         // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
@@ -47,15 +46,15 @@ public class KoranAdapter extends RecyclerView.Adapter<KoranAdapter.ViewHolder> 
     }
 
     @Override
-    public void onBindViewHolder(@NonNull KoranAdapter.ViewHolder holder, int position) {
-        Verse verse = sura.getVerses().get(position);
-        Verse verse2 = sura.getTranslatedVerses().get(position);
-        TextView verse1 = holder.verse;
+    public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, int position) {
+        Verse arabicViewVerse = sura.getVerses().get(position);
+        Verse translateViewVerse = sura.getTranslatedVerses().get(position);
+        TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
         num.setText(Integer.toString(position));
-        verse.setText(verse.getText());
-        tvesre.setText(verse2.getText());
+        arabicViewVerse.setText(arabicViewVerse.getText());
+        tvesre.setText(translateViewVerse.getText());
     }
 
     @Override
@@ -63,7 +62,8 @@ public class KoranAdapter extends RecyclerView.Adapter<KoranAdapter.ViewHolder> 
         return sura.getVerses().size();
     }
 
-    public KoranAdapter(Sura suras) {
+    public QuranAdapter(Sura suras) {
         this.sura = suras;
     }
 }
+
