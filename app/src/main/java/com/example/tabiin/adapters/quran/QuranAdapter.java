@@ -19,6 +19,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public TextView num;
         public TextView arabicVerse;
         public TextView translatedVerse;
+        public TextView heading;
+        public TextView headingArabic;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -26,6 +28,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             arabicVerse = itemView.findViewById(R.id.arabicViewVerse); // аят на арабском
             translatedVerse = itemView.findViewById(R.id.translateViewVerse); // аят на русском
             num = itemView.findViewById(R.id.numVerse); // номер аята
+
+            heading = itemView.findViewById(R.id.heading);
+            headingArabic = itemView.findViewById(R.id.headingArabic);
 
         }
     }
@@ -55,6 +60,29 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         num.setText(Integer.toString(position));
         arabicViewVerse.setText(arabicViewVerse.getText());
         tvesre.setText(translateViewVerse.getText());
+        TextView heading = holder.heading;
+        TextView headingArabic = holder.headingArabic;
+        heading.setVisibility(View.GONE);
+        headingArabic.setVisibility(View.GONE);
+
+        if (position == 1){
+            num.setVisibility(View.GONE);
+            heading.setVisibility(View.VISIBLE);
+            heading.setText(sura.getTranslatedName());
+            headingArabic.setVisibility(View.VISIBLE);
+            headingArabic.setText(sura.getName().replaceAll("[1234567890]", ""));
+            verseView.setText(sura.getForeword());
+            tvesre.setText(sura.getTranslatedForeword());
+        }
+        else {
+            num.setVisibility(View.VISIBLE);
+            heading.setVisibility(View.GONE);
+            arabicViewVerse = sura.getVerses().get(position);
+            translateViewVerse = sura.getTranslatedVerses().get(position);
+            num.setText(Integer.toString(position));
+            verseView.setText(arabicViewVerse.getText());
+            tvesre.setText(translateViewVerse.getText());
+        }
     }
 
     @Override
