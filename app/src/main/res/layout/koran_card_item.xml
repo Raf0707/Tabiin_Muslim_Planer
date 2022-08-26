@@ -1,43 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
+        android:id="@+id/heading"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="Сура 5. Аль-Маида"
+        android:textAlignment="gravity"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/headingArabic"
+        android:layout_width="184dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="سورة «المائدة»"
+        android:textAlignment="gravity"
+        android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091" />
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+        app:layout_constraintVertical_bias="0.047"
+        tools:layout_editor_absoluteX="0dp">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.07"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="15dp"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/arabicViewVerse"
+                android:text="بِسْمِ اللّهِ الرَّحْمنِ الرَّحِيم"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/translateViewVerse"
+                android:text="(Мединская сура) Во имя Аллаха Милостивого, Милосердного! Эта сура ниспослана в Медине. Она состоит из 120 айатов и является одной из последних ниспосланных сур Корана. Среди многих тем, затронутых в этой суре, следующие: 1) обязательность выполнения договоров, обетов и обещаний - будут ли они между рабами и их Господом или между людьми, 2) некоторые запрещения мусульманам в пище, 3) разрешённая мусульманам пища, 4) разрешение верующим жениться на целомудренных женщинах из обладателей Писания, 5) как и в каком порядке совершается омовение перед молитвой, 6) сухое омовение песком или пылью в случае отсутствия воды перед молитвой, 7) требование справедливости даже по отношению к врагам, 8) блага, дарованные Аллахом мусульманам, 9) обязанность хранить Священную Книгу мусульман - Коран, 10) как иудеи искажали слова Аллаха, 11) как христиане забыли некоторые заповеди Аллаха, о которых им напомнили, и что они остаются неверными из-за утверждения, что Иса - сын Аллаха, 12) разоблачение ложного утверждения иудеев и христиан о том, что они сыновья Аллаха и Его любимцы, 13) некоторые сведения об иудеях, 14) рассказ об обоих сыновьях Адама, который доказывает, что агрессивность - одна из черт людей, сыновей Адама, 15) месть обязательна, чтобы предупредить и наказать агрессию, 16) наказание за распутство и за кражу, 17) ещё раз в этой суре говорится об искажении иудеями законов, данных в Торе, о необходимости судить по шариату, ниспосланному Аллахом, и о том, что Тора и Евангелие содержали истину до того, как их исказили, 18) враждебность тогдашних иудеев и христиан к верующим, и требование не подчиняться им, а противостоять им, 19) неверие тех христиан, которые утверждают, что Аллах - третий в троице, 20) в этой суре также рассказывается о тех христианах, которые уверовали в Истину Аллаха, 21) запрещение верующим отказывать себе в той пище, которая разрешена им Аллахом, 22) искупление за нарушение клятвы верующим, 23) абсолютное запрещение вина и пьянства, 24) некоторые обряды паломничества (хаджжа), Священное место - Кааба, запретные месяцы, достоинство Каабы и запретных месяцев, 25) разрешение того, что арабы сами себе запретили без довода, 26) составление завещания перед отъездом, 27) чудеса, совершённые Исой, - мир ему! - для подтверждения своего учения, несмотря на которые сыны Исраила всё равно не поверили в него. Отказ Исы - мир ему! - принимать поклонение ему как Богу, 28) власть Аллаха - слава Ему Всевышнему! - над всем в небесах и на земле и Его беспредельная сила и мощь"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/numCustVerse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+
+    </com.google.android.material.card.MaterialCardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
