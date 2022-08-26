@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tabiin.R;
 import com.example.tabiin.adapters.quran.QuranAdapter;
+import com.example.tabiin.objects.quran.QuranItemContent;
 import com.example.tabiin.objects.sures.Sura;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
