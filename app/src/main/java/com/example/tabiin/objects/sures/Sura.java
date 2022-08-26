@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class Sura {
     private String name;
-    private String translatedName;
+    private String translated_name;
 
     private String foreword;
-    private String translatedForeword;
+    private String translated_foreword;
 
     private ArrayList<Verse> verses;
-    private ArrayList<Verse> translatedVerses;
+    private ArrayList<Verse> translated_verses;
 
     public String getName() {
         return name;
     }
 
     public String getTranslatedName() {
-        return translatedName;
+        return translated_name;
     }
 
     public String getForeword() {
@@ -25,7 +25,7 @@ public class Sura {
     }
 
     public String getTranslatedForeword() {
-        return translatedForeword;
+        return translated_foreword;
     }
 
     public ArrayList<Verse> getVerses() {
@@ -33,7 +33,7 @@ public class Sura {
     }
 
     public ArrayList<Verse> getTranslatedVerses() {
-        return translatedVerses;
+        return translated_verses;
     }
 
     public void setName(String name) {
@@ -41,7 +41,7 @@ public class Sura {
     }
 
     public void setTranslatedName(String translatedName) {
-        this.translatedName = translatedName;
+        this.translated_name = translatedName;
     }
 
     public void setForeword(String foreword) {
@@ -49,7 +49,7 @@ public class Sura {
     }
 
     public void setTranslatedForeword(String translatedForeword) {
-        this.translatedForeword = translatedForeword;
+        this.translated_foreword = translatedForeword;
     }
 
     public void setVerses(ArrayList<Verse> verses) {
@@ -57,18 +57,18 @@ public class Sura {
     }
 
     public void setTranslatedVerses(ArrayList<Verse> translatedVerses) {
-        this.translatedVerses = translatedVerses;
+        this.translated_verses = translatedVerses;
     }
 
     @Override
     public String toString() {
         return "Sura{" +
                 "name='" + name + '\'' +
-                ", translatedName='" + translatedName + '\'' +
+                ", translatedName='" + translated_name + '\'' +
                 ", foreword='" + foreword + '\'' +
-                ", translatedForeword='" + translatedForeword + '\'' +
+                ", translatedForeword='" + translated_foreword + '\'' +
                 ", verses=" + verses +
-                ", translatedVerses=" + translatedVerses +
+                ", translatedVerses=" + translated_verses +
                 '}';
     }
 }
