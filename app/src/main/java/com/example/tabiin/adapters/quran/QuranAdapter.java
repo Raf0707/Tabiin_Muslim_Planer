@@ -61,7 +61,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
-        num.setText(Integer.toString(number));
+        num.setText(Integer.toString(number + 1));
         arabicViewVerse.setText(arabicViewVerse.getText());
         tvesre.setText(translateViewVerse.getText());
         TextView heading = holder.heading;
