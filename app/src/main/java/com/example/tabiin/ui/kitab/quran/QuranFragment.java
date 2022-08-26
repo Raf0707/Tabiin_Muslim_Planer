@@ -101,7 +101,7 @@ public class QuranFragment extends Fragment {
 //        binding.quranContent.setAdapter(drawerNamesAdapter);
 //        binding.quranContent.setHasFixedSize(false);
 
-        drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName);
+        drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext());
         binding.quranContent.setAdapter(drawerQuranAdapter);
         binding.quranContent.setHasFixedSize(false);
 
