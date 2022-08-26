@@ -22,6 +22,18 @@
             android:background="@android:color/transparent"
             android:elevation="0dp" />
 
+        <FrameLayout
+            android:id="@+id/tyk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:id="@+id/sura_content"
+                android:layout_width="match_parent"
+                android:layout_height="720dp" />
+        </FrameLayout>
+
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

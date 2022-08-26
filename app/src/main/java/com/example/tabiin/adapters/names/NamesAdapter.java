@@ -54,7 +54,7 @@ public class NamesAdapter extends RecyclerView.Adapter<NamesAdapter.ViewHolder> 
         final TextView nameView;
         ViewHolder(View view){
             super(view);
-            nameView = view.findViewById(R.id.name);
+            nameView = view.findViewById(R.id.name1);
         }
     }
 

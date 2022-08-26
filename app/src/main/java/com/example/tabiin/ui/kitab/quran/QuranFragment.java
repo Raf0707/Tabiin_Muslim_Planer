@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.tabiin.adapters.names.AdaptersFirstUse;
 import com.example.tabiin.adapters.names.DrawerNamesAdapter;
 import com.example.tabiin.adapters.names.DrawerQuranAdapter;
 import com.example.tabiin.databinding.FragmentQuranBinding;
@@ -92,16 +93,15 @@ public class QuranFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         binding = FragmentQuranBinding.inflate(inflater, container, false);
-
+        binding.suraContent.setAdapter(new AdaptersFirstUse());
 
         initContent();
         initMap();
-
 //        drawerNamesAdapter = new DrawerNamesAdapter(getContext(), suresName);
 //        binding.quranContent.setAdapter(drawerNamesAdapter);
 //        binding.quranContent.setHasFixedSize(false);
 
-        drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext());
+        drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext(), binding.suraContent);
         binding.quranContent.setAdapter(drawerQuranAdapter);
         binding.quranContent.setHasFixedSize(false);
 
