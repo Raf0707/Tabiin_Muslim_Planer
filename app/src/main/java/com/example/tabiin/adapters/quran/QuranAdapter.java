@@ -16,6 +16,7 @@ import com.google.android.material.card.MaterialCardView;
 
 public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> {
     private Sura sura;
+    private int number;
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView num;
         public TextView arabicVerse;
@@ -54,13 +55,13 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, int position) {
-        Verse arabicViewVerse = sura.getVerses().get(position);
-        Verse translateViewVerse = sura.getTranslatedVerses().get(position);
+        Verse arabicViewVerse = sura.getVerses().get(number);
+        Verse translateViewVerse = sura.getTranslatedVerses().get(number);
         MaterialCardView cardView = holder.materialCardView;
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
-        num.setText(Integer.toString(position));
+        num.setText(Integer.toString(number + 1));
         arabicViewVerse.setText(arabicViewVerse.getText());
         tvesre.setText(translateViewVerse.getText());
         TextView heading = holder.heading;
@@ -68,7 +69,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         heading.setVisibility(View.GONE);
         headingArabic.setVisibility(View.GONE);
 
-        if (position == 1){
+        if (number == 1){
             num.setVisibility(View.GONE);
             heading.setVisibility(View.VISIBLE);
             heading.setText(sura.getTranslatedName());
@@ -98,8 +99,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         return sura.getVerses().size();
     }
 
-    public QuranAdapter(Sura suras) {
+    public QuranAdapter(Sura suras, int number) {
         this.sura = suras;
+        this.number = number;
     }
 }
 

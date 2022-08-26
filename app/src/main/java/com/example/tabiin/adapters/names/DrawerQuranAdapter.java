@@ -25,9 +25,11 @@ public class DrawerQuranAdapter extends RecyclerView.Adapter<DrawerQuranAdapter.
     private LayoutInflater inflater;
     private List<String> heads;
     private Context context;
+    private RecyclerView quranContent;
 
 
-    public DrawerQuranAdapter(LayoutInflater inflater, List<String> heads, Context context) {
+    public DrawerQuranAdapter(LayoutInflater inflater, List<String> heads, Context context, RecyclerView quranContent) {
+        this.quranContent = quranContent;
         this.inflater = inflater;
         this.heads = heads;
         this.context = context;
@@ -36,7 +38,7 @@ public class DrawerQuranAdapter extends RecyclerView.Adapter<DrawerQuranAdapter.
     @NonNull
     @Override
     public DrawerQuranAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.listitem, parent, false);
+        View view = inflater.inflate(R.layout.listitem1, parent, false);
         return new DrawerQuranAdapter.ViewHolder(view);
     }
 
@@ -51,12 +53,12 @@ public class DrawerQuranAdapter extends RecyclerView.Adapter<DrawerQuranAdapter.
                 Gson gson = new GsonBuilder().create();
                 InputStream inputStream = null;
                 try {
-                    inputStream = context.getAssets().open(String.format("Quran and Tafsir (.json)/%d.json", holder.getBindingAdapterPosition()));
+                    inputStream = context.getAssets().open(String.format("Quran and Tafsir (.json)/%d.json", holder.getBindingAdapterPosition() + 1));
                     String jsonString = new Scanner(inputStream).useDelimiter("\\A").next();
                     Sura sura = gson.fromJson(jsonString, Sura.class);
-                    RecyclerView recyclerView = holder.quranContent;
-                    recyclerView.setAdapter(new QuranAdapter(sura));
-                    recyclerView.setHasFixedSize(false);
+
+                    quranContent.setAdapter(new QuranAdapter(sura, holder.getBindingAdapterPosition() + 1));
+                    quranContent.setHasFixedSize(false);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -71,11 +73,10 @@ public class DrawerQuranAdapter extends RecyclerView.Adapter<DrawerQuranAdapter.
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         final TextView nameView1;
-        private RecyclerView quranContent;
+
         ViewHolder(View view) {
             super(view);
-            quranContent = view.findViewById(R.id.quranContent);
-            nameView1 = view.findViewById(R.id.name);
+            nameView1 = view.findViewById(R.id.name1);
         }
     }
 }
