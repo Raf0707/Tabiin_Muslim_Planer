@@ -55,13 +55,13 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, int position) {
-        Verse arabicViewVerse = sura.getVerses().get(number);
-        Verse translateViewVerse = sura.getTranslatedVerses().get(number);
+        Verse arabicViewVerse = sura.getVerses().get(position);
+        Verse translateViewVerse = sura.getTranslatedVerses().get(position);
         MaterialCardView cardView = holder.materialCardView;
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
-        num.setText(Integer.toString(number + 1));
+        num.setText(Integer.toString(position + 1));
         arabicViewVerse.setText(arabicViewVerse.getText());
         tvesre.setText(translateViewVerse.getText());
         TextView heading = holder.heading;
@@ -69,7 +69,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         heading.setVisibility(View.GONE);
         headingArabic.setVisibility(View.GONE);
 
-        if (number == 1){
+        if (position == 0){
             num.setVisibility(View.GONE);
             heading.setVisibility(View.VISIBLE);
             heading.setText(sura.getTranslatedName());
@@ -84,7 +84,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             headingArabic.setVisibility(View.GONE);
             ViewGroup.MarginLayoutParams layoutParams =
                     (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
-            layoutParams.setMargins(0, 0, 0, 0);
+            layoutParams.setMargins(`0, 0, 0, 0);
             cardView.requestLayout();
             arabicViewVerse = sura.getVerses().get(position);
             translateViewVerse = sura.getTranslatedVerses().get(position);
