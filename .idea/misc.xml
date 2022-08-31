@@ -112,10 +112,6 @@
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/menu/bottom_navig_menu.xml" value="0.546875" />
         <entry key="..\:/Android_Projects/Tabiin/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.5630208333333333" />
         <entry key="..\:/Users/User/StudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/m2kegg/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/koran_card_item.xml" value="0.3582427536231884" />
-        <entry key="..\:/Users/m2kegg/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/listitem.xml" value="0.3582427536231884" />
-        <entry key="..\:/Users/m2kegg/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/listitem1.xml" value="0.3582427536231884" />
-        <entry key="..\:/Users/m2kegg/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/quran_card_item.xml" value="0.3582427536231884" />
         <entry key="..\:/Users/mikha/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/drawer_names_item.xml" value="0.27853260869565216" />
         <entry key="..\:/Users/mikha/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/fragment_allah_names.xml" value="0.1" />
         <entry key="..\:/Users/mikha/AndroidStudioProjects/Tabiin_Muslim_Planer/app/src/main/res/layout/fragment_koran.xml" value="0.26811594202898553" />
@@ -160,6 +156,7 @@
         <entry key="app/src/main/res/drawable/progress.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/progress_bar_round_corners.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/progress_bar_splesh_screen.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/quran_card_item.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/shape_circular.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/splash_screen_new.xml" value="0.3305" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.4221014492753623" />
@@ -200,7 +197,7 @@
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/listitem.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/listitem1.xml" value="0.5380208333333333" />
-        <entry key="app/src/main/res/layout/quran_card_item.xml" value="0.26165146909827763" />
+        <entry key="app/src/main/res/layout/quran_card_item.xml" value="0.5" />
         <entry key="app/src/main/res/layout/recylerview_row.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/menu/bottom_navig_menu.xml" value="0.5380208333333333" />
       </map>
