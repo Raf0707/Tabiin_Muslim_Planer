@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kitabGeneralLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="80dp"
+    tools:context=".ui.kitab.quran_rtx.sures.AlFatihaFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mainAlFatiha"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="سورة الفاتحةِ"
+                            android:layout_gravity="center"
+                            android:textColor="@color/purple_300"
+                            android:textSize="44sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="1. Сура Аль-Фатиха \n (Открывающая Книгу)"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="أَعُوْذُ بِاللهِ مِنَ الشَّـيْطٰنِ الرَّجِيْمِ"
+                            android:layout_gravity="center"
+                            android:textColor="@color/purple_300"
+                            android:textSize="33sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="(Мекканская сура) Во имя Аллаха Милостивого, Милосердного! Эта сура мекканского происхождения. Она была ниспослана пророку Мухаммаду - да благословит его Аллах и приветствует! - до хиджры. Сура состоит из 7 айатов. Она называется Открывающая Книгу (аль-Фатиха), потому что это первая сура по порядку расположения в Благородном Коране и первая сура, ниспосланная полностью. В этой суре говорится о совокупности идей и общем значении Корана, который подтверждает единобожие, является благой вестью для верующих, предупреждает о наказании неверующих и грешников, указывает на необходимость поклонения Господу, на путь к счастью в настоящей и будущей жизни и рассказывает о тех, которые повиновались Аллаху и обрели блаженство, и о тех, которые не повиновались Ему и оказались в убытке, и поэтому эта сура называется Мать Книги."
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="1"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="بِسْمِ اللّهِ الرَّحْمنِ الرَّحِيمِ"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/purple_300"
+                            android:textSize="40sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Сура начинается именем Аллаха Единого, Совершенного, Всемогущего, Безупречного. Он - Милостивый, Податель Блага (великого и малого, общего и частного) и вечно Милосердный."
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="2"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الْحَمْدُ للّهِ رَبِّ الْعَالَمِينَ"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text="Все виды прекраснейшей хвалы Аллаху Единому за всё, что Он предопределил для Своих рабов! Вся слава Аллаху - Творцу и Господу обитателей миров!"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="3"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الرَّحْمنِ الرَّحِيمِ"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Аллах - Всемилостив. Он один - Источник Милосердия и Податель всякого Блага (великого и малого)."
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="4"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="مَالِكِ يَوْمِ الدِّينِ"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Аллах один - Властелин Судного дня - Дня расчёта и воздаяния. И никто, кроме Него, не властен ни над чем в этот День."
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="5"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Тебе одному мы поклоняемся и лишь к Тебе о помощи взываем"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="6"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="الْقُرآن"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="Веди нас прямым путём истины, блага и счастья,"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:strokeColor="@color/purple_300"
+                app:cardUseCompatPadding="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="40dp"
+                            android:text="7"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:background="@drawable/conturdesc"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="صِرَاطَ الَّذِينَ أَنعَمتَ عَلَيهِمْ غَيرِ المَغضُوبِ عَلَيهِمْ وَلاَ الضَّالِّينَ"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:text="путём Твоих рабов, которых Ты наставил на веру в Тебя и которым Ты оказал Свою милость, направив их на прямой путь и оказав им Своё благоволение, но не тех, которые вызвали Твой гнев и сбились с пути истины и блага, отклонясь от веры в Тебя и не повинуясь Тебе"
+                            android:textColor="@color/purple_300"
+                            android:textSize="24sp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

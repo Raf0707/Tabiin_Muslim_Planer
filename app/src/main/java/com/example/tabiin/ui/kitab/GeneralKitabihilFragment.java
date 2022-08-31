@@ -14,6 +14,7 @@ import com.example.tabiin.R;
 import com.example.tabiin.databinding.FragmentGeneralKitabihilBinding;
 import com.example.tabiin.databinding.FragmentGeneralZickrBinding;
 import com.example.tabiin.ui.kitab.quran.QuranFragment;
+import com.example.tabiin.ui.kitab.quran_rtx.main_quran.MainQuranFragment;
 import com.example.tabiin.ui.zickr.counter.CounterFragment;
 
 
@@ -28,7 +29,7 @@ public class GeneralKitabihilFragment extends Fragment {
 
         binding.materialCardQuran.setOnClickListener(view -> {
             changeFragment(requireActivity(),
-                    new QuranFragment(),
+                    new MainQuranFragment(),
                     R.id.kontainerFragment, savedInstanceState);
         });
 

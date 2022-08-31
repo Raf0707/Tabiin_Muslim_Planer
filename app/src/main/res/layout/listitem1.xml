@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/name1"
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardQuran"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="left|bottom"
-        android:textColor="@color/purple_300"
-        android:textSize="16sp" />
+        app:cardCornerRadius="24dp"
+        app:strokeColor="@color/purple_300"
+        app:cardUseCompatPadding="true">
+
+        <TextView
+            android:id="@+id/name1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/purple_300"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textSize="18sp" />
+
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

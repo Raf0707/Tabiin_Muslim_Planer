@@ -146,6 +146,7 @@
         <entry key="app/src/main/res/drawable/contur_mini.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/contur_mini_radius.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/contur_text_rect.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/conturdesc.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/custom_fill_progress.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/ic_baseline_alternate_email_24.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/ic_baseline_exposure_neg_1_24.xml" value="0.331" />
@@ -167,6 +168,7 @@
         <entry key="app/src/main/res/layout/counter_item_create.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/counter_item_element.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/drawer_names_item.xml" value="0.5369791666666667" />
+        <entry key="app/src/main/res/layout/fragment_al_fatiha.xml" value="0.2965834051105369" />
         <entry key="app/src/main/res/layout/fragment_allah_names.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_app_about.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_click_counter_settings.xml" value="0.5380208333333333" />
@@ -178,18 +180,23 @@
         <entry key="app/src/main/res/layout/fragment_developer_params.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_general_beta_gesture_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_general_counter_settings.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_general_kitabihil.xml" value="0.26165146909827763" />
         <entry key="app/src/main/res/layout/fragment_general_zickr.xml" value="0.36386051426558647" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_counter_sound_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_general_settings.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_gesture_swipe_settings.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_main_quran.xml" value="0.5223958333333333" />
         <entry key="app/src/main/res/layout/fragment_navigation.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_page.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_password_dev.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/fragment_quran.xml" value="0.26165146909827763" />
         <entry key="app/src/main/res/layout/fragment_settings_beta_counter.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_splash_screen.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/listitem.xml" value="0.5369791666666667" />
+        <entry key="app/src/main/res/layout/listitem1.xml" value="0.5380208333333333" />
+        <entry key="app/src/main/res/layout/quran_card_item.xml" value="0.26165146909827763" />
         <entry key="app/src/main/res/layout/recylerview_row.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/menu/bottom_navig_menu.xml" value="0.5380208333333333" />
       </map>
