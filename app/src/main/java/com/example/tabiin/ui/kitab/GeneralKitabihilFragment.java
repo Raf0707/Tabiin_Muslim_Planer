@@ -29,7 +29,7 @@ public class GeneralKitabihilFragment extends Fragment {
 
         binding.materialCardQuran.setOnClickListener(view -> {
             changeFragment(requireActivity(),
-                    new MainQuranFragment(),
+                    new QuranFragment(),
                     R.id.kontainerFragment, savedInstanceState);
         });
 
