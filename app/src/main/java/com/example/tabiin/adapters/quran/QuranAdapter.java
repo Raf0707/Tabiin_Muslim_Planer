@@ -84,7 +84,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             headingArabic.setVisibility(View.GONE);
             ViewGroup.MarginLayoutParams layoutParams =
                     (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
-            layoutParams.setMargins(`0, 0, 0, 0);
+            layoutParams.setMargins(0, 0, 0, 0);
             cardView.requestLayout();
             arabicViewVerse = sura.getVerses().get(position);
             translateViewVerse = sura.getTranslatedVerses().get(position);
