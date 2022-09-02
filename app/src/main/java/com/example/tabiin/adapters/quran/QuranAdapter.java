@@ -55,15 +55,15 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, int position) {
-        Verse arabicViewVerse = sura.getVerses().get(position);
-        Verse translateViewVerse = sura.getTranslatedVerses().get(position);
+        /*Verse arabicViewVerse = sura.getVerses().get(position);
+        Verse translateViewVerse = sura.getTranslatedVerses().get(position); */
         MaterialCardView cardView = holder.materialCardView;
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
-        num.setText(Integer.toString(position + 1));
+        /*num.setText(Integer.toString(position));
         arabicViewVerse.setText(arabicViewVerse.getText());
-        tvesre.setText(translateViewVerse.getText());
+        tvesre.setText(translateViewVerse.getText()); */
         TextView heading = holder.heading;
         TextView headingArabic = holder.headingArabic;
         heading.setVisibility(View.GONE);
@@ -86,9 +86,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                     (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
             layoutParams.setMargins(0, 0, 0, 0);
             cardView.requestLayout();
-            arabicViewVerse = sura.getVerses().get(position);
-            translateViewVerse = sura.getTranslatedVerses().get(position);
-            num.setText(Integer.toString(position));
+            Verse arabicViewVerse = sura.getVerses().get(holder.getBindingAdapterPosition() - 1);
+            Verse translateViewVerse = sura.getTranslatedVerses().get(holder.getBindingAdapterPosition() - 1);
+            num.setText(Integer.toString(holder.getBindingAdapterPosition()));
             verseView.setText(arabicViewVerse.getText());
             tvesre.setText(translateViewVerse.getText());
         }
@@ -96,7 +96,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return sura.getVerses().size();
+        return sura.getVerses().size() + 1;
     }
 
     public QuranAdapter(Sura suras, int number) {
