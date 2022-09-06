@@ -143,9 +143,12 @@
         <entry key="..\:/Users/mikha/AppData/Local/Android/Sdk/platforms/android-32/data/res/layout/simple_list_item_1.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/circular_progress.xml" value="0.331" />
         <entry key="app/src/main/res/drawable/contur.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/contur_45.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/contur_mini.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/contur_mini_radius.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/contur_red_rect.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/contur_text_rect.xml" value="0.325" />
+        <entry key="app/src/main/res/drawable/conturdesc.xml" value="0.3235" />
         <entry key="app/src/main/res/drawable/custom_fill_progress.xml" value="0.325" />
         <entry key="app/src/main/res/drawable/ic_baseline_alternate_email_24.xml" value="0.3305" />
         <entry key="app/src/main/res/drawable/ic_baseline_exposure_neg_1_24.xml" value="0.331" />
@@ -166,6 +169,7 @@
         <entry key="app/src/main/res/layout/counter_item_create.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/counter_item_element.xml" value="0.5369791666666667" />
         <entry key="app/src/main/res/layout/drawer_names_item.xml" value="0.5369791666666667" />
+        <entry key="app/src/main/res/layout/fragment_al_fatiha.xml" value="0.26165146909827763" />
         <entry key="app/src/main/res/layout/fragment_allah_names.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_app_about.xml" value="0.5380208333333333" />
         <entry key="app/src/main/res/layout/fragment_click_counter_settings.xml" value="0.5380208333333333" />
