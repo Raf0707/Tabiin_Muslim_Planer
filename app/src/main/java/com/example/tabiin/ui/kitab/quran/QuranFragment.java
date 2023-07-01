@@ -21,6 +21,7 @@ import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -97,9 +98,6 @@ public class QuranFragment extends Fragment {
 
         initContent();
         initMap();
-//        drawerNamesAdapter = new DrawerNamesAdapter(getContext(), suresName);
-//        binding.quranContent.setAdapter(drawerNamesAdapter);
-//        binding.quranContent.setHasFixedSize(false);
 
         drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext(), binding.suraContent);
         binding.quranContent.setAdapter(drawerQuranAdapter);
@@ -146,12 +144,12 @@ public class QuranFragment extends Fragment {
         sures[32] = "33. «Аль-Ахзаб» \n («Сонмы»)";
         sures[33] = "34. «Саба» \n («Саба»)";
         sures[34] = "35. «Фатыр» \n («Ангелы»)";
-        sures[35] = "36. «Ясин» \n («Йа Син»)";
+        sures[35] = "36. «Йа син» \n («Йа Син»)";
         sures[36] = "37. «Ас-Саффат» \n («Стоящие в ряд»)";
         sures[37] = "38. «Сад» \n («Сад»)";
         sures[38] = "39. «Аз-Зумар» \n («Толпы»)";
         sures[39] = "40. «Гафир» \n («Прощающий»)";
-        sures[40] = "41. «Фуссилат» \n («Разъяснены»)";
+        sures[40] = "41. «Фуссылят» \n («Разъяснены»)";
         sures[41] = "42. «Аш-Шура» \n («Совет»)";
         sures[42] = "43. «Аз-Зухруф» \n («Украшения»)";
         sures[43] = "44. «Ад-Духан» \n («Дым»)";
@@ -168,14 +166,14 @@ public class QuranFragment extends Fragment {
         sures[54] = "55. «Ар-Рахман» \n («Милосердный»)";
         sures[55] = "56. «Аль-Вакиа» \n («Падающее»)";
         sures[56] = "57. «Аль-Хадид» \n («Железо»)";
-        sures[57] = "58. «Аль-Муджадила» \n («Препирательство»)";
+        sures[57] = "58. «Аль-Муджадиля» \n («Препирательство»)";
         sures[58] = "59. «Аль-Хашр» \n («Собрание»)";
         sures[59] = "60. «Аль-Мумтахана» \n («Испытуемая»)";
         sures[60] = "61. «Ас-Сафф» \n («Ряды»)";
         sures[61] = "62. «Аль-Джума» \n («Пятница»)";
         sures[62] = "63. «Аль-Мунафикун» \n («Лицемеры»)";
         sures[63] = "64. «Ат-Тагабун» \n («Взаимное обманывание»)";
-        sures[64] = "65. «Ат-Талак» \n («Развод»)";
+        sures[64] = "65. «Ат-Таляк» \n («Развод»)";
         sures[65] = "66. «Ат-Тахрим» \n («Запрещение»)";
         sures[66] = "67. «Аль-Мульк» \n («Власть»)";
         sures[67] = "68. «Аль-Калям» \n («Письменная трость»)";
@@ -185,7 +183,7 @@ public class QuranFragment extends Fragment {
         sures[71] = "72. «Аль-Джинн» \n («Джинны»)";
         sures[72] = "73. «Аль-Муззаммиль» \n («Закутавшийся»)";
         sures[73] = "74. «Аль-Муддассир» \n («Завернувшийся»)";
-        sures[74] = "75. «Аль-Кийама» \n («Воскресение»)";
+        sures[74] = "75. «Аль-Кыйама» \n («Воскресение»)";
         sures[75] = "76. «Аль-Инсан» \n («Человек»)";
         sures[76] = "77. «Аль-Мурсалят» \n («Посылаемые»)";
         sures[77] = "78. «Ан-Наба» \n («Весть»)";
@@ -197,19 +195,19 @@ public class QuranFragment extends Fragment {
         sures[83] = "84. «Аль-Иншикак» \n («Разверзнется»)";
         sures[84] = "85. «Аль-Бурудж» \n («Башни»)";
         sures[85] = "86. «Ат-Тарик» \n («Ночной путник»)";
-        sures[86] = "87. «Аль-Аля» \n («Высочайший»)";
+        sures[86] = "87. «Аль-А'ля» \n («Высочайший»)";
         sures[87] = "88. «Аль-Гашия» \n («Покрывающее»)";
         sures[88] = "89. «Аль-Фаджр» \n («Заря»)";
-        sures[89] = "90. «Аль-Балад» \n («Город»)";
+        sures[89] = "90. «Аль-Баляд» \n («Город»)";
         sures[90] = "91. «Аш-Шамс» \n («Солнце»)";
-        sures[91] = "92. «Аль-Лайл» \n («Ночь»)";
+        sures[91] = "92. «Аль-Ляйл» \n («Ночь»)";
         sures[92] = "93. «Ад-Духа» \n («Утро»)";
         sures[93] = "94. «Аш-Шарх» \n («Раскрытие»)";
         sures[94] = "95 «Ат-Тин» \n («Смоковница»)";
-        sures[95] = "96. «Аль-Алак» \n («Сгусток»)";
+        sures[95] = "96. «Аль-Аляк» \n («Сгусток»)";
         sures[96] = "97. «Аль-Кадр» \n («Могущество»)";
         sures[97] = "98. «Аль-Баййина» \n («Ясное знамение»)";
-        sures[98] = "99. «Аз-Залзала» \n («Землетрясение»)";
+        sures[98] = "99. «Аз-Залзаля» \n («Землетрясение»)";
         sures[99] = "100. «Аль-Адият» \n («Скачущие»)";
         sures[100] = "101. «Аль-Кари’а» \n («Поражающее»)";
         sures[101] = "102. «Ат-Такасур» \n («Приумножение»)";
@@ -219,7 +217,7 @@ public class QuranFragment extends Fragment {
         sures[105] = "106. «Курайш» \n («Курайшиты»)";
         sures[106] = "107. «Аль-Маун» \n («Милостыня»)";
         sures[107] = "108. «Аль-Каусар» \n («Изобилие»)";
-        sures[108] = "109. «Аль-Кафирун» \n («Неверующие»)";
+        sures[108] = "109. «Аль-Кяфирун» \n («Неверующие»)";
         sures[109] = "110. «Ан-Наср» \n («Помощь»)";
         sures[110] = "111. «Аль-Масад» \n («Пальмовые волокна»)";
         sures[111] = "112. «Аль-Ихлас» \n («Очищение веры»)";
@@ -230,9 +228,7 @@ public class QuranFragment extends Fragment {
 
     private void initMap() {
         // Инициализация HashMap
-        for(int n = 0; n < sures.length; ++n) {
-            suresName.add(new String(sures[n]));
-        }
+        suresName.addAll(Arrays.asList(sures));
     }
 
 
