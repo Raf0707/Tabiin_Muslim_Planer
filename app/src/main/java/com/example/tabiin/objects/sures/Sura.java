@@ -12,6 +12,8 @@ public class Sura {
     private ArrayList<Verse> verses;
     private ArrayList<Verse> translated_verses;
 
+    private ArrayList<Verse> audioLinks;
+
     public String getName() {
         return name;
     }
@@ -58,6 +60,14 @@ public class Sura {
 
     public void setTranslatedVerses(ArrayList<Verse> translatedVerses) {
         this.translated_verses = translatedVerses;
+    }
+
+    public ArrayList<Verse> getAudioLinks() {
+        return audioLinks;
+    }
+
+    public void setAudioLinks(ArrayList<Verse> audioLinks) {
+        this.audioLinks = audioLinks;
     }
 
     @Override

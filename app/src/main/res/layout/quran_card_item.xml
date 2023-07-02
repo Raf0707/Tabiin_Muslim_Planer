@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_marginBottom="13dp"
     android:layout_marginTop="13dp"
+    android:layout_marginRight="25dp"
+    android:layout_marginLeft="25dp"
+    android:background="#C9DCD8"
     android:layout_height="wrap_content">
 
     <TextView
@@ -40,6 +43,10 @@
         android:id="@+id/card"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        app:cardCornerRadius="45dp"
+        app:cardElevation="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,8 +61,8 @@
                 android:id="@+id/numVerse"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/conturdesc"
                 android:gravity="center"
                 android:text="1"
@@ -69,9 +76,11 @@
 
             <ImageButton
                 android:id="@+id/play_verse"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:padding="15dp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:background="@drawable/conturdesc"
                 android:src="@drawable/play"/>
 
         </LinearLayout>

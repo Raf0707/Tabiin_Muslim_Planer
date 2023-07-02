@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -102,6 +103,8 @@ public class QuranFragment extends Fragment {
         drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext(), binding.suraContent);
         binding.quranContent.setAdapter(drawerQuranAdapter);
         binding.quranContent.setHasFixedSize(false);
+
+
 
         return binding.getRoot();
 
