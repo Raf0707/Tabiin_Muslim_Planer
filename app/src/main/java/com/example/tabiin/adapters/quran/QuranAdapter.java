@@ -1,9 +1,17 @@
 package com.example.tabiin.adapters.quran;
 
+import static android.provider.Settings.System.getString;
+import static androidx.core.content.PackageManagerCompat.LOG_TAG;
+
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.media.MediaPlayer;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +21,9 @@ import com.example.tabiin.R;
 import com.example.tabiin.objects.sures.Sura;
 import com.example.tabiin.objects.sures.Verse;
 import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.snackbar.Snackbar;
+
+import java.io.IOException;
 
 public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> {
     private Sura sura;
@@ -24,6 +35,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public TextView heading;
         public TextView headingArabic;
         public MaterialCardView materialCardView;
+        public ImageButton play;
+        public MediaPlayer mediaPlayer;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -34,6 +47,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             materialCardView = itemView.findViewById(R.id.card);
             heading = itemView.findViewById(R.id.heading);
             headingArabic = itemView.findViewById(R.id.headingArabic);
+            play = itemView.findViewById(R.id.play_verse);
+            mediaPlayer = new MediaPlayer();
 
         }
     }
@@ -61,6 +76,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
+        ImageButton play = holder.play;
+        MediaPlayer mediaPlayer = new MediaPlayer();
         /*num.setText(Integer.toString(position));
         arabicViewVerse.setText(arabicViewVerse.getText());
         tvesre.setText(translateViewVerse.getText()); */
@@ -92,6 +109,34 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             verseView.setText(arabicViewVerse.getText());
             tvesre.setText(translateViewVerse.getText());
         }
+
+
+        cardView.setOnClickListener(v -> {
+            ClipboardManager clipboard = (ClipboardManager)
+                    v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("", verseView.getText().toString() + "\n"
+                    + tvesre.getText().toString() + "\n" + "Коран, сура " + number + " (" + sura.getTranslatedName() + "), аят " + holder.num.getText().toString());
+            clipboard.setPrimaryClip(clip);
+
+            Snackbar.make(v, "Коран, " + number + ", аят " + holder.num.getText().toString()
+                                    + " скопирован в буфер обмена",
+                            Snackbar.LENGTH_SHORT)
+                    .show();
+        });
+
+        play.setOnClickListener(v -> {
+            try {
+                mediaPlayer.setDataSource(String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink()));
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+            mediaPlayer.prepareAsync();
+
+            mediaPlayer.setOnPreparedListener(mp -> mediaPlayer.start());
+        });
+
+
+
     }
 
     @Override

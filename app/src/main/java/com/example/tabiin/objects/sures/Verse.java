@@ -1,10 +1,15 @@
 package com.example.tabiin.objects.sures;
 
+import android.widget.ImageButton;
+
 import java.util.ArrayList;
 
 public class Verse {
     private String text;
     private String audioLink;
+    private int number;
+
+    private ImageButton play;
 
     public String getText() {
         return text;
@@ -20,6 +25,14 @@ public class Verse {
 
     public void setAudioLink(String audioLink) {
         this.audioLink = audioLink;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     @Override
