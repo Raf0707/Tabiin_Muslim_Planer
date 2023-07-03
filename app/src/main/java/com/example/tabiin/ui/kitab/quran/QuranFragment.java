@@ -101,7 +101,6 @@ public class QuranFragment extends Fragment {
 
         initContent();
         initMap();
-        //initSuresContent();
 
         drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext(), binding.suraContent);
         binding.quranContent.setAdapter(drawerQuranAdapter);
