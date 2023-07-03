@@ -4,7 +4,9 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +22,10 @@ import com.example.tabiin.objects.sures.Verse;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 
@@ -35,8 +40,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public TextView headingArabic;
         public MaterialCardView materialCardView;
         public ImageButton play;
-        public MediaPlayer mediaPlayer;
+        private MediaPlayer mediaPlayer;
         public boolean isPlay;
+        private final ArrayList<Verse> verses;
         public ViewHolder(@NonNull View itemView) {
 
             super(itemView);
@@ -51,6 +57,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             mediaPlayer = new MediaPlayer();
             isPlay = false;
 
+            verses = sura.getVerses();
         }
     }
 
@@ -89,12 +96,10 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         heading.setVisibility(View.GONE);
         headingArabic.setVisibility(View.GONE);
 
-        if (position == 0){
+        if (position == 0) {
 
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
-            //card.setVisibility(View.GONE);
-            //sura.getVerses().get(0).setAudioLink("");
             heading.setVisibility(View.VISIBLE);
             heading.setText(sura.getTranslatedName());
             headingArabic.setVisibility(View.VISIBLE);
@@ -103,20 +108,14 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             tvesre.setText(sura.getTranslatedForeword());
 
 
-        } else if (position == 1){
+        } else if (position == 1) {
 
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
             card.setVisibility(View.GONE);
-            //sura.getVerses().get(0).setAudioLink("");
             heading.setVisibility(View.GONE);
-            //heading.setText(sura.getTranslatedName());
             headingArabic.setVisibility(View.GONE);
-            //headingArabic.setText(sura.getName().replaceAll("[1234567890]", ""));
-            //verseView.setText(sura.getForeword());
-            //tvesre.setText(sura.getTranslatedForeword());
         } else {
-            //Verse verse = new Verse();
             num.setVisibility(View.VISIBLE);
             card.setVisibility(View.VISIBLE);
             play.setVisibility(View.VISIBLE);
@@ -126,11 +125,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                     (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
             layoutParams.setMargins(0, 0, 0, 0);
             cardView.requestLayout();
-            Verse arabicViewVerse = sura.getVerses().get(holder.getBindingAdapterPosition()-1);
-            Verse translateViewVerse = sura.getTranslatedVerses().get(holder.getBindingAdapterPosition()-1);
-            //Verse audiolink = sura.getAudioLinks().get(holder.getBindingAdapterPosition());
-            num.setText(Integer.toString(holder.getBindingAdapterPosition()-1));
-            //num.setText(position);
+            Verse arabicViewVerse = sura.getVerses().get(holder.getBindingAdapterPosition() - 1);
+            Verse translateViewVerse = sura.getTranslatedVerses().get(holder.getBindingAdapterPosition() - 1);
+            num.setText(Integer.toString(holder.getBindingAdapterPosition() - 1));
             verseView.setText(arabicViewVerse.getText());
             tvesre.setText(translateViewVerse.getText());
 
@@ -138,67 +135,95 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
 
         cardView.setOnClickListener(v -> {
-            ClipboardManager clipboard = (ClipboardManager)
-                    v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("", verseView.getText().toString() + "\n"
-                    + tvesre.getText().toString() + "\n" + "Коран, сура " + number + " (" + sura.getTranslatedName() + "), аят " + holder.num.getText().toString());
-            clipboard.setPrimaryClip(clip);
 
-            Snackbar.make(v, "Коран, " + number + ", аят " + holder.num.getText().toString()
-                                    + " скопирован в буфер обмена",
-                            Snackbar.LENGTH_SHORT)
-                    .show();
+            if (position == 0) {
+                ClipboardManager clipboard = (ClipboardManager)
+                        v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("", verseView.getText().toString() + "\n"
+                        + tvesre.getText().toString() + "\n" + "Коран, " + sura.getTranslatedName() + ", предисловие к тафсиру");
+                clipboard.setPrimaryClip(clip);
+
+                Snackbar.make(v, "Коран, " + sura.getTranslatedName() +  ", предисловие к тафсиру"
+                                        + " скопировано в буфер обмена",
+                                Snackbar.LENGTH_SHORT)
+                        .show();
+
+            } else {
+                ClipboardManager clipboard = (ClipboardManager)
+                        v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("", verseView.getText().toString() + "\n"
+                        + tvesre.getText().toString() + "\n" + "Коран, " + sura.getTranslatedName() + ", аят " + holder.num.getText().toString());
+                clipboard.setPrimaryClip(clip);
+
+                Snackbar.make(v, "Коран, " + sura.getTranslatedName() +  ", аят " + holder.num.getText().toString()
+                                        + " скопирован в буфер обмена",
+                                Snackbar.LENGTH_SHORT)
+                        .show();
+            }
         });
 
 
+
         play.setOnClickListener(v -> {
-            Snackbar.make(v, (String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink())), Snackbar.LENGTH_LONG).show();
-            int countClick = 1;
-            AtomicBoolean isPlayMedia = new AtomicBoolean(true);
-            play.setImageResource(R.drawable.pause);
+            //mediaPlayer = MediaPlayer.create(v.getContext(), Uri.parse("123"));
+            AtomicBoolean isPlayMedia = new AtomicBoolean(false);
+            //MediaPlayer mediaPlayer = new MediaPlayer();
+            //Snackbar.make(v, (String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink())), Snackbar.LENGTH_LONG).show();
             if (Objects.equals(sura.getName(), "Дуа после прочтения Корана")) {
                 Context context = v.getContext();
                 startSound("mp3/dua.mp3", context);
             } else {
+
                 try {
-                    //mediaPlayer.reset();
                     //mediaPlayer.pause();
+                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                     mediaPlayer.setDataSource(String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink()));
                     mediaPlayer.prepareAsync();
+                    //mediaPlayer.prepare();
                 } catch (IOException e) {
                     throw new RuntimeException(e);
+                    //mediaPlayer.pause();
+                } catch (IllegalStateException e) {
+                    if (mediaPlayer.isPlaying()) {
+                        mediaPlayer.pause();
+                        Snackbar.make(v, "Sabr", Snackbar.LENGTH_LONG).show();
+                        mediaPlayer.reset();
+
+                    } else {
+                        mediaPlayer.setLooping(true);
+                    }
+
+                    //mediaPlayer.setLooping(true);
                 }
 
-
-                mediaPlayer.setOnPreparedListener(mp -> {
-                    if (isPlayMedia.get() && (countClick % 2 != 0)) {
-                        mediaPlayer.start();
-                        play.setImageResource(R.drawable.pause);
-                    }
-                    else {
-                        isPlayMedia.set(false);
-                        play.setImageResource(R.drawable.play);
-                        //mediaPlayer.pause();
-                        //mediaPlayer.setLooping(true);
-                        if (mp.isPlaying()) {
-                            mediaPlayer.pause();
-                            mediaPlayer.stop();
-                        }
-                        /*
-                        try {
-                            mediaPlayer.prepare();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-
-                         */
-                    }
-                });
             }
 
+            mediaPlayer.setOnPreparedListener(mp -> {
+                if (mediaPlayer.isPlaying()) {
+                    if (mediaPlayer != null) {
+                        mediaPlayer.stop();
+                    }
+                } else {
+                    if (mediaPlayer != null) {
+                        mediaPlayer.start();
+                    }
+                }
+            });
+
+
+            mediaPlayer.setOnPreparedListener(mp -> {
+                if (!isPlayMedia.get()) {
+                    mp.start();
+                    isPlayMedia.set(true);
+                } else if (isPlayMedia.get()) {
+                    mp.pause();
+                    isPlayMedia.set(false);
+                }
+            });
+
+
+
         });
-
-
 
     }
 
@@ -232,6 +257,42 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             e.printStackTrace();
         }
         player.start();
+    }
+
+    public void playFile(View v, MediaPlayer mediaPlayer, ViewHolder holder) {
+        if (mediaPlayer == null)
+            mediaPlayer = new MediaPlayer();
+
+        try {
+
+            mediaPlayer.setDataSource
+                    (String.valueOf(
+                            sura.getVerses()
+                                    .get(Integer
+                                            .parseInt
+                                                    (holder.num.getText().toString()))
+                                    .getAudioLink()));
+
+            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                @Override
+                public void onPrepared(@NotNull MediaPlayer mp) {
+                    mp.start();
+                }
+            });
+            mediaPlayer.prepareAsync();
+
+        }catch (IOException e) {
+            e.printStackTrace();
+            //stopSelf();
+        }
+
+        if (mediaPlayer.isPlaying()) {
+            //pause music
+            mediaPlayer.pause();
+        } else {
+            //play music
+            mediaPlayer.start();
+        }
     }
 }
 

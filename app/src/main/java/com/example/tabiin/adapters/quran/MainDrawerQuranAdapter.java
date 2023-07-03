@@ -1,4 +1,4 @@
-package com.example.tabiin.adapters.names;
+package com.example.tabiin.adapters.quran;
 
 import static java.lang.String.format;
 
@@ -18,17 +18,6 @@ import java.util.List;
 
 
 import static java.lang.String.format;
-
-import android.content.*;
-import android.view.*;
-import android.widget.*;
-
-import androidx.recyclerview.widget.*;
-
-import com.example.tabiin.R;
-import com.example.tabiin.objects.names.DrawerNamesContent;
-
-import java.util.*;
 
 public class MainDrawerQuranAdapter extends RecyclerView.Adapter<MainDrawerQuranAdapter.ViewHolder> {
     private LayoutInflater inflater;

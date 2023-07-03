@@ -8,11 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tabiin.R;
-import com.example.tabiin.adapters.names.AdaptersFirstUse;
 import com.example.tabiin.adapters.names.DrawerNamesAdapter;
-import com.example.tabiin.adapters.names.DrawerQuranAdapter;
-import com.example.tabiin.adapters.names.MainDrawerQuranAdapter;
+import com.example.tabiin.adapters.quran.DrawerQuranAdapter;
+import com.example.tabiin.adapters.quran.MainDrawerQuranAdapter;
 import com.example.tabiin.databinding.FragmentMainQuranBinding;
 import com.example.tabiin.objects.names.DrawerNamesContent;
 

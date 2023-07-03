@@ -5,16 +5,15 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.tabiin.adapters.names.AdaptersFirstUse;
 import com.example.tabiin.adapters.names.DrawerNamesAdapter;
-import com.example.tabiin.adapters.names.DrawerQuranAdapter;
+import com.example.tabiin.adapters.quran.DrawerQuranAdapter;
+import com.example.tabiin.adapters.quran.DrawerSuraContentAdapter;
 import com.example.tabiin.databinding.FragmentQuranBinding;
-import com.example.tabiin.objects.quran.QuranItemContent;
 import com.example.tabiin.objects.sures.Sura;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,10 +34,13 @@ public class QuranFragment extends Fragment {
 
     private FragmentQuranBinding binding;
     private DrawerQuranAdapter drawerQuranAdapter;
-    private DrawerNamesAdapter drawerNamesAdapter;
 
+    private DrawerSuraContentAdapter drawerSuraContentAdapter;
+
+    private List<String> suresContent = new ArrayList<>();
     private List<String> suresName = new ArrayList<>();
     private String[] sures = new String[115];
+    private Sura sura;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -99,12 +101,11 @@ public class QuranFragment extends Fragment {
 
         initContent();
         initMap();
+        //initSuresContent();
 
         drawerQuranAdapter = new DrawerQuranAdapter(inflater, suresName, getContext(), binding.suraContent);
         binding.quranContent.setAdapter(drawerQuranAdapter);
         binding.quranContent.setHasFixedSize(false);
-
-
 
         return binding.getRoot();
 
@@ -232,6 +233,13 @@ public class QuranFragment extends Fragment {
     private void initMap() {
         // Инициализация HashMap
         suresName.addAll(Arrays.asList(sures));
+    }
+
+    private void initSuresContent() {
+        int a = sura.getVerses().size();
+        for (int i = 0; i < a; ++i) {
+            suresContent.add(Integer.toString(i));
+        }
     }
 
 
