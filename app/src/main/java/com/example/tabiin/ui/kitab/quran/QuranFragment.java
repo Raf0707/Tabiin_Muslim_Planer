@@ -241,5 +241,4 @@ public class QuranFragment extends Fragment {
         }
     }
 
-
 }

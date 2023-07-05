@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.res.AssetFileDescriptor;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,7 +86,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         ImageButton play = holder.play;
         MaterialCardView card = holder.materialCardView;
         MediaPlayer mediaPlayer = new MediaPlayer();
-        boolean isPlay = false;
+        AtomicBoolean isPlay = new AtomicBoolean(false);
         /*num.setText(Integer.toString(position));
         arabicViewVerse.setText(arabicViewVerse.getText());
         tvesre.setText(translateViewVerse.getText()); */
@@ -165,47 +164,73 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
 
         play.setOnClickListener(v -> {
-            //mediaPlayer = MediaPlayer.create(v.getContext(), Uri.parse("123"));
+
+            /*
+            if (mediaPlayer.isPlaying()) {
+                mediaPlayer.pause();
+                play.setImageResource(R.drawable.play);
+                mediaPlayer.reset();
+            } else {
+                mediaPlayer.start();
+                play.setImageResource(R.drawable.pause);
+            }*/
+
+
             AtomicBoolean isPlayMedia = new AtomicBoolean(false);
-            //MediaPlayer mediaPlayer = new MediaPlayer();
-            //Snackbar.make(v, (String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink())), Snackbar.LENGTH_LONG).show();
             if (Objects.equals(sura.getName(), "Дуа после прочтения Корана")) {
                 Context context = v.getContext();
                 startSound("mp3/dua.mp3", context);
             } else {
 
                 try {
-                    //mediaPlayer.pause();
+                    play.setImageResource(R.drawable.pause);
                     mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
                     mediaPlayer.setDataSource(String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink()));
+                    //mediaPlayer.setOnPreparedListener(MediaPlayer::start);
+                    mediaPlayer.setOnPreparedListener(mp -> {
+                        mp.start();
+                        play.setImageResource(R.drawable.pause);  // Здесь меняем иконку на иконку паузы
+                        isPlay.set(true);
+                    });
                     mediaPlayer.prepareAsync();
-                    //mediaPlayer.prepare();
+                    mediaPlayer.setOnCompletionListener(mediaPlayer1 -> {
+                        play.setImageResource(R.drawable.play);
+                        mediaPlayer1.reset();
+                    });
                 } catch (IOException e) {
                     throw new RuntimeException(e);
-                    //mediaPlayer.pause();
                 } catch (IllegalStateException e) {
                     if (mediaPlayer.isPlaying()) {
                         mediaPlayer.pause();
+                        play.setImageResource(R.drawable.pause);
                         Snackbar.make(v, "Sabr", Snackbar.LENGTH_LONG).show();
                         mediaPlayer.reset();
 
                     } else {
-                        mediaPlayer.setLooping(true);
+                        mediaPlayer.start();
+                        play.setImageResource(R.drawable.play);
                     }
 
-                    //mediaPlayer.setLooping(true);
                 }
+
+                mediaPlayer.setOnPreparedListener(mp -> {
+                    mp.start();
+                    play.setImageResource(R.drawable.pause);  // Здесь меняем иконку на иконку паузы
+                    isPlay.set(true);
+                });
 
             }
 
             mediaPlayer.setOnPreparedListener(mp -> {
-                if (mediaPlayer.isPlaying()) {
-                    if (mediaPlayer != null) {
-                        mediaPlayer.stop();
+                if (mp.isPlaying()) {
+                    if (mp == null) {
+                        mp = new MediaPlayer();
                     }
                 } else {
-                    if (mediaPlayer != null) {
-                        mediaPlayer.start();
+                    if (mp != null) {
+                        mp.stop();  // Остановить текущий MediaPlayer, если он существует
+                        mp.release();  // Освободить ресурсы
+                        mp = null;
                     }
                 }
             });
@@ -220,8 +245,6 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                     isPlayMedia.set(false);
                 }
             });
-
-
 
         });
 

@@ -1,5 +1,6 @@
 package com.example.tabiin.objects.sures;
 
+import android.media.MediaPlayer;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -10,6 +11,16 @@ public class Verse {
     private int number;
 
     private ImageButton play;
+
+    private MediaPlayer mediaPlayer;
+
+    public MediaPlayer getMediaPlayer() {
+        return mediaPlayer;
+    }
+
+    public void setMediaPlayer(MediaPlayer mediaPlayer) {
+        this.mediaPlayer = mediaPlayer;
+    }
 
     public String getText() {
         return text;
