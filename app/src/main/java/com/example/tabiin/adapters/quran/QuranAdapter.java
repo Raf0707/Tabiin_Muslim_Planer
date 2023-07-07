@@ -165,17 +165,6 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
         play.setOnClickListener(v -> {
 
-            /*
-            if (mediaPlayer.isPlaying()) {
-                mediaPlayer.pause();
-                play.setImageResource(R.drawable.play);
-                mediaPlayer.reset();
-            } else {
-                mediaPlayer.start();
-                play.setImageResource(R.drawable.pause);
-            }*/
-
-
             AtomicBoolean isPlayMedia = new AtomicBoolean(false);
             if (Objects.equals(sura.getName(), "Дуа после прочтения Корана")) {
                 Context context = v.getContext();
