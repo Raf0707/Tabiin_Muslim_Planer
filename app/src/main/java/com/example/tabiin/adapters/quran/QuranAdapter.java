@@ -1,5 +1,6 @@
 package com.example.tabiin.adapters.quran;
 
+import android.annotation.SuppressLint;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -31,6 +32,10 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> {
     private Sura sura;
     private int number;
+    private MediaPlayer mediaPlayer;
+    private int currentPlayingPosition = -1;
+    private boolean isPlaying = false;
+
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView num;
         public TextView arabicVerse;
@@ -39,23 +44,18 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public TextView headingArabic;
         public MaterialCardView materialCardView;
         public ImageButton play;
-        private MediaPlayer mediaPlayer;
-        public boolean isPlay;
-        private final ArrayList<Verse> verses;
-        public ViewHolder(@NonNull View itemView) {
+        public ArrayList<Verse> verses;
 
+        public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            arabicVerse = itemView.findViewById(R.id.arabicViewVerse); // аят на арабском
-            translatedVerse = itemView.findViewById(R.id.translateViewVerse); // аят на русском
-            num = itemView.findViewById(R.id.numVerse); // номер аята
+            arabicVerse = itemView.findViewById(R.id.arabicViewVerse);
+            translatedVerse = itemView.findViewById(R.id.translateViewVerse);
+            num = itemView.findViewById(R.id.numVerse);
             materialCardView = itemView.findViewById(R.id.card);
             heading = itemView.findViewById(R.id.heading);
             headingArabic = itemView.findViewById(R.id.headingArabic);
             play = itemView.findViewById(R.id.play_verse);
-            mediaPlayer = new MediaPlayer();
-            isPlay = false;
-
             verses = sura.getVerses();
         }
     }
@@ -65,76 +65,57 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
     public QuranAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Inflate the custom layout
         View contactView = inflater.inflate(R.layout.quran_card_item, parent, false);
-
-        // Return a new holder instance
         ViewHolder viewHolder = new ViewHolder(contactView);
         return viewHolder;
-
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, int position) {
-        /*Verse arabicViewVerse = sura.getVerses().get(position);
-        Verse translateViewVerse = sura.getTranslatedVerses().get(position); */
+    public void onBindViewHolder(@NonNull QuranAdapter.ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         MaterialCardView cardView = holder.materialCardView;
         TextView verseView = holder.arabicVerse;
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
         ImageButton play = holder.play;
         MaterialCardView card = holder.materialCardView;
-        MediaPlayer mediaPlayer = new MediaPlayer();
-        AtomicBoolean isPlay = new AtomicBoolean(false);
-        /*num.setText(Integer.toString(position));
-        arabicViewVerse.setText(arabicViewVerse.getText());
-        tvesre.setText(translateViewVerse.getText()); */
-        TextView heading = holder.heading;
-        TextView headingArabic = holder.headingArabic;
-        heading.setVisibility(View.GONE);
-        headingArabic.setVisibility(View.GONE);
+        ArrayList<Verse> verses = holder.verses;
+
+        holder.heading.setVisibility(View.GONE);
+        holder.headingArabic.setVisibility(View.GONE);
 
         if (position == 0) {
-
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
-            heading.setVisibility(View.VISIBLE);
-            heading.setText(sura.getTranslatedName());
-            headingArabic.setVisibility(View.VISIBLE);
-            headingArabic.setText(sura.getName().replaceAll("[1234567890]", ""));
+            holder.heading.setVisibility(View.VISIBLE);
+            holder.heading.setText(sura.getTranslatedName());
+            holder.headingArabic.setVisibility(View.VISIBLE);
+            holder.headingArabic.setText(sura.getName().replaceAll("[1234567890]", ""));
             verseView.setText(sura.getForeword());
             tvesre.setText(sura.getTranslatedForeword());
-
-
         } else if (position == 1) {
-
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
             card.setVisibility(View.GONE);
-            heading.setVisibility(View.GONE);
-            headingArabic.setVisibility(View.GONE);
+            holder.heading.setVisibility(View.GONE);
+            holder.headingArabic.setVisibility(View.GONE);
         } else {
             num.setVisibility(View.VISIBLE);
             card.setVisibility(View.VISIBLE);
             play.setVisibility(View.VISIBLE);
-            heading.setVisibility(View.GONE);
-            headingArabic.setVisibility(View.GONE);
+            holder.heading.setVisibility(View.GONE);
+            holder.headingArabic.setVisibility(View.GONE);
             ViewGroup.MarginLayoutParams layoutParams =
                     (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
             layoutParams.setMargins(0, 0, 0, 0);
             cardView.requestLayout();
-            Verse arabicViewVerse = sura.getVerses().get(holder.getBindingAdapterPosition() - 1);
-            Verse translateViewVerse = sura.getTranslatedVerses().get(holder.getBindingAdapterPosition() - 1);
-            num.setText(Integer.toString(holder.getBindingAdapterPosition() - 1));
+            Verse arabicViewVerse = verses.get(position - 1);
+            Verse translateViewVerse = sura.getTranslatedVerses().get(position - 1);
+            num.setText(Integer.toString(position - 1));
             verseView.setText(arabicViewVerse.getText());
             tvesre.setText(translateViewVerse.getText());
-
         }
 
-
         cardView.setOnClickListener(v -> {
-
             if (position == 0) {
                 ClipboardManager clipboard = (ClipboardManager)
                         v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -143,10 +124,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                 clipboard.setPrimaryClip(clip);
 
                 Snackbar.make(v, "Коран, " + sura.getTranslatedName() +  ", предисловие к тафсиру"
-                                        + " скопировано в буфер обмена",
-                                Snackbar.LENGTH_SHORT)
+                                + " скопировано в буфер обмена", Snackbar.LENGTH_SHORT)
                         .show();
-
             } else {
                 ClipboardManager clipboard = (ClipboardManager)
                         v.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
@@ -155,88 +134,30 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                 clipboard.setPrimaryClip(clip);
 
                 Snackbar.make(v, "Коран, " + sura.getTranslatedName() +  ", аят " + holder.num.getText().toString()
-                                        + " скопирован в буфер обмена",
-                                Snackbar.LENGTH_SHORT)
+                                + " скопирован в буфер обмена", Snackbar.LENGTH_SHORT)
                         .show();
             }
         });
 
-
-
         play.setOnClickListener(v -> {
-
-            AtomicBoolean isPlayMedia = new AtomicBoolean(false);
-            if (Objects.equals(sura.getName(), "Дуа после прочтения Корана")) {
-                Context context = v.getContext();
-                startSound("mp3/dua.mp3", context);
+            if (currentPlayingPosition == position) {
+                stopAudio();
+                currentPlayingPosition = -1;
+                isPlaying = false;
             } else {
-
-                try {
-                    play.setImageResource(R.drawable.pause);
-                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-                    mediaPlayer.setDataSource(String.valueOf(sura.getVerses().get(Integer.parseInt(holder.num.getText().toString())).getAudioLink()));
-                    //mediaPlayer.setOnPreparedListener(MediaPlayer::start);
-                    mediaPlayer.setOnPreparedListener(mp -> {
-                        mp.start();
-                        play.setImageResource(R.drawable.pause);  // Здесь меняем иконку на иконку паузы
-                        isPlay.set(true);
-                    });
-                    mediaPlayer.prepareAsync();
-                    mediaPlayer.setOnCompletionListener(mediaPlayer1 -> {
-                        play.setImageResource(R.drawable.play);
-                        mediaPlayer1.reset();
-                    });
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (IllegalStateException e) {
-                    if (mediaPlayer.isPlaying()) {
-                        mediaPlayer.pause();
-                        play.setImageResource(R.drawable.pause);
-                        Snackbar.make(v, "Sabr", Snackbar.LENGTH_LONG).show();
-                        mediaPlayer.reset();
-
-                    } else {
-                        mediaPlayer.start();
-                        play.setImageResource(R.drawable.play);
-                    }
-
-                }
-
-                mediaPlayer.setOnPreparedListener(mp -> {
-                    mp.start();
-                    play.setImageResource(R.drawable.pause);  // Здесь меняем иконку на иконку паузы
-                    isPlay.set(true);
-                });
-
+                stopAudio();
+                currentPlayingPosition = position;
+                isPlaying = true;
+                playAudio(verses.get(position - 1).getAudioLink());
             }
-
-            mediaPlayer.setOnPreparedListener(mp -> {
-                if (mp.isPlaying()) {
-                    if (mp == null) {
-                        mp = new MediaPlayer();
-                    }
-                } else {
-                    if (mp != null) {
-                        mp.stop();  // Остановить текущий MediaPlayer, если он существует
-                        mp.release();  // Освободить ресурсы
-                        mp = null;
-                    }
-                }
-            });
-
-
-            mediaPlayer.setOnPreparedListener(mp -> {
-                if (!isPlayMedia.get()) {
-                    mp.start();
-                    isPlayMedia.set(true);
-                } else if (isPlayMedia.get()) {
-                    mp.pause();
-                    isPlayMedia.set(false);
-                }
-            });
-
+            notifyDataSetChanged();
         });
 
+        if (currentPlayingPosition == position && isPlaying) {
+            play.setImageResource(R.drawable.pause);
+        } else {
+            play.setImageResource(R.drawable.play);
+        }
     }
 
     @Override
@@ -247,64 +168,39 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
     public QuranAdapter(Sura suras, int number) {
         this.sura = suras;
         this.number = number;
+        mediaPlayer = new MediaPlayer();
     }
 
-    private void startSound(String filename, Context c) {
-        AssetFileDescriptor afd = null;
+    private void playAudio(String audioLink) {
         try {
-            afd = c.getResources().getAssets().openFd(filename);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        MediaPlayer player = new MediaPlayer();
-        try {
-            assert afd != null;
-            player.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            player.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        player.start();
-    }
-
-    public void playFile(View v, MediaPlayer mediaPlayer, ViewHolder holder) {
-        if (mediaPlayer == null)
-            mediaPlayer = new MediaPlayer();
-
-        try {
-
-            mediaPlayer.setDataSource
-                    (String.valueOf(
-                            sura.getVerses()
-                                    .get(Integer
-                                            .parseInt
-                                                    (holder.num.getText().toString()))
-                                    .getAudioLink()));
-
-            mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                @Override
-                public void onPrepared(@NotNull MediaPlayer mp) {
-                    mp.start();
-                }
-            });
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+            mediaPlayer.setDataSource(audioLink);
             mediaPlayer.prepareAsync();
-
-        }catch (IOException e) {
+            mediaPlayer.setOnPreparedListener(mp -> {
+                mp.start();
+                isPlaying = true;
+            });
+            mediaPlayer.setOnCompletionListener(mp -> {
+                stopAudio();
+                currentPlayingPosition = -1;
+                isPlaying = false;
+                notifyDataSetChanged();
+            });
+        } catch (IOException e) {
             e.printStackTrace();
-            //stopSelf();
         }
+    }
 
+    private void stopAudio() {
         if (mediaPlayer.isPlaying()) {
-            //pause music
-            mediaPlayer.pause();
-        } else {
-            //play music
-            mediaPlayer.start();
+            mediaPlayer.stop();
         }
+        mediaPlayer.reset();
+        isPlaying = false;
+    }
+
+    private void releaseMediaPlayer() {
+        mediaPlayer.release();
+        mediaPlayer = null;
     }
 }
-

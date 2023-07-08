@@ -10,6 +10,8 @@ public class Verse {
     private String audioLink;
     private int number;
 
+    private int lenSecondsMP3;
+
     private ImageButton play;
 
     private MediaPlayer mediaPlayer;
@@ -44,6 +46,13 @@ public class Verse {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+    public int getLenSecondsMP3() {
+        return lenSecondsMP3;
+    }
+
+    public void setLenSecondsMP3(int lenSecondsMP3) {
+        this.lenSecondsMP3 = lenSecondsMP3;
     }
 
     @Override
