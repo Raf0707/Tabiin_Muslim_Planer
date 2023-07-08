@@ -1,9 +1,10 @@
 package com.example.tabiin.util;
 
 import android.media.MediaPlayer;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 
-import androidx.annotation.NonNull;
+import com.example.tabiin.R;
 
 public class MyMediaPlayer {
     private static MediaPlayer instance;
@@ -118,6 +119,11 @@ public class MyMediaPlayer {
                 seekBar.postDelayed(runnable, 1000);
             }
         }
+    }
+
+    public void onComplete(ImageButton imageButton, int drawable) {
+        mediaPlayer.setOnCompletionListener(mediaPlayer ->
+                imageButton.setImageResource(drawable));
     }
 }
 

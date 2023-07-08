@@ -160,29 +160,33 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             }
         });
 
-
         play.setOnClickListener(v -> {
 
             mediaPlayer.setSeekBar(seekBar);
 
             if (currentPlayingPosition == position) {
                 mediaPlayer.pause();
+                play.setImageResource(R.drawable.pause);
                 currentPlayingPosition = -1;
                 isPlaying = false;
             } else {
-                mediaPlayer.pause();
                 currentPlayingPosition = position;
                 isPlaying = true;
+                play.setImageResource(R.drawable.play);
                 mediaPlayer.play(verses.get(position - 1).getAudioLink());
             }
-            notifyDataSetChanged();
-        });
 
-        if (currentPlayingPosition == position && isPlaying) {
-            play.setImageResource(R.drawable.pause);
-        } else {
-            play.setImageResource(R.drawable.play);
-        }
+            mediaPlayer.onComplete(play, R.drawable.play);
+
+            if (currentPlayingPosition == position && isPlaying) {
+                play.setImageResource(R.drawable.pause);
+            } else {
+                play.setImageResource(R.drawable.play);
+            }
+
+            notifyDataSetChanged();
+
+        });
 
     }
 
