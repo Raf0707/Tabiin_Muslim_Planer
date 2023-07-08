@@ -110,12 +110,7 @@ public class MyMediaPlayer {
         if (seekBar != null) {
             seekBar.setProgress(mediaPlayer.getCurrentPosition());
             if (mediaPlayer.isPlaying()) {
-                Runnable runnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        updateSeekBar();
-                    }
-                };
+                Runnable runnable = this::updateSeekBar;
                 seekBar.postDelayed(runnable, 1000);
             }
         }

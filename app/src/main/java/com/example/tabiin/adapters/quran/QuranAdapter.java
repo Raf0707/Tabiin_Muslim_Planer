@@ -166,13 +166,13 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
             if (currentPlayingPosition == position) {
                 mediaPlayer.pause();
-                play.setImageResource(R.drawable.pause);
+                play.setImageResource(R.drawable.play);
                 currentPlayingPosition = -1;
                 isPlaying = false;
             } else {
                 currentPlayingPosition = position;
                 isPlaying = true;
-                play.setImageResource(R.drawable.play);
+                play.setImageResource(R.drawable.pause);
                 mediaPlayer.play(verses.get(position - 1).getAudioLink());
             }
 
