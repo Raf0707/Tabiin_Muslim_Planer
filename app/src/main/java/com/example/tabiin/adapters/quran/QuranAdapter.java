@@ -36,7 +36,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> {
     private Sura sura;
     private int number;
-    private MediaPlayer mediaPlayer;
+    private MyMediaPlayer mediaPlayer;
     private int currentPlayingPosition = -1;
     private boolean isPlaying = false;
 
@@ -160,18 +160,20 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             }
         });
 
+
         play.setOnClickListener(v -> {
 
+            mediaPlayer.setSeekBar(seekBar);
 
             if (currentPlayingPosition == position) {
-                stopAudio();
+                mediaPlayer.pause();
                 currentPlayingPosition = -1;
                 isPlaying = false;
             } else {
-                stopAudio();
+                mediaPlayer.pause();
                 currentPlayingPosition = position;
                 isPlaying = true;
-                playAudio(verses.get(position - 1).getAudioLink());
+                mediaPlayer.play(verses.get(position - 1).getAudioLink());
             }
             notifyDataSetChanged();
         });
@@ -182,24 +184,6 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             play.setImageResource(R.drawable.play);
         }
 
-        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(mediaPlayer!=null && fromUser){
-                    mediaPlayer.seekTo(progress);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
     }
 
     @Override
@@ -210,47 +194,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
     public QuranAdapter(Sura suras, int number) {
         this.sura = suras;
         this.number = number;
-        mediaPlayer = new MyMediaPlayer().getInstance();
+        mediaPlayer = new MyMediaPlayer();
 
     }
 
-    private void playAudio(String audioLink) {
-        try {
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
-            mediaPlayer.setDataSource(audioLink);
-            mediaPlayer.prepareAsync();
-            mediaPlayer.setOnPreparedListener(mp -> {
-                mp.start();
-                isPlaying = true;
-                /*Timer timer = new Timer();
-                timer.schedule(new TimerTask() {
-                    @Override
-                    public void run() {
-
-                    }
-                }, 2*60*1000);*/
-            });
-            mediaPlayer.setOnCompletionListener(mp -> {
-                stopAudio();
-                currentPlayingPosition = -1;
-                isPlaying = false;
-                notifyDataSetChanged();
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void stopAudio() {
-        if (mediaPlayer.isPlaying()) {
-            mediaPlayer.stop();
-        }
-        mediaPlayer.reset();
-        isPlaying = false;
-    }
-
-    private void releaseMediaPlayer() {
-        mediaPlayer.release();
-        mediaPlayer = null;
-    }
 }
