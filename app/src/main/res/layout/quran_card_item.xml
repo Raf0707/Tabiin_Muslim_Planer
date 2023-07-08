@@ -55,6 +55,12 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
@@ -85,11 +91,39 @@
 
         </LinearLayout>
 
-        <LinearLayout
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="15dp"
+                android:orientation="vertical">
+
+                <SeekBar
+                    android:id="@+id/lengthAyatSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </SeekBar>
+
+                <TextView
+                    android:id="@+id/currentSeconds"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/conturdesc"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="00:00"
+                    android:textSize="20sp"/>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="15dp"
             android:gravity="center"
@@ -100,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text=" يَا أَيُّهَا الَّذِينَ آمَنُواْ أَوْفُواْ بِالْعُقُودِ أُحِلَّتْ لَكُم بَهِيمَةُ الأَنْعَامِ إِلاَّ مَا يُتْلَى عَلَيْكُمْ غَيْرَ مُحِلِّي الصَّيْدِ وَأَنتُمْ حُرُمٌ إِنَّ اللّهَ يَحْكُمُ مَا يُرِيدُ"
+                android:text="арабский"
                 android:textSize="30sp">
 
             </TextView>
@@ -110,10 +144,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="О вы, которые уверовали! Выполняйте все договоры, обеты и обещания между вами и Аллахом, а также законные договоры между вами и другими людьми, честно соблюдайте все свои обязательства. Аллах разрешил вам есть мясо животных из скота (верблюдов, коров, овец и т.д.), кроме того, что вам запрещено Аллахом. Вам не дозволена охота, когда вы в ихраме (в хаджже или умре) или находитесь в Священном месте - Запретном Доме Аллаха. Аллах устанавливает законы по Своей мудрости. Поистине, Аллах решает то, что Он захочет. И это - один из заветов Аллаха."
+                android:text="перевод"
                 android:textSize="20sp">
 
             </TextView>
+
+        </LinearLayout>
 
         </LinearLayout>
 

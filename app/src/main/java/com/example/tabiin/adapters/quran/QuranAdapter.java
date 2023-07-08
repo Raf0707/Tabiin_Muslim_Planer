@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.tabiin.R;
 import com.example.tabiin.objects.sures.Sura;
 import com.example.tabiin.objects.sures.Verse;
+import com.example.tabiin.util.MyMediaPlayer;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -46,6 +48,11 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public ImageButton play;
         public ArrayList<Verse> verses;
 
+        private SeekBar seekBar;
+        private TextView ayatLengthCurrentSeconds;
+        private int currentSec;
+
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -56,7 +63,10 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             heading = itemView.findViewById(R.id.heading);
             headingArabic = itemView.findViewById(R.id.headingArabic);
             play = itemView.findViewById(R.id.play_verse);
+            seekBar = itemView.findViewById(R.id.lengthAyatSeekBar);
+            ayatLengthCurrentSeconds = itemView.findViewById(R.id.currentSeconds);
             verses = sura.getVerses();
+            currentSec = 0;
         }
     }
 
@@ -79,11 +89,16 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         ImageButton play = holder.play;
         MaterialCardView card = holder.materialCardView;
         ArrayList<Verse> verses = holder.verses;
+        SeekBar seekBar = holder.seekBar;
+        TextView currentSeconds = holder.ayatLengthCurrentSeconds;
+        int currentSec = holder.currentSec;
 
         holder.heading.setVisibility(View.GONE);
         holder.headingArabic.setVisibility(View.GONE);
 
         if (position == 0) {
+            seekBar.setVisibility(View.GONE);
+            currentSeconds.setVisibility(View.GONE);
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
             holder.heading.setVisibility(View.VISIBLE);
@@ -93,12 +108,16 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             verseView.setText(sura.getForeword());
             tvesre.setText(sura.getTranslatedForeword());
         } else if (position == 1) {
+            seekBar.setVisibility(View.GONE);
+            currentSeconds.setVisibility(View.GONE);
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
             card.setVisibility(View.GONE);
             holder.heading.setVisibility(View.GONE);
             holder.headingArabic.setVisibility(View.GONE);
         } else {
+            seekBar.setVisibility(View.VISIBLE);
+            currentSeconds.setVisibility(View.VISIBLE);
             num.setVisibility(View.VISIBLE);
             card.setVisibility(View.VISIBLE);
             play.setVisibility(View.VISIBLE);
@@ -140,6 +159,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         });
 
         play.setOnClickListener(v -> {
+
             if (currentPlayingPosition == position) {
                 stopAudio();
                 currentPlayingPosition = -1;
@@ -158,6 +178,24 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         } else {
             play.setImageResource(R.drawable.play);
         }
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if(mediaPlayer!=null && fromUser){
+                    mediaPlayer.seekTo(progress);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
     }
 
     @Override
@@ -168,7 +206,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
     public QuranAdapter(Sura suras, int number) {
         this.sura = suras;
         this.number = number;
-        mediaPlayer = new MediaPlayer();
+        mediaPlayer = new MyMediaPlayer().getInstance();
     }
 
     private void playAudio(String audioLink) {
