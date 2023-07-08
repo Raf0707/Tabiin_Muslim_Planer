@@ -29,6 +29,8 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> {
@@ -48,9 +50,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public ImageButton play;
         public ArrayList<Verse> verses;
 
-        private SeekBar seekBar;
-        private TextView ayatLengthCurrentSeconds;
-        private int currentSec;
+        public SeekBar seekBar;
+        public TextView ayatLengthCurrentSeconds;
+        public int currentSec;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -160,6 +162,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
         play.setOnClickListener(v -> {
 
+
             if (currentPlayingPosition == position) {
                 stopAudio();
                 currentPlayingPosition = -1;
@@ -178,6 +181,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         } else {
             play.setImageResource(R.drawable.play);
         }
+
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -207,6 +211,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         this.sura = suras;
         this.number = number;
         mediaPlayer = new MyMediaPlayer().getInstance();
+
     }
 
     private void playAudio(String audioLink) {
@@ -217,6 +222,13 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             mediaPlayer.setOnPreparedListener(mp -> {
                 mp.start();
                 isPlaying = true;
+                /*Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+
+                    }
+                }, 2*60*1000);*/
             });
             mediaPlayer.setOnCompletionListener(mp -> {
                 stopAudio();

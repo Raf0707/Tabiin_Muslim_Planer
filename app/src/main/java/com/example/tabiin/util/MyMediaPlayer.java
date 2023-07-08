@@ -1,16 +1,49 @@
 package com.example.tabiin.util;
 
 import android.media.MediaPlayer;
+import android.widget.SeekBar;
+
+import androidx.annotation.NonNull;
 
 public class MyMediaPlayer {
-    private MediaPlayer mediaPlayer;
-    private int currentPosition;
+    private static MediaPlayer instance;
+    private android.media.MediaPlayer mediaPlayer;
     private String filePath;
-
-    static MediaPlayer instance;
+    private int currentPosition;
+    private SeekBar seekBar;
 
     public MyMediaPlayer() {
-        mediaPlayer = new MediaPlayer();
+        mediaPlayer = new android.media.MediaPlayer();
+    }
+
+    public static MediaPlayer getInstance() {
+        if (instance == null) {
+            instance = new MediaPlayer();
+        }
+        return instance;
+    }
+
+    public void setSeekBar(SeekBar seekBar) {
+        this.seekBar = seekBar;
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                if (fromUser) {
+                    currentPosition = progress;
+                    mediaPlayer.seekTo(currentPosition);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                // Ничего не делаем при начале перемещения ползунка
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                // Ничего не делаем при окончании перемещения ползунка
+            }
+        });
     }
 
     public void play(String filePath) {
@@ -23,6 +56,10 @@ public class MyMediaPlayer {
             mediaPlayer.prepare();
             mediaPlayer.start();
             this.filePath = filePath;
+            if (seekBar != null) {
+                seekBar.setMax(mediaPlayer.getDuration());
+                updateSeekBar();
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -43,6 +80,7 @@ public class MyMediaPlayer {
                 mediaPlayer.prepare();
                 mediaPlayer.seekTo(currentPosition);
                 mediaPlayer.start();
+                updateSeekBar();
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -56,6 +94,9 @@ public class MyMediaPlayer {
         mediaPlayer.reset();
         filePath = null;
         currentPosition = 0;
+        if (seekBar != null) {
+            seekBar.setProgress(0);
+        }
     }
 
     public void release() {
@@ -64,12 +105,19 @@ public class MyMediaPlayer {
         mediaPlayer = null;
     }
 
-    public static MediaPlayer getInstance(){
-        if(instance == null){
-            instance = new MediaPlayer();
+    private void updateSeekBar() {
+        if (seekBar != null) {
+            seekBar.setProgress(mediaPlayer.getCurrentPosition());
+            if (mediaPlayer.isPlaying()) {
+                Runnable runnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        updateSeekBar();
+                    }
+                };
+                seekBar.postDelayed(runnable, 1000);
+            }
         }
-        return instance;
     }
-
 }
 
