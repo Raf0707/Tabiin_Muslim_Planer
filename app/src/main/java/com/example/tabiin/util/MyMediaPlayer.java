@@ -36,9 +36,16 @@ public class MyMediaPlayer {
     }
 
     public void resume() {
-        if (!mediaPlayer.isPlaying()) {
-            mediaPlayer.seekTo(currentPosition);
-            mediaPlayer.start();
+        if (!mediaPlayer.isPlaying() && filePath != null) {
+            try {
+                mediaPlayer.reset();
+                mediaPlayer.setDataSource(filePath);
+                mediaPlayer.prepare();
+                mediaPlayer.seekTo(currentPosition);
+                mediaPlayer.start();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
