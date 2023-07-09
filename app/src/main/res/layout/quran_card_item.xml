@@ -77,7 +77,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="       "
+                android:text="    "
                 />
 
             <ImageButton
@@ -88,6 +88,36 @@
                 android:padding="8dp"
                 android:background="@drawable/conturdesc"
                 android:src="@drawable/play"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="    "
+                />
+
+            <ImageButton
+                android:id="@+id/repeatOneVerse"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:background="@drawable/conturdesc"
+                android:src="@drawable/repeat_one_on"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="    "
+                />
+
+            <ImageButton
+                android:id="@+id/playAllVerses"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:background="@drawable/conturdesc"
+                android:src="@drawable/repeat_on"/>
 
         </LinearLayout>
 

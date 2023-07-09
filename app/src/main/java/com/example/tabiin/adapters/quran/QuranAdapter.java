@@ -48,6 +48,9 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         public TextView headingArabic;
         public MaterialCardView materialCardView;
         public ImageButton play;
+        public ImageButton repeatOneVerse;
+        public ImageButton playAllVerses;
+
         public ArrayList<Verse> verses;
 
         public SeekBar seekBar;
@@ -65,6 +68,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             heading = itemView.findViewById(R.id.heading);
             headingArabic = itemView.findViewById(R.id.headingArabic);
             play = itemView.findViewById(R.id.play_verse);
+            repeatOneVerse = itemView.findViewById(R.id.repeatOneVerse);
+            playAllVerses = itemView.findViewById(R.id.playAllVerses);
             seekBar = itemView.findViewById(R.id.lengthAyatSeekBar);
             ayatLengthCurrentSeconds = itemView.findViewById(R.id.currentSeconds);
             verses = sura.getVerses();
@@ -89,6 +94,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         TextView num = holder.num;
         TextView tvesre = holder.translatedVerse;
         ImageButton play = holder.play;
+        ImageButton repeatOneVerse = holder.repeatOneVerse;
+        ImageButton playAllVerses = holder.playAllVerses;
         MaterialCardView card = holder.materialCardView;
         ArrayList<Verse> verses = holder.verses;
         SeekBar seekBar = holder.seekBar;
@@ -103,6 +110,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             currentSeconds.setVisibility(View.GONE);
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
+            repeatOneVerse.setVisibility(View.GONE);
+            playAllVerses.setVisibility(View.GONE);
             holder.heading.setVisibility(View.VISIBLE);
             holder.heading.setText(sura.getTranslatedName());
             holder.headingArabic.setVisibility(View.VISIBLE);
@@ -114,6 +123,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             currentSeconds.setVisibility(View.GONE);
             num.setVisibility(View.GONE);
             play.setVisibility(View.GONE);
+            repeatOneVerse.setVisibility(View.GONE);
+            playAllVerses.setVisibility(View.GONE);
             card.setVisibility(View.GONE);
             holder.heading.setVisibility(View.GONE);
             holder.headingArabic.setVisibility(View.GONE);
@@ -123,6 +134,8 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
             num.setVisibility(View.VISIBLE);
             card.setVisibility(View.VISIBLE);
             play.setVisibility(View.VISIBLE);
+            repeatOneVerse.setVisibility(View.VISIBLE);
+            playAllVerses.setVisibility(View.VISIBLE);
             holder.heading.setVisibility(View.GONE);
             holder.headingArabic.setVisibility(View.GONE);
             ViewGroup.MarginLayoutParams layoutParams =
@@ -163,6 +176,65 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
         play.setOnClickListener(v -> {
 
             mediaPlayer.setSeekBar(seekBar);
+
+            if (currentPlayingPosition == position) {
+                mediaPlayer.pause();
+                play.setImageResource(R.drawable.play);
+                currentPlayingPosition = -1;
+                isPlaying = false;
+            } else {
+                currentPlayingPosition = position;
+                isPlaying = true;
+                play.setImageResource(R.drawable.pause);
+                mediaPlayer.play(verses.get(position - 1).getAudioLink());
+            }
+
+            mediaPlayer.onComplete(play, R.drawable.play);
+
+            if (currentPlayingPosition == position && isPlaying) {
+                play.setImageResource(R.drawable.pause);
+            } else {
+                play.setImageResource(R.drawable.play);
+            }
+
+            notifyDataSetChanged();
+
+        });
+
+        repeatOneVerse.setOnClickListener(v -> {
+            mediaPlayer.setSeekBar(seekBar);
+
+            mediaPlayer.repeatOne();
+
+            if (currentPlayingPosition == position) {
+                mediaPlayer.pause();
+                play.setImageResource(R.drawable.play);
+                currentPlayingPosition = -1;
+                isPlaying = false;
+            } else {
+                currentPlayingPosition = position;
+                isPlaying = true;
+                play.setImageResource(R.drawable.pause);
+                mediaPlayer.play(verses.get(position - 1).getAudioLink());
+            }
+
+            mediaPlayer.onComplete(play, R.drawable.play);
+
+            if (currentPlayingPosition == position && isPlaying) {
+                play.setImageResource(R.drawable.pause);
+            } else {
+                play.setImageResource(R.drawable.play);
+            }
+
+            notifyDataSetChanged();
+
+        });
+
+        playAllVerses.setOnClickListener(v -> {
+            mediaPlayer.setSeekBar(seekBar);
+
+            mediaPlayer.playQueue(verses, new RecyclerView(v.getContext()), MyMediaPlayer.getInstance(),
+                    play, R.drawable.play, R.drawable.pause, currentPlayingPosition);
 
             if (currentPlayingPosition == position) {
                 mediaPlayer.pause();

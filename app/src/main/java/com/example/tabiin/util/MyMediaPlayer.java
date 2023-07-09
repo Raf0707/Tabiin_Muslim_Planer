@@ -4,7 +4,14 @@ import android.media.MediaPlayer;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
 
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.tabiin.R;
+import com.example.tabiin.objects.sures.Verse;
+
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MyMediaPlayer {
     private static MediaPlayer instance;
@@ -104,6 +111,37 @@ public class MyMediaPlayer {
         stop();
         mediaPlayer.release();
         mediaPlayer = null;
+    }
+
+    public void repeatOne() {
+        // повторение одной композиции
+        //mediaPlayer.start();
+        while (true) {
+            mediaPlayer.start();
+            mediaPlayer.setLooping(true);
+        }
+
+    }
+
+    public void playQueue(ArrayList<Verse> objects, RecyclerView recyclerView,
+                          MediaPlayer mediaPlayer, ImageButton playBtn,
+                          int drawablePlay, int drawablePause, int startPosition) {
+        startPosition = recyclerView.getChildAdapterPosition(recyclerView);
+        for (int i = startPosition; i < objects.size(); ++i) {
+            recyclerView.scrollToPosition(i);
+            Timer timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    mediaPlayer.start();
+                    playBtn.setImageResource(drawablePlay);
+                    if (timer.purge() != mediaPlayer.getDuration()) {
+                        mediaPlayer.stop();
+                        playBtn.setImageResource(drawablePause);
+                    }
+                }
+            }, mediaPlayer.getDuration());
+        }
     }
 
     private void updateSeekBar() {
