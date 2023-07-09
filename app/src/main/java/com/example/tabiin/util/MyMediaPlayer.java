@@ -116,7 +116,7 @@ public class MyMediaPlayer {
     public void repeatOne() {
         // повторение одной композиции
         //mediaPlayer.start();
-        while (true) {
+        while (true) { // исправить
             mediaPlayer.start();
             mediaPlayer.setLooping(true);
         }
