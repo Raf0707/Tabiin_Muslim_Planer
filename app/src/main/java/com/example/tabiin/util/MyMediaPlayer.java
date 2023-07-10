@@ -20,6 +20,10 @@ public class MyMediaPlayer {
     private int currentPosition;
     private SeekBar seekBar;
 
+    int counterClick = 0;
+
+    boolean repeatOne = false;
+
     public MyMediaPlayer() {
         mediaPlayer = new android.media.MediaPlayer();
     }
@@ -116,10 +120,16 @@ public class MyMediaPlayer {
     public void repeatOne() {
         // повторение одной композиции
         //mediaPlayer.start();
-        while (true) { // исправить
-            mediaPlayer.start();
+        /*counterClick++;
+
+        if (counterClick % 2 == 1) { // исправить
+            //mediaPlayer.start();
             mediaPlayer.setLooping(true);
         }
+
+        mediaPlayer.stop();*/
+
+        repeatOne = true;
 
     }
 
@@ -127,7 +137,7 @@ public class MyMediaPlayer {
                           MediaPlayer mediaPlayer, ImageButton playBtn,
                           int drawablePlay, int drawablePause, int startPosition) {
         startPosition = recyclerView.getChildAdapterPosition(recyclerView);
-        for (int i = startPosition; i < objects.size(); ++i) {
+        for (int i = startPosition; i < objects.size() - 1; ++i) {
             recyclerView.scrollToPosition(i);
             Timer timer = new Timer();
             timer.schedule(new TimerTask() {
@@ -155,8 +165,14 @@ public class MyMediaPlayer {
     }
 
     public void onComplete(ImageButton imageButton, int drawable) {
-        mediaPlayer.setOnCompletionListener(mediaPlayer ->
-                imageButton.setImageResource(drawable));
+        mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mediaPlayer) {
+                if (!repeatOne) imageButton.setImageResource(drawable);
+                else mediaPlayer.setLooping(true);
+            }
+        });
     }
+
 }
 

@@ -191,20 +191,18 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
 
             mediaPlayer.onComplete(play, R.drawable.play);
 
-            if (currentPlayingPosition == position && isPlaying) {
+            /*if (currentPlayingPosition == position && isPlaying) {
                 play.setImageResource(R.drawable.pause);
             } else {
                 play.setImageResource(R.drawable.play);
-            }
+            }*/
 
             notifyDataSetChanged();
 
         });
 
         repeatOneVerse.setOnClickListener(v -> {
-            mediaPlayer.setSeekBar(seekBar);
-
-            mediaPlayer.repeatOne();
+            /*mediaPlayer.setSeekBar(seekBar);
 
             if (currentPlayingPosition == position) {
                 mediaPlayer.pause();
@@ -215,23 +213,28 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                 currentPlayingPosition = position;
                 isPlaying = true;
                 play.setImageResource(R.drawable.pause);
-                mediaPlayer.play(verses.get(position - 1).getAudioLink());
+                mediaPlayer.play(verses.get(position).getAudioLink());
+                mediaPlayer.repeatOne();
             }
 
             mediaPlayer.onComplete(play, R.drawable.play);
 
             if (currentPlayingPosition == position && isPlaying) {
                 play.setImageResource(R.drawable.pause);
+                repeatOneVerse.setImageResource(R.drawable.repeat_one_on);
+                mediaPlayer.play(verses.get(position - 1).getAudioLink());
+                mediaPlayer.repeatOne();
             } else {
                 play.setImageResource(R.drawable.play);
+                repeatOneVerse.setImageResource(R.drawable.repeat_one_off);
             }
 
-            notifyDataSetChanged();
+            notifyDataSetChanged();*/
 
         });
 
         playAllVerses.setOnClickListener(v -> {
-            mediaPlayer.setSeekBar(seekBar);
+            /*mediaPlayer.setSeekBar(seekBar);
 
             mediaPlayer.playQueue(verses, new RecyclerView(v.getContext()), MyMediaPlayer.getInstance(),
                     play, R.drawable.play, R.drawable.pause, currentPlayingPosition);
@@ -256,7 +259,7 @@ public class QuranAdapter extends RecyclerView.Adapter<QuranAdapter.ViewHolder> 
                 play.setImageResource(R.drawable.play);
             }
 
-            notifyDataSetChanged();
+            notifyDataSetChanged();*/
 
         });
 
